@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ONE QUARTER EQUALS A D$LLAR</title>
 <!-- Load Tailwind CSS -->
-<script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
 /* Set a custom font family */
-@import url('[https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap)');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 body {
 font-family: 'Inter', sans-serif;
-background-color: #0d1226; /* Dark navy background */
+background-color: #0d1226; /* Dark navy background for the whole page */
 }
 /* Using solid gold color for strong contrast like the cover art */
 .title-text {
@@ -39,16 +39,18 @@ box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5) !important;
 <p class="text-3xl tracking-widest uppercase font-bold text-yellow-400 mb-0">INSIDE LOOK</p>
 </header>
 
-<!-- Logo Section - CLEANED AND CORRECTED -->
-<div class="h-40 w-40 mx-auto">
+<!-- Logo Section - NOW USING THE ACTUAL GOLD COIN IMAGE -->
+<div class="h-40 w-40 mx-auto bg-black rounded-full p-2">
 <!--
-*** 1. ACTION REQUIRED: REPLACE THIS URL ***
-Insert the direct link to your publicly hosted OQE LLC logo here.
-(The current link is a placeholder image that will display "LOGO").
+*** 1. ACTION REQUIRED: VERIFY LOGO URL ***
+I've attempted to use a likely public URL for your gold coin logo.
+If this specific URL fails, replace it with the direct public link
+where your image (image.png in the uploads) is hosted.
 -->
-<img src="[https://placehold.co/160x160/FFD700/0D1226?text=LOGO](https://placehold.co/160x160/FFD700/0D1226?text=LOGO)"
-alt="OQE LLC Logo Placeholder"
-class="w-full h-full object-contain rounded-full shadow-lg p-2 bg-black">
+<img src="https://onequarterdollar.com/oqe-gold-coin-logo.png"
+alt="One Quarter Enterprises LLC Gold Coin Logo"
+onerror="this.src='https://placehold.co/160x160/FFD700/0D1226?text=OQE%20LLC'"
+class="w-full h-full object-contain rounded-full">
 </div>
 
 <!-- Title Block -->
@@ -136,6 +138,8 @@ const form = document.getElementById('lead-form');
 const formMessage = document.getElementById('form-message');
 
 form.addEventListener('submit', () => {
+// This is a simple client-side message, the actual submission logic
+// is handled by the MailerLite 'action' URL in the form tag.
 formMessage.style.display = 'block';
 formMessage.textContent = 'Submitting... Taking you to the next step.';
 formMessage.classList.remove('text-red-500', 'text-green-600');
