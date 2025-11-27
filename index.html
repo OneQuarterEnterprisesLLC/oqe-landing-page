@@ -4,127 +4,174 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ONE QUARTER EQUALS A D$LLAR</title>
+
+<style>
+/* 1. Global Reset & Custom Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+/* This ensures the container centers itself if it takes up the full viewport */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    background-color: #0d1226; /* Dark navy background */
+}
+
+/* 2. Main Container Styling */
+.main-container {
+    max-width: 900px;
+    width: 100%;
+    background-color: #1c213d; /* Inner dark color */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex; /* Flexbox for the two columns */
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+}
+
+/* 3. Left (Image/Branding) Column */
+.left-panel {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d1226; /* Deepest dark color */
+    color: white;
+    box-sizing: border-box;
+}
+.title-text {
+    color: #FFD700; /* Solid Gold */
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-size: 3rem; /* Approx. equivalent of text-5xl/6xl */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.book-cover {
+    width: 256px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    margin: 10px auto 30px;
+}
+
+/* 4. Right (Form) Column */
+.right-panel {
+    width: 50%;
+    padding: 30px;
+    background-color: #f9fafb; /* Light gray background for form */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.form-field {
+    margin-bottom: 1rem;
+}
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+/* Focus Styling */
+.form-input:focus {
+    outline: none;
+    border-color: #FFD700;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+/* 5. Button Styling */
+.submit-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1c213d;
+    background-color: #FFD700;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+.submit-button:hover {
+    background-color: #facc15; /* A slightly darker gold/yellow */
+}
+
+/* 6. Mobile Responsiveness */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .left-panel, .right-panel {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    .title-text {
+        font-size: 2.5rem;
+    }
+}
+</style>
 </head>
 <body>
 
-<div id="tailwind-isolated-lead-magnet"></div>
+<div class="wrapper">
+    <div class="main-container">
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Get the container element where the Shadow DOM will attach
-    const container = document.getElementById('tailwind-isolated-lead-magnet');
-    
-    // Check for Shadow DOM support and attach it
-    if (container.attachShadow) {
-        const shadowRoot = container.attachShadow({ mode: 'open' });
+        <div class="left-panel">
 
-        // 2. The entire HTML structure, including internal <style> and Tailwind CDN
-        const htmlContent = `
-        <style>
-        /* Load Tailwind CSS from CDN *only* for this component */
-        @import url('https://cdn.tailwindcss.com');
-        /* Set a custom font family */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        
-        .custom-body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d1226;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
-        .title-text {
-            color: #FFD700;
-            font-weight: 900;
-            line-height: 1.1;
-        }
-        input:focus {
-            border-color: #FFD700 !important;
-            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5) !important;
-        }
-        .book-cover-container {
-            height: auto;
-            width: 256px;
-            max-width: 100%;
-        }
-        </style>
+            <header style="text-align: center; width: 100%;">
+                <p style="font-size: 1.5rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: #fcd34d; margin-bottom: 0;">INSIDE LOOK</p>
+            </header>
 
-        <div class="custom-body">
-            <div class="max-w-4xl w-full bg-[#1c213d] shadow-2xl rounded-xl overflow-hidden md:flex">
+            <img src="https://i.imgur.com/EwWFtC6.jpg"
+                alt="One Quarter Equals A D$llar Blueprint Cover"
+                class="book-cover">
 
-                <div class="md:w-1/2 p-6 md:p-10 flex flex-col justify-center items-center bg-[#0d1226] text-white space-y-8">
+            <main style="text-align: center;">
+                <h1 class="title-text">
+                    <span style="display: block;">ONE QUARTER</span>
+                    <span style="display: block;">EQUALS A D$LLAR</span>
+                </h1>
+                <p style="color: #fcd34d; font-size: 1.125rem; font-weight: 700;">7 Chapters to 7 Figures</p>
+                <p style="color: #9ca3af; font-size: 0.875rem; margin-top: 0.5rem;">The #1 Blueprint To Financial Freedom</p>
+            </main>
 
-                    <header class="text-center w-full">
-                        <p class="text-3xl tracking-widest uppercase font-bold text-yellow-400 mb-0">INSIDE LOOK</p>
-                    </header>
+            <footer style="margin-top: auto; padding-top: 2rem;">
+                <p style="font-size: 0.75rem; color: #6b7280;">© 2025 One Quarter Enterprises LLC</p>
+            </footer>
+        </div>
 
-                    <div class="book-cover-container mx-auto p-2">
-                        <img src="https://i.imgur.com/EwWFtC6.jpg"
-                        alt="One Quarter Equals A D$llar Blueprint Cover"
-                        onerror="this.src='https://placehold.co/256x350/FFD700/0D1226?text=IMAGE+ERROR'"
-                        class="w-full h-auto object-contain rounded-lg shadow-xl">
-                    </div>
+        <div class="right-panel">
+            <div>
+                <h2 style="font-size: 1.5rem; font-weight: 700; color: #1f2937; margin-bottom: 1rem;">
+                    Get Your Free Inside Look
+                </h2>
+                <p style="color: #4b5563; margin-bottom: 1.5rem;">
+                    Start converting a Quarter of Effort into a Dollar of Wealth.
+                </p>
 
-                    <main class="text-center">
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl title-text font-extrabold leading-none mb-4 uppercase">
-                            <span class="block">ONE QUARTER</span>
-                            <span class="block">EQUALS A D$LLAR</span>
-                        </h1>
-                        <p class="text-yellow-400 text-lg font-bold">7 Chapters to 7 Figures</p>
-                        <p class="text-gray-400 text-sm mt-2">The #1 Blueprint To Financial Freedom</p>
-                    </main>
+                <form id="lead-form" style="margin-top: 1rem;"
+                action="YOUR_MAILERLITE_FORM_ACTION_URL"
+                method="post">
 
-                    <footer class="mt-auto pt-8">
-                        <p class="text-xs text-gray-500">© 2025 One Quarter Enterprises LLC</p>
-                    </footer>
-                </div>
-
-                <div class="md:w-1/2 p-6 md:p-8 bg-gray-50 flex flex-col justify-center">
-                    <div id="form-content">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-4">
-                            Get Your Free Inside Look
-                        </h2>
-                        <p class="text-gray-600 mb-6">
-                            Start converting a Quarter of Effort into a Dollar of Wealth.
-                        </p>
-
-                        <form id="lead-form" class="space-y-4"
-                        action="YOUR_MAILERLITE_FORM_ACTION_URL"
-                        method="post">
-
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700">Your Name (Optional)</label>
-                            <input type="text" name="fields[name]" id="name" placeholder="John Doe"
-                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 transition duration-150 ease-in-out"
-                            autocomplete="name">
-                        </div>
-
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">Enter Your Best Email *</label>
-                            <input type="email" name="fields[email]" id="email" required placeholder="you@example.com"
-                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 transition duration-150 ease-in-out"
-                            autocomplete="email">
-                        </div>
-
-                        <button type="submit"
-                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-lg text-lg font-bold text-[#1c213d] bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-300 ease-in-out">
-                            Get My Free Inside Look
-                        </button>
-
-                        <p id="form-message" class="text-center text-sm mt-3" style="display: none;"></p>
-
-                        <p class="text-xs text-center text-gray-500 mt-4">
-                            We respect your privacy. Your data is 100% secure.
-                        </p>
-                        </form>
-                    </div>
-
-                    <div id="thank-you-message" class="hidden text-center p-8 bg-white rounded-lg shadow-xl">
-                        <h2 class="text-3xl font-bold text-green-600 mb-4">Success!</h2>
-                        <p class="text-lg text-gray-700 mb-6">
-                            Thank you for your interest! Your free 'Inside Look' has been sent to your email address.
-                        </p>
-                        <p class="text-sm text-gray-500">
-                            Check your inbox (and spam folder
+                <div class="form-field">
+                    <label for="name" style="display: block; font-size: 0.875rem; font-weight: 500; color: #374151;">Your Name (Optional)</label>
+                    <input type="text" name="fields[name]" id="name" placeholder="John Doe"
+                    class="form
