@@ -1,289 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Blueprint: One Quarter Equals A Dollar</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            /* Dark, professional background */
-            background-color: #0d1117;
-            color: #e5e7eb;
-        }
-        .gradient-text {
-            /* Orange/Yellow Gradient for the title */
-            background-image: linear-gradient(90deg, #f59e0b, #ef4444);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .btn-primary {
-            transition: all 0.2s;
-            box-shadow: 0 4px 15px -5px rgba(245, 158, 11, 0.5);
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px -5px rgba(245, 158, 11, 0.7);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Quarter Enterprises LLC | 7 Chapters to 7 Figures</title>
+<!-- Load Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<style>
+/* Define custom Tailwind configuration */
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+'primary-dark': '#060E1B', /* Deep Navy/Indigo based on the book cover */
+'accent-gold': '#D4AF37', /* Classic Gold */
+'light-gold': '#FFD700',
+'text-light': '#E5E7EB',
+},
+fontFamily: {
+sans: ['Inter', 'sans-serif'],
+serif: ['Georgia', 'serif'], /* Used for the main titles */
+},
+boxShadow: {
+'gold-glow': '0 0 15px rgba(212, 175, 55, 0.7)',
+}
+}
+}
+}
+/* Custom styles for the logo image placeholder */
+.logo-placeholder {
+width: 100%;
+max-width: 250px;
+height: 250px;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: transparent;
+}
+</style>
 </head>
-<body class="min-h-screen flex flex-col antialiased">
+<body class="bg-primary-dark text-text-light font-sans min-h-screen flex flex-col">
 
+<!-- Header / Navbar (Simple, just the logo/title) -->
+<header class="p-4 sm:p-6 border-b border-accent-gold/20">
+<div class="max-w-7xl mx-auto flex justify-between items-center">
+<h1 class="text-xl sm:text-2xl font-serif font-bold text-accent-gold tracking-widest uppercase">
+INSIDE LOOK
+<span class="text-sm align-super inline-block ml-0.5 opacity-80">™</span>
+</h1>
+</div>
+</header>
 
-    <!-- Header (Simple and Clean) -->
-    <header class="p-4 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold text-gray-100">The Blueprint</h1>
-            <!-- Placeholder for a logo or secondary CTA -->
-            <button onclick="document.getElementById('email-form').scrollIntoView({ behavior: 'smooth' });" class="text-sm font-semibold text-gray-400 hover:text-white transition duration-150">Start Now</button>
-        </div>
-    </header>
+<!-- Main Content Area -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="py-12 sm:py-24 text-center px-4">
+<div class="max-w-xl mx-auto">
+<!-- Placeholder for the Coin Logo (Generic, working URL) -->
+<div class="logo-placeholder">
+<img src="https://placehold.co/250x250/060E1B/D4AF37?text=OQE+LLC"
+alt="One Quarter Enterprises LLC Logo Placeholder"
+class="rounded-full border-4 border-accent-gold shadow-gold-glow">
+</div>
 
+<h2 class="mt-8 text-4xl sm:text-6xl font-serif font-extrabold leading-tight text-light-gold">
+ONE QUARTER EQUALS A D$LLAR
+</h2>
+<p class="mt-4 text-xl sm:text-2xl font-medium text-text-light/90 tracking-wide">
+The complete **7 Chapters to 7 Figures** Framework for Financial Fortitude.
+</p>
 
-    <!-- Main Content Container -->
-    <main class="flex-grow">
-        <div class="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-           
-            <!-- Hero Section & Lead Capture -->
-            <section class="flex flex-col lg:flex-row items-center justify-between gap-12 mb-20">
-               
-                <!-- Left: Headline and Description -->
-                <div class="lg:w-1/2">
-                    <p class="text-base font-semibold uppercase tracking-wider text-red-500 mb-3">FINALLY, ESCAPE THE P.O.O.R. MINDSET</p>
-                    <h2 class="text-5xl sm:text-6xl font-extrabold leading-tight mb-6">
-                        <span class="gradient-text">Convert A Quarter Of Effort</span> Into A Dollar Of Wealth.
-                    </h2>
-                    <p class="text-xl text-gray-400 mb-8">
-                        The ultimate tactical system to stop the hustle, build automated income streams, and guarantee exponential business growth. Stop trading time for money.
-                    </p>
+<!-- Call-to-Action Button -->
+<button id="cta-button" onclick="document.getElementById('lead-form').scrollIntoView({ behavior: 'smooth' });"
+class="mt-8 px-8 py-4 bg-accent-gold text-primary-dark font-bold text-lg rounded-xl transition duration-300 ease-in-out transform hover:scale-[1.03] shadow-lg shadow-accent-gold/40 hover:shadow-gold-glow uppercase tracking-wider">
+Get the Free Inside Look Now
+</button>
+</div>
+</section>
 
+<!-- Value Proposition / Framework Overview (Updated Content) -->
+<section class="py-16 sm:py-20 px-4 bg-primary-dark/80 border-t border-b border-accent-gold/10">
+<div class="max-w-4xl mx-auto">
+<h3 class="text-3xl sm:text-4xl font-serif font-bold text-center text-accent-gold mb-12">
+Inside the 7 Chapters: From Quarter to Fortune
+</h3>
 
-                    <!-- The Email Capture Form -->
-                    <div id="email-form" class="bg-gray-800 p-6 rounded-xl shadow-2xl border border-gray-700">
-                        <h3 class="text-2xl font-bold mb-4 text-white">Unlock The Purchase Link:</h3>
-                        <p class="text-sm text-gray-400 mb-4">We need your email to secure your copy and send you a critical pre-purchase training link.</p>
-                        <form id="leadCaptureForm" class="flex flex-col sm:flex-row gap-3">
-                            <input type="email" id="email" required placeholder="Enter Your Best Email"
-                                class="flex-grow p-3 bg-gray-900 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
-                            <button type="submit" id="submitButton"
-                                class="btn-primary w-full sm:w-auto px-6 py-3 bg-amber-500 text-gray-900 font-bold rounded-lg whitespace-nowrap">
-                                Get The Buy Link
-                            </button>
-                        </form>
-                        <p id="messageBox" class="text-sm mt-3 hidden"></p>
-                        <p class="text-xs text-gray-500 mt-3">We hate spam, too. Your email is 100% secure.</p>
-                    </div>
-                </div>
+<!-- Part I: The Mindset Mandate -->
+<h4 class="text-2xl font-bold text-light-gold border-b border-accent-gold/50 pb-2 mb-6">
+📘 Part I: The Mindset Mandate (Chapters 1-5)
+</h4>
 
+<div class="grid md:grid-cols-2 gap-8 text-left mb-10">
+<!-- Chapter 1 -->
+<div class="p-6 bg-primary-dark rounded-xl border border-accent-gold/30 hover:border-accent-gold transition duration-300">
+<span class="text-accent-gold text-xl font-bold block mb-1">Chapter 1: What Is Money?</span>
+<p class="text-text-light/70">Redefine your financial understanding: Discover why Wisdom is the true Operating System for wealth.</p>
+</div>
+<!-- Chapter 2 -->
+<div class="p-6 bg-primary-dark rounded-xl border border-accent-gold/30 hover:border-accent-gold transition duration-300">
+<span class="text-accent-gold text-xl font-bold block mb-1">Chapter 2: Pitfalls of Poverty (P.O.P.)</span>
+<p class="text-text-light/70">Identify and eliminate the unconscious habits and beliefs that keep you stuck in the cycle of P.O.P.</p>
+</div>
+<!-- Chapter 3 -->
+<div class="p-6 bg-primary-dark rounded-xl border border-accent-gold/30 hover:border-accent-gold transition duration-300">
+<span class="text-accent-gold text-xl font-bold block mb-1">Chapter 3: How 1 Can Equal 4</span>
+<p class="text-text-light/70">Unlock The Power of the Multiplier: Learn the mathematical secret to exponential financial growth.</p>
+</div>
+<!-- Chapter 4 -->
+<div class="p-6 bg-primary-dark rounded-xl border border-accent-gold/30 hover:border-accent-gold transition duration-300">
+<span class="text-accent-gold text-xl font-bold block mb-1">Chapter 4: The Network Marketing Trap</span>
+<p class="text-text-light/70">A critical look at the Failure of Human Duplication and why reliance on others is a flawed scaling model.</p>
+</div>
+<!-- Chapter 5 -->
+<div class="md:col-span-2 p-6 bg-primary-dark rounded-xl border border-accent-gold/30 hover:border-accent-gold transition duration-300 text-center">
+<span class="text-accent-gold text-xl font-bold block mb-1">Chapter 5: Bridging The Gap</span>
+<p class="text-text-light/70">Achieve Expanded Mental Fortitude—the link between your current reality and the 10,000 hours of mastery.</p>
+</div>
+</div>
 
-                <!-- Right: Book Image Placeholder -->
-                <div class="lg:w-1/2 flex justify-center">
-                    <div class="w-72 h-96 bg-gray-800 rounded-xl shadow-2xl p-6 flex flex-col justify-center items-center text-center border-2 border-amber-500/50">
-                        <svg class="w-16 h-16 text-amber-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"></path></svg>
-                        <p class="text-2xl font-bold text-white">"One Quarter Equals A Dollar"</p>
-                        <p class="text-sm text-gray-400 mt-2">The Blueprint System</p>
-                    </div>
-                </div>
-            </section>
+<!-- Part II & III: Action & Legacy -->
+<h4 class="text-2xl font-bold text-light-gold border-b border-accent-gold/50 pb-2 mb-6 mt-10">
+⚙️ Part II: The Action Blueprint & 🚀 Part III: Legacy
+</h4>
 
+<div class="grid md:grid-cols-2 gap-8 text-left">
+<!-- Chapter 6 -->
+<div class="p-6 bg-primary-dark rounded-xl border border-accent-gold/30 hover:border-accent-gold transition duration-300">
+<span class="text-accent-gold text-xl font-bold block mb-1">Chapter 6: Earning the Seed</span>
+<p class="text-text-light/70">The Foundation of wealth: Tactical strategies for earning your initial seed capital and Defending the Quarter from loss.</p>
+</div>
+<!-- Chapter 7 -->
+<div class="p-6 bg-primary-dark rounded-xl border border-accent-gold/30 hover:border-accent-gold transition duration-300">
+<span class="text-accent-gold text-xl font-bold block mb-1">Chapter 7: The Final Avenues</span>
+<p class="text-text-light/70">The ultimate steps to 7 Figures: Mastering Systemizing your efforts and Compounding your results for long-term legacy.</p>
+</div>
+</div>
 
-            <!-- Key Concepts Section -->
-            <section class="text-center mb-20">
-                <h3 class="text-4xl font-extrabold text-white mb-4">What You'll Master Inside The Blueprint</h3>
-                <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-12">This is the framework used by top system builders. It eliminates waste and focuses your energy on exponential returns.</p>
-               
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                   
-                    <!-- P.O.O.R. -->
-                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:shadow-amber-500/30 transition duration-300 shadow-lg">
-                        <span class="text-4xl mb-3 block text-red-500 font-extrabold">P.O.O.R.</span>
-                        <h4 class="text-xl font-bold text-white mb-2">Eliminate Passing Over Opportunities Repeatedly</h4>
-                        <p class="text-gray-400 text-sm">Understand the mental and logistical traps that keep entrepreneurs stuck in the Linear Hustle. Break the cycle permanently.</p>
-                    </div>
-                   
-                    <!-- Quarter -->
-                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:shadow-amber-500/30 transition duration-300 shadow-lg">
-                        <span class="text-4xl mb-3 block text-amber-500 font-extrabold">The Quarter</span>
-                        <h4 class="text-xl font-bold text-white mb-2">The Single, High-Leverage Unit of Effort</h4>
-                        <p class="text-gray-400 text-sm">Identify the one core action that provides 80% of your value. Stop multitasking and focus your energy on the True Multiplier.</p>
-                    </div>
-                   
-                    <!-- Dollar -->
-                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:shadow-amber-500/30 transition duration-300 shadow-lg">
-                        <span class="text-4xl mb-3 block text-green-500 font-extrabold">The Dollar</span>
-                        <h4 class="text-xl font-bold text-white mb-2">Exponential, Automated Return on Investment</h4>
-                        <p class="text-gray-400 text-sm">Architect your business into an automated machine. The goal isn't just revenue—it's **freedom and time equity**.</p>
-                    </div>
-                </div>
-            </section>
+<!-- Call to Action Reminder -->
+<div class="text-center mt-12">
+<p class="text-xl font-semibold text-text-light/90">
+Ready to shift your mindset and build your action plan?
+</p>
+<button onclick="document.getElementById('lead-form').scrollIntoView({ behavior: 'smooth' });"
+class="mt-4 px-8 py-3 bg-light-gold text-primary-dark font-bold text-lg rounded-xl transition duration-300 hover:bg-accent-gold uppercase tracking-wider">
+Get Instant Access to the Inside Look
+</button>
+</div>
+</div>
+</section>
 
+<!-- Lead Capture Form Section -->
+<section id="lead-form" class="py-16 sm:py-20 px-4">
+<div class="max-w-lg mx-auto bg-primary-dark/80 p-8 sm:p-10 rounded-2xl shadow-2xl shadow-accent-gold/20 border border-accent-gold/30">
+<h3 class="text-3xl font-serif font-bold text-center text-accent-gold mb-6">
+Get Your Free Inside Look
+</h3>
+<p class="text-center text-text-light/70 mb-8">
+Enter your best email below to receive an exclusive preview of the foundational principles.
+</p>
 
-            <!-- Social Proof/Authority Section (Placeholder) -->
-            <section class="bg-gray-900 p-10 rounded-xl mb-16">
-                <h3 class="text-3xl font-bold text-center text-white mb-6">Built By a Former Hustler, For Owners</h3>
-                <blockquote class="max-w-4xl mx-auto text-center italic text-xl text-gray-400">
-                    "I spent 15 years on the clock before I realized I was building other people's machines. **The Blueprint** is the exact system I used to walk away from the time-for-money trade and finally become an owner. This isn't theoretical motivation; this is tactical engineering."
-                </blockquote>
-            </section>
+<form id="subscribe-form" class="space-y-6">
+<div>
+<label for="name" class="sr-only">Your Name</label>
+<input type="text" id="name" name="name" placeholder="Your Name" required
+class="w-full px-5 py-3 rounded-lg bg-primary-dark/50 border border-accent-gold/50 focus:ring-2 focus:ring-accent-gold text-text-light placeholder-text-light/50 transition duration-200">
+</div>
+<div>
+<label for="email" class="sr-only">Your Email</label>
+<input type="email" id="email" name="email" placeholder="Your Best Email" required
+class="w-full px-5 py-3 rounded-lg bg-primary-dark/50 border border-accent-gold/50 focus:ring-2 focus:ring-accent-gold text-text-light placeholder-text-light/50 transition duration-200">
+</div>
+<button type="submit"
+class="w-full px-5 py-3 bg-light-gold text-primary-dark font-bold text-xl rounded-xl transition duration-300 ease-in-out transform hover:bg-accent-gold hover:shadow-lg hover:shadow-accent-gold/60 uppercase tracking-widest">
+Send Me the Preview
+</button>
+</form>
 
+<p id="message-box" class="mt-4 text-center text-sm text-green-400 hidden">
+Success! Check your email for the inside look.
+</p>
+</div>
+</section>
+</main>
 
-        </div>
-    </main>
+<!-- Footer -->
+<footer class="p-4 sm:p-6 text-center border-t border-accent-gold/20">
+<div class="max-w-7xl mx-auto">
+<p class="text-sm text-text-light/60">
+&copy; <span id="current-year"></span> One Quarter Enterprises LLC<span class="align-super inline-block ml-0.5 opacity-80 text-xs">™</span>
+</p>
+</div>
+</footer>
 
+<!-- JavaScript for Form Submission and Year -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+// Set current year in footer
+document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    <!-- Footer -->
-    <footer class="p-4 border-t border-gray-800 mt-8">
-        <div class="max-w-7xl mx-auto text-center text-sm text-gray-500">
-            &copy; 2025 The Blueprint System. All Rights Reserved.
-        </div>
-    </footer>
+const form = document.getElementById('subscribe-form');
+const messageBox = document.getElementById('message-box');
 
+form.addEventListener('submit', async (event) => {
+event.preventDefault();
 
-    <!-- Firebase SDK Imports (MUST USE THE SPECIFIED CDN) -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, setDoc, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-        import { setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-       
-        // --- Global Variables (Provided by Canvas Environment) ---
-        // Ensure these variables exist or use sensible defaults
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-       
-        const SQUARE_PURCHASE_LINK = "square.link/u/RDBg3rri
-"; // *** IMPORTANT: Replace with your actual Square link ***
+// Disable button and show loading state
+const submitButton = form.querySelector('button[type="submit"]');
+const originalText = submitButton.textContent;
+submitButton.textContent = 'Submitting...';
+submitButton.disabled = true;
+messageBox.classList.add('hidden'); // Hide previous message
 
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
 
-        let db;
-        let auth;
-        let userId;
+console.log(`Simulating submission: Name: ${name}, Email: ${email}`);
 
+// --- Placeholder API Call Logic ---
+// In a real application, you would make a fetch() call here
+// to your CRM or email service endpoint (e.g., Mailchimp, custom backend).
 
-        // Utility for message display
-        const messageBox = document.getElementById('messageBox');
-        const submitButton = document.getElementById('submitButton');
-       
-        function displayMessage(text, isError = false) {
-            messageBox.textContent = text;
-            messageBox.className = `text-sm mt-3 p-2 rounded ${isError ? 'bg-red-900 text-red-300' : 'bg-green-900 text-green-300'} visible`;
-            messageBox.style.display = 'block';
-        }
+try {
+// Simulate a network delay (replace with actual fetch)
+await new Promise(resolve => setTimeout(resolve, 1500));
 
+// Simulate successful response
+console.log('Submission successful!');
 
-        async function initializeFirebase() {
-            if (!firebaseConfig) {
-                console.error("Firebase config is missing. Cannot initialize database.");
-                displayMessage("Error: Database configuration missing.", true);
-                return;
-            }
-            try {
-                // setLogLevel('Debug'); // Enable for debugging
-                const app = initializeApp(firebaseConfig);
-                db = getFirestore(app);
-                auth = getAuth(app);
+messageBox.textContent = 'Success! Check your email for the inside look.';
+messageBox.classList.remove('hidden');
+messageBox.classList.add('text-green-400');
+form.reset(); // Clear the form
 
-
-                // Authentication: Use custom token if available, otherwise sign in anonymously
-                if (initialAuthToken) {
-                    await signInWithCustomToken(auth, initialAuthToken);
-                } else {
-                    await signInAnonymously(auth);
-                }
-               
-                // Get the user ID (authenticated user ID or a random ID if anonymous)
-                userId = auth.currentUser?.uid || crypto.randomUUID();
-                console.log("Firebase initialized. User ID:", userId);
-
-
-            } catch (error) {
-                console.error("Firebase initialization or sign-in error:", error);
-                displayMessage(`Error initializing: ${error.message}`, true);
-            }
-        }
-
-
-        async function handleFormSubmit(event) {
-            event.preventDefault();
-            const emailInput = document.getElementById('email');
-            const email = emailInput.value.trim();
-           
-            if (!email) {
-                displayMessage("Please enter a valid email address.", true);
-                return;
-            }
-
-
-            if (!db) {
-                displayMessage("Database not ready. Please wait a moment.", true);
-                return;
-            }
-
-
-            submitButton.disabled = true;
-            submitButton.textContent = "Processing...";
-            displayMessage("Securing your access link...", false);
-
-
-            try {
-                // 1. Save the lead (email) to the 'leads' collection
-                // Path: /artifacts/{appId}/public/data/leads/{documentId}
-                const leadsCollectionRef = collection(db, `artifacts/${appId}/public/data/leads`);
-               
-                await addDoc(leadsCollectionRef, {
-                    email: email,
-                    timestamp: new Date().toISOString(),
-                    userId: userId, // Include userId for tracking
-                    source: "LandingPage"
-                });
-
-
-                displayMessage("Success! Redirecting you to the Square store...", false);
-               
-                // 2. Redirect the user to the purchase link after a short delay
-                setTimeout(() => {
-                    window.location.href = SQUARE_PURCHASE_LINK;
-                }, 1000);
-
-
-            } catch (error) {
-                // Implement Exponential Backoff for Fetch/API calls, but for Firestore simply log and try to proceed
-                console.error("Error logging lead to Firestore:", error);
-                displayMessage("Database error occurred. Redirecting anyway...", true);
-
-
-                // If Firestore fails, still attempt to redirect to the purchase link
-                setTimeout(() => {
-                    window.location.href = SQUARE_PURCHASE_LINK;
-                }, 1000);
-
-
-            } finally {
-                // Re-enable button in case of failure (if redirect didn't happen)
-                setTimeout(() => {
-                    if (submitButton.textContent === "Processing...") {
-                        submitButton.textContent = "Get The Buy Link";
-                        submitButton.disabled = false;
-                    }
-                }, 2000);
-            }
-        }
-
-
-        // Initialize Firebase on page load
-        initializeFirebase();
-
-
-        // Attach event listener to the form
-        document.getElementById('leadCaptureForm').addEventListener('submit', handleFormSubmit);
-
-
-    </script>
+} catch (error) {
+// Simulate error response
+console.error('Submission failed:', error);
+messageBox.textContent = 'Oops! Something went wrong. Please try again.';
+messageBox.classList.remove('hidden');
+messageBox.classList.remove('text-green-400');
+messageBox.classList.add('text-red-400');
+} finally {
+// Reset button state
+submitButton.textContent = originalText;
+submitButton.disabled = false;
+}
+});
+});
+</script>
 </body>
 </html>
-
