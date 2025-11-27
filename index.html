@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Your Inside Look</title>
+    <title>ONE QUARTER EQUALS A D$LLAR</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,19 +22,56 @@
             background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center aligns the branding elements */
         }
+
+        /* Branding Styles */
+        .brand-header {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .brand-logo {
+            width: 120px; /* Reduced size for single column layout */
+            height: auto;
+            margin: 0 auto 10px;
+            border-radius: 4px;
+        }
+        .brand-title {
+            font-size: 28px;
+            font-weight: 900;
+            color: #1f2937;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .brand-subtitle {
+            font-size: 16px;
+            font-weight: 700;
+            color: #FFD700; /* Gold */
+        }
+        .brand-tagline {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 5px;
+        }
+
+        /* Form Content Styles */
         .form-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: #1f2937;
             margin-bottom: 10px;
+            text-align: left; /* Align form content left */
         }
         .form-subtitle {
             color: #4b5563;
             margin-bottom: 25px;
+            text-align: left; /* Align form content left */
         }
         .form-field {
             margin-bottom: 15px;
+            text-align: left;
         }
         .form-label {
             display: block;
@@ -48,6 +86,7 @@
             border: 1px solid #d1d5db;
             border-radius: 4px;
             box-sizing: border-box;
+            font-family: inherit;
         }
         .submit-button {
             width: 100%;
@@ -57,7 +96,7 @@
             font-size: 16px;
             font-weight: bold;
             color: #1c213d;
-            background-color: #FFD700; /* Gold */
+            background-color: #FFD700; 
             cursor: pointer;
             margin-top: 15px;
         }
@@ -66,6 +105,22 @@
 <body>
 
 <div class="form-container">
+
+    <div class="brand-header">
+        <img src="https://i.imgur.com/EwWFtC6.jpg" 
+             alt="One Quarter Equals A D$llar Blueprint Cover" 
+             class="brand-logo">
+        <div class="brand-title">
+            ONE QUARTER EQUALS A D$LLAR
+        </div>
+        <div class="brand-subtitle">
+            7 Chapters to 7 Figures
+        </div>
+        <div class="brand-tagline">
+            The #1 Blueprint To Financial Freedom
+        </div>
+    </div>
+    
     <h2 class="form-title">Get Your Free Inside Look</h2>
     <p class="form-subtitle">Start converting a Quarter of Effort into a Dollar of Wealth.</p>
 
