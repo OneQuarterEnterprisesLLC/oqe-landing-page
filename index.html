@@ -30,6 +30,12 @@ outline: none;
     width: 256px; 
     max-width: 100%;
 }
+
+/* Fix for placeholder color on the dark background */
+input::placeholder {
+    color: #9ca3af; /* Light gray to show placeholder text */
+    opacity: 1; /* Override default opacity */
+}
 </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4">
@@ -77,4 +83,12 @@ action="YOUR_MAILERLITE_FORM_ACTION_URL"
 method="post">
 
 <div style="margin-bottom: 1rem;">
-<label for="name" class="block text-sm font-medium text-gray-300">Your Name (Optional)</
+<label for="name" class="block text-sm font-medium text-gray-300">Your Name (Optional)</label>
+<input type="text" name="fields[name]" id="name" placeholder="John Doe"
+style="display: block; width: 100%; padding: 10px 16px; border: 1px solid #4b5563; border-radius: 6px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); box-sizing: border-box; font-family: inherit; color: #1f2937; background-color: #ffffff;"
+class="form-input-style"
+autocomplete="name">
+</div>
+
+<div style="margin-bottom: 1rem;">
+<label for="email" class="block text-sm font
