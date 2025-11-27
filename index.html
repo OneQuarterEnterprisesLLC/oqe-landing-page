@@ -1,40 +1,183 @@
-<div class="right-panel">
-    <div>
-        <h2 style="font-size: 1.5rem; font-weight: 700; color: #1f2937; margin-bottom: 1rem;">
-            Get Your Free Inside Look
-        </h2>
-        <p style="color: #4b5563; margin-bottom: 1.5rem;">
-            Start converting a Quarter of Effort into a Dollar of Wealth.
-        </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONE QUARTER EQUALS A D$LLAR</title>
 
-        <form id="lead-form" style="margin-top: 1rem;"
-        action="YOUR_MAILERLITE_FORM_ACTION_URL"
-        method="post">
+<style>
+/* 1. Global Reset & Custom Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
-        <div style="margin-bottom: 1rem;">
-            <label for="name" style="display: block; font-size: 0.875rem; font-weight: 500; color: #374151;">Your Name (Optional)</label>
-            <input type="text" name="fields[name]" id="name" placeholder="John Doe"
-            style="display: block; width: 100%; padding: 10px 16px; border: 1px solid #d1d5db; border-radius: 6px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); box-sizing: border-box;"
-            autocomplete="name">
+/* This ensures the container centers itself if it takes up the full viewport */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    background-color: #0d1226; /* Dark navy background */
+}
+
+/* 2. Main Container Styling */
+.main-container {
+    max-width: 900px;
+    width: 100%;
+    background-color: #1c213d; /* Inner dark color */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex; /* Flexbox for the two columns */
+    flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+}
+
+/* 3. Left (Image/Branding) Column */
+.left-panel {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d1226; /* Deepest dark color */
+    color: white;
+    box-sizing: border-box;
+}
+.title-text {
+    color: #FFD700; /* Solid Gold */
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-size: 3rem; /* Approx. equivalent of text-5xl/6xl */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.book-cover {
+    width: 256px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    margin: 10px auto 30px;
+}
+
+/* 4. Right (Form) Column */
+.right-panel {
+    width: 50%;
+    padding: 30px;
+    background-color: #f9fafb; /* Light gray background for form */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* 5. Mobile Responsiveness */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+    .left-panel, .right-panel {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    .title-text {
+        font-size: 2.5rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="main-container">
+
+        <div class="left-panel">
+
+            <header style="text-align: center; width: 100%;">
+                <p style="font-size: 1.5rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: #fcd34d; margin-bottom: 0;">INSIDE LOOK</p>
+            </header>
+
+            <img src="https://i.imgur.com/EwWFtC6.jpg"
+                alt="One Quarter Equals A D$llar Blueprint Cover"
+                class="book-cover">
+
+            <main style="text-align: center;">
+                <h1 class="title-text">
+                    <span style="display: block;">ONE QUARTER</span>
+                    <span style="display: block;">EQUALS A D$LLAR</span>
+                </h1>
+                <p style="color: #fcd34d; font-size: 1.125rem; font-weight: 700;">7 Chapters to 7 Figures</p>
+                <p style="color: #9ca3af; font-size: 0.875rem; margin-top: 0.5rem;">The #1 Blueprint To Financial Freedom</p>
+            </main>
+
+            <footer style="margin-top: auto; padding-top: 2rem;">
+                <p style="font-size: 0.75rem; color: #6b7280;">© 2025 One Quarter Enterprises LLC</p>
+            </footer>
         </div>
 
-        <div style="margin-bottom: 1rem;">
-            <label for="email" style="display: block; font-size: 0.875rem; font-weight: 500; color: #374151;">Enter Your Best Email *</label>
-            <input type="email" name="fields[email]" id="email" required placeholder="you@example.com"
-            style="display: block; width: 100%; padding: 10px 16px; border: 1px solid #d1d5db; border-radius: 6px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); box-sizing: border-box;"
-            autocomplete="email">
+        <div class="right-panel">
+            <div>
+                <h2 style="font-size: 1.5rem; font-weight: 700; color: #1f2937; margin-bottom: 1rem;">
+                    Get Your Free Inside Look
+                </h2>
+                <p style="color: #4b5563; margin-bottom: 1.5rem;">
+                    Start converting a Quarter of Effort into a Dollar of Wealth.
+                </p>
+
+                <form id="lead-form" style="margin-top: 1rem;"
+                action="YOUR_MAILERLITE_FORM_ACTION_URL"
+                method="post">
+
+                <div style="margin-bottom: 1rem;">
+                    <label for="name" style="display: block; font-size: 0.875rem; font-weight: 500; color: #374151;">Your Name (Optional)</label>
+                    <input type="text" name="fields[name]" id="name" placeholder="John Doe"
+                    style="display: block; width: 100%; padding: 10px 16px; border: 1px solid #d1d5db; border-radius: 6px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); box-sizing: border-box; font-family: inherit;"
+                    autocomplete="name">
+                </div>
+
+                <div style="margin-bottom: 1rem;">
+                    <label for="email" style="display: block; font-size: 0.875rem; font-weight: 500; color: #374151;">Enter Your Best Email *</label>
+                    <input type="email" name="fields[email]" id="email" required placeholder="you@example.com"
+                    style="display: block; width: 100%; padding: 10px 16px; border: 1px solid #d1d5db; border-radius: 6px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); box-sizing: border-box; font-family: inherit;"
+                    autocomplete="email">
+                </div>
+
+                <button type="submit" 
+                style="width: 100%; display: flex; justify-content: center; padding: 12px 16px; border: none; border-radius: 6px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); font-size: 1.125rem; font-weight: 700; color: #1c213d; background-color: #FFD700; transition: background-color 0.3s; cursor: pointer; margin-top: 1.5rem; text-align: center;">
+                    Get My Free Inside Look
+                </button>
+
+                <p style="text-align: center; font-size: 0.875rem; margin-top: 0.75rem; display: none;" id="form-message"></p>
+
+                <p style="font-size: 0.75rem; text-align: center; color: #6b7280; margin-top: 1rem;">
+                    We respect your privacy. Your data is 100% secure.
+                </p>
+                </form>
+            </div>
+            
         </div>
 
-        <button type="submit" 
-        style="width: 100%; display: flex; justify-content: center; padding: 12px 16px; border: none; border-radius: 6px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); font-size: 1.125rem; font-weight: 700; color: #1c213d; background-color: #FFD700; transition: background-color 0.3s; cursor: pointer; margin-top: 1.5rem;">
-            Get My Free Inside Look
-        </button>
-
-        <p style="text-align: center; font-size: 0.875rem; margin-top: 0.75rem; display: none;" id="form-message"></p>
-
-        <p style="font-size: 0.75rem; text-align: center; color: #6b7280; margin-top: 1rem;">
-            We respect your privacy. Your data is 100% secure.
-        </p>
-        </form>
     </div>
 </div>
+
+<script>
+// Basic client-side message handler
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('lead-form');
+    const formMessage = document.getElementById('form-message');
+
+    if (form) {
+        form.addEventListener('submit', () => {
+            formMessage.style.display = 'block';
+            formMessage.textContent = 'Submitting... Please wait for redirect.';
+            formMessage.style.color = '#4b5563';
+        });
+    }
+});
+</script>
+</body>
+</html>
