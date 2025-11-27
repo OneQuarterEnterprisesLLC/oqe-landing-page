@@ -4,53 +4,91 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ONE QUARTER EQUALS A D$LLAR</title>
-<script src="https://cdn.tailwindcss.com"></script>
+
 <style>
-/* Set a custom font family */
+/* 1. Global Reset & Custom Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-body {
-font-family: 'Inter', sans-serif;
-background-color: #0d1226; /* Dark navy background for the whole page */
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    background-color: #0d1226; /* Dark navy background */
 }
-/* Using solid gold color for strong contrast like the cover art */
+
+/* 2. Main Container Styling */
+.main-container {
+    max-width: 900px;
+    width: 100%;
+    background-color: #1c213d; /* Inner dark color */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 3. Left (Image/Branding) Column */
+.left-panel {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d1226; /* Deepest dark color */
+    color: white;
+    box-sizing: border-box;
+}
 .title-text {
-color: #FFD700; /* Solid Gold */
-font-weight: 900;
-line-height: 1.1; /* Tighter line height for large text */
+    color: #FFD700; /* Solid Gold */
+    font-weight: 900;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
 }
-/* Custom input focus color */
-input:focus {
-border-color: #FFD700 !important;
-box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5) !important;
-}
-/* Style to ensure the image displays as a rectangle */
-.book-cover-container {
-    height: auto; /* Allow height to adjust */
-    width: 256px; /* A fixed width (64 units in Tailwind) */
+.book-cover {
+    width: 256px;
     max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    margin: 10px auto 30px;
 }
-</style>
-</head>
-<body class="min-h-screen flex items-center justify-center p-4">
 
-<div class="max-w-4xl w-full bg-[#1c213d] shadow-2xl rounded-xl overflow-hidden md:flex">
+/* 4. Right (Form) Column - CRITICAL FIX HERE: Guaranteed White Background */
+.right-panel {
+    width: 50%;
+    padding: 30px;
+    background-color: #ffffff; /* Explicitly set to White */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
 
-<div class="md:w-1/2 p-6 md:p-10 flex flex-col justify-center items-center bg-[#0d1226] text-white space-y-8">
-
-<header class="text-center w-full">
-<p class="text-3xl tracking-widest uppercase font-bold text-yellow-400 mb-0">INSIDE LOOK</p>
-</header>
-
-<div class="book-cover-container mx-auto p-2">
-    <img src="https://i.imgur.com/EwWFtC6.jpg"
-    alt="One Quarter Equals A D$llar Blueprint Cover"
-    onerror="this.src='https://placehold.co/256x350/FFD700/0D1226?text=IMAGE+ERROR:+CHECK+IMGUR+LINK'"
-    class="w-full h-auto object-contain rounded-lg shadow-xl">
-</div>
-
-<main class="text-center">
-<h1 class="text-4xl sm:text-5xl lg:text-6xl title-text font-extrabold leading-none mb-4 uppercase">
-<span class="block">ONE QUARTER</span>
-<span class="block">EQUALS A D$LLAR</span>
-</h1>
-<p class="text-yellow-400 text-lg font-bold">7 Chapters to 7 Figures</p>
+/* 5. Form Elements - Basic, guaranteed visibility styles */
+.form-field {
+    margin-bottom: 1rem;
+}
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151; /* Dark label text */
+    margin-bottom: 5px;
+}
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,
