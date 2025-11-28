@@ -1,170 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inside Look – One Quarter Enterprises LLC</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: #031027;
-      color: white;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 50px 20px;
-      display: flex;
-      gap: 50px;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    /* LEFT SECTION WITHOUT LOGO */
-    .left {
-      width: 40%;
-      text-align: left;
-      padding-top: 40px;
-    }
-
-    .inside-look-label {
-      color: #FFCC33;
-      font-size: 14px;
-      letter-spacing: 2px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .title {
-      font-size: 42px;
-      font-weight: 800;
-      margin-top: 10px;
-      color: #FFCC00;
-      line-height: 1.1;
-    }
-
-    .subtitle {
-      margin-top: 18px;
-      opacity: 0.8;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    /* RIGHT SIDE */
-    .right {
-      width: 50%;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 40px;
-      border-radius: 18px;
-    }
-
-    h2 {
-      font-size: 30px;
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
-
-    .highlight-box {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 22px;
-      border-radius: 14px;
-      margin: 20px 0;
-    }
-
-    .gold {
-      color: #FFCC00;
-      font-weight: 700;
-    }
-
-    .cta-btn {
-      margin-top: 25px;
-      display: inline-block;
-      background: #FFD700;
-      color: #000;
-      padding: 18px 35px;
-      font-size: 18px;
-      font-weight: 700;
-      border-radius: 12px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .cta-btn:hover {
-      background: #ffdf48;
-    }
-
-    .footer {
-      margin-top: 30px;
-      font-size: 13px;
-      opacity: 0.6;
-      text-align: center;
-    }
-
-    .download-link {
-      color: #FFCC00;
-      font-weight: 600;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONE QUARTER EQUALS A D$LLAR</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* Set a custom font family */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+body {
+font-family: 'Inter', sans-serif;
+background-color: #0d1226; /* Dark navy background for the whole page */
+}
+/* Using solid gold color for strong contrast like the cover art */
+.title-text {
+color: #FFD700; /* Solid Gold */
+font-weight: 900;
+line-height: 1.1; /* Tighter line height for large text */
+}
+/* Custom input focus color (using CSS for stability) */
+.form-input-style:focus {
+border-color: #FFD700 !important;
+box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5) !important;
+outline: none;
+}
+/* Style to ensure the image displays as a rectangle */
+.book-cover-container {
+    height: auto;
+    width: 256px; 
+    max-width: 100%;
+}
+/* Fix for placeholder color on the dark background */
+input::placeholder {
+    color: #9ca3af; /* Light gray to show placeholder text */
+    opacity: 1; /* Override default opacity */
+}
+</style>
 </head>
+<body class="min-h-screen flex items-center justify-center p-4"> 
+<div class="max-w-4xl w-full bg-[#1c213d] shadow-2xl rounded-xl overflow-hidden md:flex">
 
-<body>
-  <div class="container">
+<div class="md:w-1/2 p-6 md:p-10 flex flex-col justify-center items-center bg-[#0d1226] text-white space-y-8">
+<header class="text-center w-full">
+<p class="text-3xl tracking-widest uppercase font-bold text-yellow-400 mb-0">INSIDE LOOK</p>
+</header>
 
-    <!-- LEFT SIDE (NO LOGO) -->
-    <div class="left">
-      <div class="inside-look-label">FREE INSIDE LOOK</div>
+<div class="book-cover-container mx-auto p-2" style="margin-top: 1rem; margin-bottom: 1rem;">
+    <img src="https://i.imgur.com/EwWFtC6.jpg"
+    alt="One Quarter Equals A D$llar Blueprint Cover"
+    onerror="this.src='https://placehold.co/256x350/FFD700/0D1226?text=IMAGE+ERROR:+CHECK+IMGUR+LINK'"
+    class="w-full h-auto object-contain rounded-lg shadow-xl">
+</div>
 
-      <div class="title">
-        ONE<br>
-        QUARTER<br>
-        EQUALS A<br>
-        D$LLAR
-      </div>
+<main class="text-center">
+<h1 class="text-4xl sm:text-5xl lg:text-6xl title-text font-extrabold leading-none mb-4 uppercase">
+<span class="block">ONE QUARTER</span>
+<span class="block">EQUALS A D$LLAR</span>
+</h1>
+<p class="text-yellow-400 text-lg font-bold">7 Chapters to 7 Figures</p>
+<p class="text-gray-400 text-sm mt-2">The #1 Blueprint To Financial Freedom</p>
+</main>
 
-      <div class="subtitle">
-        7 Chapters to 7 Figures<br><br>
-        The #1 Blueprint To Financial Freedom<br>
-        © 2025 One Quarter Enterprises LLC
-      </div>
-    </div>
+<footer class="mt-auto pt-8">
+<p class="text-xs text-gray-500">© 2025 One Quarter Enterprises LLC</p>
+</footer>
+</div>
 
-    <!-- RIGHT SIDE -->
-    <div class="right">
-      <h2>Your Inside Look Is On the Way</h2>
+<div class="md:w-1/2 p-6 md:p-8 bg-[#1c213d] flex flex-col justify-center text-white">
+<div id="form-content">
+<h2 class="text-2xl font-bold text-white mb-4">
+Get Your Free Inside Look
+</h2>
+<p class="text-gray-300 mb-6">
+Start converting a Quarter of Effort into a Dollar of Wealth.
+</p>
 
-      <p>Before you open it, read this — it will make everything click.</p>
+<form id="lead-form" class="space-y-4"
+action="YOUR_MAILERLITE_FORM_ACTION_URL"
+method="post">
+<div style="margin-bottom: 1rem;">
+<label for="name" class="block text-sm font-medium text-gray-300">Your Name (Optional)</label>
+<input type="text" name="fields[name]" id="name" placeholder="John Doe"
+style="display: block; width: 100%; padding: 10px 16px; border: 1px solid #4b5563; border-radius: 6px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); box-sizing: border-box; font-family: inherit; color: #1f2937; background-color: #ffffff;"
+class="form-input-style"
+autocomplete="name">
+</div>
 
-      <div class="highlight-box">
-        <strong>Mindset vs Structure</strong><br><br>
-        You already claimed the Mindset Mandate — but mindset without structure is chaos.  
-        This is where the Blueprint separates you from 99% of people.
-      </div>
+<div style="margin-bottom: 1rem;">
+<label for="email" class="block text-sm font-medium text-gray-300">Enter Your Best Email *</label>
+<input type="email" name="fields[email]" id="email" required placeholder="you@example.com"
+style="display: block; width: 100%; padding: 10px 16px; border: 1px solid #4b5563; border-radius: 6px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); box-sizing: border-box; font-family: inherit; color: #1f2937; background-color: #ffffff;"
+class="form-input-style"
+autocomplete="email">
+</div>
 
-      <p class="gold">You're Not Lucky. You're Structured.</p>
+<button type="submit"
+class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-lg text-lg font-bold text-[#1c213d] bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-300 ease-in-out">
+Get My Free Inside Look
+</button>
 
-      <p>The Inside Look gives you the foundation. The Blueprint gives you the full system — the 3 Account Setup, Scarcity Transfers, and the MVP Money Machine.</p>
+<p id="form-message" class="text-center text-sm mt-3" style="display: none;"></p>
 
-      <a class="cta-btn" href="
-square.link/u/RDBg3rri
-">Yes, I Need The Full Blueprint Architecture Now</a>
+<p class="text-xs text-center text-gray-500 mt-4">
+We respect your privacy. Your data is 100% secure.
+</p>
+</form>
+</div>
 
-      <div class="footer">
-        We respect your privacy. Your data is 100% secure.<br><br>
-        If you don’t receive the email in 5 minutes, 
-<a class="download-link" href="https://storage.googleapis.com/mailerlite-uploads-prod/1924779/VCMKGyj5k13j4LSnas3jv1pqwHr4lFNLkIDPTH3.pdf" download>
-    download the FREE inside look now
-</a>
+<div id="thank-you-message" class="hidden text-center p-8 bg-[#0d1226] rounded-lg shadow-xl text-white">
+<h2 class="text-3xl font-bold text-green-400 mb-4">Success!</h2>
+<p class="text-lg text-gray-300 mb-6">
+Thank you for your interest! Your free 'Inside Look' has been sent to your email address.
+</p>
+<p class="text-sm text-gray-400">
+Check your inbox (and spam folder) now!
+</p>
+</div>
+</div>
 
-      </div>
-    </div>
+</div>
 
-  </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+const form = document.getElementById('lead-form');
+const formMessage = document.getElementById('form-message');
+
+form.addEventListener('submit', () => {
+formMessage.style.display = 'block';
+formMessage.textContent = 'Submitting... Taking you to the next step.';
+formMessage.classList.remove('text-red-500', 'text-green-600');
+formMessage.classList.add('text-gray-500');
+});
+});
+</script>
 </body>
 </html>
