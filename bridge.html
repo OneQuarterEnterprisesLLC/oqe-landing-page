@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Your Inside Look Is Here</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Set a custom font family */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1226; /* Deepest dark navy background */
+        }
+        .main-title {
+            color: #FFD700; /* Solid Gold */
+            font-weight: 900;
+        }
+        /* Style for the button */
+        .cta-button {
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #facc15;
+        }
+        /* Ensures the YouTube video scales correctly */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background-color: black;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-4">
+
+    <div class="max-w-4xl w-full bg-[#1c213d] shadow-2xl rounded-xl p-6 md:p-12 mt-10 space-y-8 text-white">
+
+        <header class="text-center space-y-4">
+            <h1 class="text-4xl md:text-5xl main-title uppercase">
+                SUCCESS! THANK YOU.
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 font-bold">
+                Your Free "Inside Look" Has Been Sent to Your Inbox.
+            </p>
+            <p class="text-sm text-gray-400">
+                (Please check your spam folder if you don't see it within 5 minutes.)
+            </p>
+        </header>
+
+        <section class="space-y-6">
+            <h2 class="text-3xl font-extrabold text-white text-center border-t border-b border-yellow-500 py-3 mt-8">
+                🎥 What To Do Next: Watch This Short Guide
+            </h2>
+
+            <div class="video-container mx-auto">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="www.youtube.com/@OneQuarterEqualsADollar" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="text-lg text-center text-gray-300 pt-4">
+                This short video reveals exactly how the **One Quarter Equals A D$llar Blueprint** turns a small effort into massive financial freedom.
+            </p>
+        </section>
+
+        <section class="pt-8 pb-4 text-center">
+            <h3 class="text-2xl font-bold text-yellow-400 mb-6 uppercase">
+                Ready to Implement the Full Blueprint?
+            </h3>
+            
+            <a href="
+square.link/u/RDBg3rri
+" 
+                class="cta-button inline-block px-12 py-4 text-xl font-extrabold text-[#1c213d] bg-yellow-400 rounded-lg shadow-lg uppercase tracking-wider transition duration-300 ease-in-out transform hover:scale-105"
+                role="button">
+                Get the Full 7-Chapter Blueprint Now
+            </a>
+            
+            <p class="text-sm text-gray-500 mt-4">
+                (This link goes directly to the main offer page.)
+            </p>
+        </section>
+
+        <footer class="text-center pt-8 border-t border-gray-700">
+            <p class="text-xs text-gray-600">© 2025 One Quarter Enterprises LLC</p>
+        </footer>
+
+    </div>
+</body>
+</html>
