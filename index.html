@@ -3,120 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - Your Inside Look Is Here</title>
+    <title>ONE QUARTER EQUALS A D$LLAR - Free Inside Look</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Set a custom font family */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d1226; /* Deepest dark navy background */
+            background-color: #0d1226; /* Deepest dark navy background for the whole page */
         }
-        .main-title {
+        .text-title {
             color: #FFD700; /* Solid Gold */
             font-weight: 900;
         }
-        .philosophy-card {
-            background-color: #0d1226; /* Dark navy for the card background */
-            border-left: 4px solid #FFD700; /* Gold accent border */
-            border-radius: 8px; /* Rounded corners */
-        }
-        .screenshot-cta {
-            background-color: #2a314f; /* A slightly lighter shade of blue */
-            border: 1px dashed #FFD700;
-            padding: 1rem;
-            text-align: center;
-            font-size: 1rem;
-            font-weight: 700;
+        .title-text {
             color: #FFD700;
-            margin-top: 1.5rem;
-        }
-        /* Style for the Download Button */
-        .download-btn {
-            background-color: #22c55e; /* Green color for download */
-            color: #0d1226;
             font-weight: 900;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s;
+            line-height: 1.1; /* Lighter line height for large text */
         }
-        .download-btn:hover {
-            background-color: #16a34a;
+        /* Custom input focus color (using CSS for stability) */
+        input:focus {
+            border-color: #FFD700 !important;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5) !important;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-4">
+<body class="min-h-screen flex items-center justify-center p-4">
 
-    <div class="max-w-4xl w-full bg-[#1c213d] shadow-2xl rounded-xl p-8 md:p-12 mt-4 space-y-10 text-white">
+    <div class="max-w-md w-full bg-white shadow-2xl rounded-xl overflow-hidden my-8">
 
-        <header class="text-center space-y-4 border-b border-gray-700 pb-6">
-            <h1 class="text-4xl md:text-5xl main-title uppercase">
-                SUCCESS! YOUR INSIDE LOOK IS WAITING.
+        <header class="text-center p-8 bg-[#1c213d]">
+            <img src="https://res.cloudinary.com/dwyx97q89/image/upload/v1700251765/ONE_QUARTER_EQUALS_A_DOLLAR_brmy1l.png" 
+                 alt="One Quarter Enterprises LLC Gold Coin Logo" 
+                 class="mx-auto h-24 w-24 object-contain mb-4">
+            
+            <h1 class="text-3xl sm:text-4xl text-white font-extrabold uppercase mb-2">
+                <span class="title-text">ONE QUARTER EQUALS A D$LLAR</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-300 font-bold">
-                Click the button below to download your free blueprint chapter now.
+            <p class="text-lg text-yellow-400 font-bold">
+                7 Chapters to 7 Figures
             </p>
             <p class="text-sm text-gray-400">
-                (We have also emailed you a copy to keep.)
+                The #1 Blueprint To Financial Freedom
             </p>
         </header>
-        
-        <section class="text-center pt-4">
-            <a href="https://storage.googleapis.com/mailerlite-uploads-prod/1924779/nFicp44ccM0Ugs8bmTle3sqpT9T53lvN0UTxv5QS.pdf" 
-               target="_blank" 
-               class="download-btn inline-block">
-                ⬇️ DOWNLOAD YOUR FREE INSIDE LOOK (PDF)
-            </a>
-        </section>
 
-        <section class="space-y-6">
-            <h2 class="text-3xl font-extrabold text-yellow-400 text-center uppercase">
-                A Critical Concept Before You Dive In...
+        <div class="p-8">
+            <h2 class="text-xl font-bold text-gray-800 mb-2">
+                Get Your Free Inside Look
             </h2>
-            
-            <div class="philosophy-card p-6 shadow-xl space-y-5">
-                <p class="text-lg font-semibold text-white">
-                    You're about to read how the **One Quarter Equals A D$llar Blueprint** shifts the traditional effort-to-reward ratio. But the system rests on a core philosophy: **Directional Leverage**.
-                </p>
-                <p class="text-gray-300">
-                    Why do some people work 10x harder for 1/10th the income? It's not ambition; it’s being stuck in the "Dollar-for-Dollar" trap. Our system allows you to identify and leverage key areas where **a Quarter of Effort yields a Dollar of Wealth.**
+            <p class="text-gray-600 mb-6">
+                Start converting a Quarter of Effort into a Dollar of Wealth.
+            </p>
+
+            <form id="lead-form" class="space-y-4"
+                  action="https://app.mailerlite.com/webforms/submit/33979730" 
+                  method="post"
+                  target="_blank"> 
+                
+                <div class="ml-form-field-row ml-form-field-row-horizontal">
+                    <label for="name" class="text-sm font-medium text-gray-700 block">Your Name (Optional)</label>
+                    <input type="text" id="name" name="fields[name]" placeholder="John Doe"
+                           class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm">
+                </div>
+
+                <div class="ml-form-field-row ml-form-field-row-horizontal">
+                    <label for="email" class="text-sm font-medium text-gray-700 block">Enter Your Best Email *</label>
+                    <input type="email" id="email" name="fields[email]" required placeholder="you@example.com"
+                           class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm">
+                </div>
+                
+                <div class="ml-form-embedSubmit">
+                    <button type="submit"
+                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-bold text-gray-800 bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-150 ease-in-out">
+                        Get My Free Inside Look
+                    </button>
+                </div>
+                
+                <p class="text-center text-xs text-gray-500">
+                    We respect your privacy. Your data is 100% secure.
                 </p>
                 
-                <h3 class="text-2xl font-bold text-yellow-500 pt-3">The Hidden Gem: S.I.S.S.I.F</h3>
-                <blockquote class="text-gray-400 italic border-l-4 border-gray-600 pl-4">
-                    "The ability to achieve Seven Figures rests entirely on mastering one principle: **S.I.S.S.I.F.**"
-                </blockquote>
-                <p class="text-gray-300">
-                    S.I.S.S.I.F is the hidden accelerator we use in **The Systemization Training Manual** to maximize the output of every step outlined in the blueprint. **Keep this principle in mind as you review your free 'Inside Look.'** It’s the conceptual key that unlocks the rapid implementation of the full system.
-                </p>
-
-                <div class="screenshot-cta">
-                    ⚠️ **SCREENSHOT THIS PAGE:** Use S.I.S.S.I.F as Your Key to Advanced Training!
-                </div>
+                <input type="hidden" name="ml-submit" value="1" />
+                <input type="hidden" name="anticsrf" value="true" />
+                <input type="hidden" name="checksum" value="a274534a1796d7411a037b3f9618b105f23d463b3614041b65e263d951012920" />
+                
+            </form>
             </div>
-        </section>
-
-        <section class="pt-8 pb-4 text-center border-t border-gray-700">
-            <h3 class="text-2xl font-bold text-yellow-400 mb-6 uppercase">
-                Ready to Implement the Full Blueprint Now?
-            </h3>
-            
-            <a href="https://square.link/u/RDBg3rri" 
-                class="inline-block px-12 py-4 text-xl font-extrabold text-[#1c213d] bg-yellow-400 rounded-lg shadow-lg uppercase tracking-wider transition duration-300 ease-in-out transform hover:scale-105"
-                role="button">
-                Get the Full 7-Chapter Blueprint Today
-            </a>
-            
-            <p class="text-sm text-gray-500 mt-4">
-                This link goes directly to the main offer page.
-            </p>
-        </section>
-
-        <footer class="text-center pt-8 border-t border-gray-700">
-            <p class="text-xs text-gray-600">© 2025 One Quarter Enterprises LLC</p>
-        </footer>
-
     </div>
 </body>
 </html>
