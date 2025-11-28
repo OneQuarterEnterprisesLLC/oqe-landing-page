@@ -54,9 +54,7 @@
                 Start converting a Quarter of Effort into a Dollar of Wealth.
             </p>
 
-            <form id="lead-form" class="space-y-4"
-                  action="https://app.mailerlite.com/webforms/submit/33979730" 
-                  method="post">
+            <form id="lead-form" class="space-y-4">
                 
                 <div class="ml-form-field-row ml-form-field-row-horizontal">
                     <label for="name" class="text-sm font-medium text-gray-700 block">Your Name (Optional)</label>
@@ -88,5 +86,32 @@
             </form>
             </div>
     </div>
+
+    <script>
+        document.getElementById('lead-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop the default submission immediately
+
+            const form = e.target;
+            const formData = new FormData(form);
+
+            // Submit data to MailerLite using fetch in the background
+            fetch('https://app.mailerlite.com/webforms/submit/33979730', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                // Regardless of the response (assuming it was sent), redirect the user
+                // The delay ensures MailerLite has time to process the subscription
+                setTimeout(() => {
+                    window.location.href = 'https://www.onequarterdollar.com/bridge.html';
+                }, 500); // 500ms delay
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+                // Redirect even if there's an error, as this is the user experience
+                window.location.href = 'https://www.onequarterdollar.com/bridge.html';
+            });
+        });
+    </script>
 </body>
 </html>
