@@ -1,106 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - Your Inside Look Is Here</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Set a custom font family */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d1226; /* Deepest dark navy background */
-        }
-        .main-title {
-            color: #FFD700; /* Solid Gold */
-            font-weight: 900;
-        }
-        /* Style for the button */
-        .cta-button {
-            transition: background-color 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #facc15;
-        }
-        /* Ensures the YouTube video scales correctly */
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            background-color: black;
-            border-radius: 8px;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inside Look – One Quarter Enterprises LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #031027;
+      color: white;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 50px 20px;
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* LEFT SECTION WITHOUT LOGO */
+    .left {
+      width: 40%;
+      text-align: left;
+      padding-top: 40px;
+    }
+
+    .inside-look-label {
+      color: #FFCC33;
+      font-size: 14px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 42px;
+      font-weight: 800;
+      margin-top: 10px;
+      color: #FFCC00;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      margin-top: 18px;
+      opacity: 0.8;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* RIGHT SIDE */
+    .right {
+      width: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 18px;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .highlight-box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 22px;
+      border-radius: 14px;
+      margin: 20px 0;
+    }
+
+    .gold {
+      color: #FFCC00;
+      font-weight: 700;
+    }
+
+    .cta-btn {
+      margin-top: 25px;
+      display: inline-block;
+      background: #FFD700;
+      color: #000;
+      padding: 18px 35px;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #ffdf48;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      opacity: 0.6;
+      text-align: center;
+    }
+
+    .download-link {
+      color: #FFCC00;
+      font-weight: 600;
+    }
+  </style>
 </head>
-<body class="min-h-screen flex flex-col items-center p-4">
 
-    <div class="max-w-4xl w-full bg-[#1c213d] shadow-2xl rounded-xl p-6 md:p-12 mt-10 space-y-8 text-white">
+<body>
+  <div class="container">
 
-        <header class="text-center space-y-4">
-            <h1 class="text-4xl md:text-5xl main-title uppercase">
-                SUCCESS! THANK YOU.
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-300 font-bold">
-                Your Free "Inside Look" Has Been Sent to Your Inbox.
-            </p>
-            <p class="text-sm text-gray-400">
-                (Please check your spam folder if you don't see it within 5 minutes.)
-            </p>
-        </header>
+    <!-- LEFT SIDE (NO LOGO) -->
+    <div class="left">
+      <div class="inside-look-label">FREE INSIDE LOOK</div>
 
-        <section class="space-y-6">
-            <h2 class="text-3xl font-extrabold text-white text-center border-t border-b border-yellow-500 py-3 mt-8">
-                🎥 What To Do Next: Watch This Short Guide
-            </h2>
+      <div class="title">
+        ONE<br>
+        QUARTER<br>
+        EQUALS A<br>
+        D$LLAR
+      </div>
 
-            <div class="video-container mx-auto">
-                <iframe 
-                    width="560" 
-                    height="315" 
-                    src="www.youtube.com/@OneQuarterEqualsADollar" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-
-            <p class="text-lg text-center text-gray-300 pt-4">
-                This short video reveals exactly how the **One Quarter Equals A D$llar Blueprint** turns a small effort into massive financial freedom.
-            </p>
-        </section>
-
-        <section class="pt-8 pb-4 text-center">
-            <h3 class="text-2xl font-bold text-yellow-400 mb-6 uppercase">
-                Ready to Implement the Full Blueprint?
-            </h3>
-            
-            <a href="
-square.link/u/RDBg3rri
-" 
-                class="cta-button inline-block px-12 py-4 text-xl font-extrabold text-[#1c213d] bg-yellow-400 rounded-lg shadow-lg uppercase tracking-wider transition duration-300 ease-in-out transform hover:scale-105"
-                role="button">
-                Get the Full 7-Chapter Blueprint Now
-            </a>
-            
-            <p class="text-sm text-gray-500 mt-4">
-                (This link goes directly to the main offer page.)
-            </p>
-        </section>
-
-        <footer class="text-center pt-8 border-t border-gray-700">
-            <p class="text-xs text-gray-600">© 2025 One Quarter Enterprises LLC</p>
-        </footer>
-
+      <div class="subtitle">
+        7 Chapters to 7 Figures<br><br>
+        The #1 Blueprint To Financial Freedom<br>
+        © 2025 One Quarter Enterprises LLC
+      </div>
     </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+      <h2>Your Inside Look Is On the Way</h2>
+
+      <p>Before you open it, read this — it will make everything click.</p>
+
+      <div class="highlight-box">
+        <strong>Mindset vs Structure</strong><br><br>
+        You already claimed the Mindset Mandate — but mindset without structure is chaos.  
+        This is where the Blueprint separates you from 99% of people.
+      </div>
+
+      <p class="gold">You're Not Lucky. You're Structured.</p>
+
+      <p>The Inside Look gives you the foundation. The Blueprint gives you the full system — the 3 Account Setup, Scarcity Transfers, and the MVP Money Machine.</p>
+
+      <a class="cta-btn" href="YOUR-PURCHASE-LINK">Yes, I Need The Full Blueprint Architecture Now</a>
+
+      <div class="footer">
+        We respect your privacy. Your data is 100% secure.<br><br>
+        If you don’t receive the email in 5 minutes, 
+        <a class="download-link" href="YOUR-DIRECT-DOWNLOAD-FILE">download the inside look now.</a>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
