@@ -1,223 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Inside Look — One Quarter Equals A D$llar</title>
-  <style>
-    :root{
-      --navy:#0b1024;
-      --panel:#0f1535;
-      --accent:#f6c400;
-      --muted:#9aa3c2;
-      --card:rgba(255,255,255,0.04);
-      --radius:16px;
-      --maxw:1100px;
-      --gap:28px;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      min-height:100vh;
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:linear-gradient(180deg,var(--navy) 0%, #07102a 100%);
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-    }
-
-    .wrap{
-      width:100%;
-      max-width:var(--maxw);
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:var(--radius);
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:var(--gap);
-      overflow:hidden;
-      box-shadow:0 20px 50px rgba(2,6,23,0.6);
-    }
-
-    .left{
-      background:linear-gradient(180deg, #0c1230 0%, #0b1024 100%);
-      padding:48px 36px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      text-align:center;
-    }
-    .inside-label{
-      color:var(--accent);
-      font-weight:700;
-      letter-spacing:2px;
-      margin-bottom:18px;
-      font-size:14px;
-    }
-    .logo{
-      width:320px;
-      max-width:72%;
-      height:auto;
-      border-radius:12px;
-      box-shadow:0 20px 40px rgba(2,6,23,0.6);
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));
-      margin-bottom:28px;
-    }
-    .big-head{
-      color:var(--accent);
-      font-weight:900;
-      font-size:48px;
-      line-height:0.95;
-      margin:18px 0 12px;
-      text-transform:uppercase;
-    }
-    .sub{
-      color:var(--muted);
-      font-weight:600;
-      margin-bottom:10px;
-    }
-    .tiny{
-      color:rgba(255,255,255,0.12);
-      margin-top:auto;
-      font-size:13px;
-    }
-
-    .right{
-      background:var(--panel);
-      padding:48px 42px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-    }
-    .h1{
-      color:#fff;
-      font-size:26px;
-      font-weight:800;
-      margin:0 0 10px;
-    }
-    .lead{
-      color:var(--muted);
-      margin-bottom:22px;
-      max-width:520px;
-    }
-
-    .card{
-      background:var(--card);
-      border-radius:12px;
-      padding:18px;
-      border:1px solid rgba(255,255,255,0.03);
-      margin-bottom:22px;
-    }
-    .card h4{
-      margin:0 0 8px;
-      color:#fff;
-      font-weight:700;
-    }
-    .card p{
-      color:var(--muted);
-      margin:0;
-      line-height:1.6;
-    }
-
-    .section-head{
-      color:var(--accent);
-      font-weight:800;
-      margin-top:8px;
-      margin-bottom:10px;
-      font-size:18px;
-    }
-
-    .cta{
-      display:inline-block;
-      background:var(--accent);
-      color:#0b1024;
-      padding:14px 22px;
-      border-radius:10px;
-      font-weight:800;
-      text-decoration:none;
-      box-shadow:0 10px 30px rgba(246,196,0,0.18);
-      margin-top:10px;
-      transition:transform .14s ease, box-shadow .14s ease;
-      width:320px;
-      text-align:center;
-    }
-    .cta:hover{
-      transform:translateY(-3px);
-      box-shadow:0 18px 40px rgba(246,196,0,0.22);
-    }
-
-    .privacy{
-      color:var(--muted);
-      font-size:13px;
-      margin-top:12px;
-    }
-
-    .footer{
-      color:rgba(255,255,255,0.06);
-      font-size:13px;
-      margin-top:20px;
-      text-align:center;
-    }
-
-    @media (max-width:900px){
-      .wrap{ grid-template-columns:1fr; padding:20px 12px; }
-      .logo{ max-width:60%; width:260px; }
-      .cta{ width:100%; }
-      .left, .right{ padding:32px 18px; }
-      .big-head{ font-size:40px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONE QUARTER EQUALS A D$LLAR</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* Set a custom font family */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+body {
+font-family: 'Inter', sans-serif;
+background-color: #0d1226; /* Dark navy background for the whole page */
+}
+/* Using solid gold color for strong contrast like the cover art */
+.title-text {
+color: #FFD700; /* Solid Gold */
+font-weight: 900;
+line-height: 1.1; /* Tighter line height for large text */
+}
+/* Custom input focus color (using CSS for stability) */
+.form-input-style:focus {
+border-color: #FFD700 !important;
+box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5) !important;
+outline: none;
+}
+/* Style to ensure the image displays as a rectangle */
+.book-cover-container {
+    height: auto;
+    width: 256px; 
+    max-width: 100%;
+}
+/* Fix for placeholder color on the dark background */
+input::placeholder {
+    color: #9ca3af; /* Light gray to show placeholder text */
+    opacity: 1; /* Override default opacity */
+}
+</style>
 </head>
-<body>
+<body class="min-h-screen flex items-center justify-center p-4"> 
 
-  <div class="wrap">
+<div class="max-w-4xl w-full bg-[#1c213d] shadow-2xl rounded-xl overflow-hidden md:flex">
 
-    <div class="left">
-      <div class="inside-label">INSIDE LOOK</div>
+<div class="md:w-1/2 p-6 md:p-10 flex flex-col justify-center items-center bg-[#0d1226] text-white space-y-8">
 
-      <img class="logo" src="https://i.imgur.com/EwWFtC6.jpg" alt="One Quarter Enterprises Logo" />
+<header class="text-center w-full">
+<p class="text-3xl tracking-widest uppercase font-bold text-yellow-400 mb-0">INSIDE LOOK</p>
+</header>
 
-      <div class="big-head">ONE<br/>QUARTER<br/>EQUALS A<br/>D$LLAR</div>
+<div class="book-cover-container mx-auto p-2" style="margin-top: 1rem; margin-bottom: 1rem;">
+    <img src="https://i.imgur.com/EwWFtC6.jpg"
+    alt="One Quarter Equals A D$llar Blueprint Cover"
+    onerror="this.src='https://placehold.co/256x350/FFD700/0D1226?text=IMAGE+ERROR:+CHECK+IMGUR+LINK'"
+    class="w-full h-auto object-contain rounded-lg shadow-xl">
+</div>
 
-      <div class="sub">7 Chapters to 7 Figures</div>
-      <div style="color:var(--muted); margin-top:6px;">
-        The #1 Blueprint To Financial Freedom
-      </div>
+<main class="text-center">
+<h1 class="text-4xl sm:text-5xl lg:text-6xl title-text font-extrabold leading-none mb-4 uppercase">
+<span class="block">ONE QUARTER</span>
+<span class="block">EQUALS A D$LLAR</span>
+</h1>
+<p class="text-yellow-400 text-lg font-bold">7 Chapters to 7 Figures</p>
+<p class="text-gray-400 text-sm mt-2">The #1 Blueprint To Financial Freedom</p>
+</main>
 
-      <div class="tiny">© 2025 One Quarter Enterprises LLC</div>
-    </div>
+<footer class="mt-auto pt-8">
+<p class="text-xs text-gray-500">© 2025 One Quarter Enterprises LLC</p>
+</footer>
+</div>
 
-    <div class="right">
-      <div class="h1">Your Inside Look is On the Way</div>
-      <div class="lead">Before you open it, read this — it will make everything click.</div>
+<div class="md:w-1/2 p-6 md:p-8 bg-[#1c213d] flex flex-col justify-center text-white">
+<div id="form-content">
+<h2 class="text-2xl font-bold text-white mb-4">
+Get Your Free Inside Look
+</h2>
+<p class="text-gray-300 mb-6">
+Start converting a Quarter of Effort into a Dollar of Wealth.
+</p>
 
-      <div class="card">
-        <h4>Mindset vs Structure</h4>
-        <p>You already claimed the Mindset Mandate — but mindset without structure is chaos. This is where the Blueprint separates you from 99% of people.</p>
-      </div>
+<form id="lead-form" class="space-y-4"
+action="YOUR_MAILERLITE_FORM_ACTION_URL"
+method="post">
+<div style="margin-bottom: 1rem;">
+<label for="name" class="block text-sm font-medium text-gray-300">Your Name (Optional)</label>
+<input type="text" name="fields[name]" id="name" placeholder="John Doe"
+style="display: block; width: 100%; padding: 10px 16px; border: 1px solid #4b5563; border-radius: 6px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); box-sizing: border-box; font-family: inherit; color: #1f2937; background-color: #ffffff;"
+class="form-input-style"
+autocomplete="name">
+</div>
 
-      <div class="section-head">You're Not Lucky. You're Structured.</div>
+<div style="margin-bottom: 1rem;">
+<label for="email" class="block text-sm font-medium text-gray-300">Enter Your Best Email *</label>
+<input type="email" name="fields[email]" id="email" required placeholder="you@example.com"
+style="display: block; width: 100%; padding: 10px 16px; border: 1px solid #4b5563; border-radius: 6px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); box-sizing: border-box; font-family: inherit; color: #1f2937; background-color: #ffffff;"
+class="form-input-style"
+autocomplete="email">
+</div>
 
-      <p style="color:var(--muted); margin-bottom:16px;">
-        The Inside Look gives you the foundation. The Blueprint gives you the full system — the 3 Account Setup, Scarcity Transfers, and the MVP Money Machine.
-      </p>
+<button type="submit"
+class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-lg text-lg font-bold text-[#1c213d] bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-300 ease-in-out">
+Get My Free Inside Look
+</button>
 
-      <a class="cta" href="#">
-        Yes, I Need The Full Blueprint Architecture Now
-      </a>
+<p id="form-message" class="text-center text-sm mt-3" style="display: none;"></p>
 
-      <div class="privacy">We respect your privacy. Your data is 100% secure.</div>
+<p class="text-xs text-center text-gray-500 mt-4">
+We respect your privacy. Your data is 100% secure.
+</p>
+</form>
+</div>
 
-      <div class="footer">
-        If you don't receive the email in 5 minutes,
-        <a href="#" style="color:var(--accent); text-decoration:none;">
-          download the inside look now
-        </a>.
-      </div>
-    </div>
+<div id="thank-you-message" class="hidden text-center p-8 bg-[#0d1226] rounded-lg shadow-xl text-white">
+<h2 class="text-3xl font-bold text-green-400 mb-4">Success!</h2>
+<p class="text-lg text-gray-300 mb-6">
+Thank you for your interest! Your free 'Inside Look' has been sent to your email address.
+</p>
+<p class="text-sm text-gray-400">
+Check your inbox (and spam folder) now!
+</p>
+</div>
+</div>
 
-  </div>
+</div>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+const form = document.getElementById('lead-form');
+const formMessage = document.getElementById('form-message');
+
+form.addEventListener('submit', () => {
+formMessage.style.display = 'block';
+formMessage.textContent = 'Submitting... Taking you to the next step.';
+formMessage.classList.remove('text-red-500', 'text-green-600');
+formMessage.classList.add('text-gray-500');
+});
+});
+</script>
 </body>
 </html>
