@@ -78,11 +78,11 @@ Start converting a Quarter of Effort into a Dollar of Wealth.
 </p>
 
 <form id="lead-form" class="space-y-4"
-action="YOUR_MAILERLITE_FORM_ACTION_URL"
-method="post">
+action="bridge.html" 
+method="get"> 
 <div style="margin-bottom: 1rem;">
 <label for="name" class="block text-sm font-medium text-gray-300">Your Name (Optional)</label>
-<input type="text" name="fields[name]" id="name" placeholder="John Doe"
+<input type="text" name="name" id="name" placeholder="John Doe"
 style="display: block; width: 100%; padding: 10px 16px; border: 1px solid #4b5563; border-radius: 6px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); box-sizing: border-box; font-family: inherit; color: #1f2937; background-color: #ffffff;"
 class="form-input-style"
 autocomplete="name">
@@ -90,7 +90,7 @@ autocomplete="name">
 
 <div style="margin-bottom: 1rem;">
 <label for="email" class="block text-sm font-medium text-gray-300">Enter Your Best Email *</label>
-<input type="email" name="fields[email]" id="email" required placeholder="you@example.com"
+<input type="email" name="email" id="email" required placeholder="you@example.com"
 style="display: block; width: 100%; padding: 10px 16px; border: 1px solid #4b5563; border-radius: 6px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); box-sizing: border-box; font-family: inherit; color: #1f2937; background-color: #ffffff;"
 class="form-input-style"
 autocomplete="email">
@@ -98,4 +98,41 @@ autocomplete="email">
 
 <button type="submit"
 class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-lg text-lg font-bold text-[#1c213d] bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-300 ease-in-out">
-Get
+Get My Free Inside Look
+</button>
+
+<p id="form-message" class="text-center text-sm mt-3" style="display: none;"></p>
+
+<p class="text-xs text-center text-gray-500 mt-4">
+We respect your privacy. Your data is 100% secure.
+</p>
+</form>
+</div>
+
+<div id="thank-you-message" class="hidden text-center p-8 bg-[#0d1226] rounded-lg shadow-xl text-white">
+<h2 class="text-3xl font-bold text-green-400 mb-4">Success!</h2>
+<p class="text-lg text-gray-300 mb-6">
+Thank you for your interest! Your free 'Inside Look' has been sent to your email address.
+</p>
+<p class="text-sm text-gray-400">
+Check your inbox (and spam folder) now!
+</p>
+</div>
+</div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+const form = document.getElementById('lead-form');
+const formMessage = document.getElementById('form-message');
+
+form.addEventListener('submit', () => {
+formMessage.style.display = 'block';
+formMessage.textContent = 'Submitting... Taking you to the next step.';
+formMessage.classList.remove('text-red-500', 'text-green-600');
+formMessage.classList.add('text-gray-500');
+});
+</script>
+</body>
+</html>
