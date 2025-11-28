@@ -3,148 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bridge Page</title>
+  <title>Inside Look – One Quarter Enterprises LLC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Montserrat', sans-serif;
-      background: #0d1b2a;
-      color: #ffffff;
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
+      background: #031027;
+      color: white;
     }
 
-    .left-section {
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 50px 20px;
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* LEFT SECTION WITHOUT LOGO */
+    .left {
       width: 40%;
-      background: #0d1b2a;
-      padding: 60px 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      text-align: left;
+      padding-top: 40px;
     }
 
-    .left-section h2 {
-      color: #f6c20a;
-      font-size: 16px;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-
-    .left-section h1 {
-      font-size: 48px;
-      font-weight: 800;
-      line-height: 1.1;
-      color: #f6c20a;
+    .inside-look-label {
+      color: #FFCC33;
+      font-size: 14px;
+      letter-spacing: 2px;
+      font-weight: 700;
       margin-bottom: 20px;
-      max-width: 350px;
     }
 
-    .left-section p {
-      font-size: 16px;
-      line-height: 1.5;
-      margin-bottom: 10px;
-      color: #d1d1d1;
-    }
-
-    .right-section {
-      width: 60%;
-      background: #142437;
-      padding: 60px;
-      border-top-left-radius: 30px;
-      border-bottom-left-radius: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .right-section h1 {
-      font-size: 36px;
+    .title {
+      font-size: 42px;
       font-weight: 800;
-      margin-bottom: 10px;
+      margin-top: 10px;
+      color: #FFCC00;
+      line-height: 1.1;
     }
 
-    .right-section p {
-      font-size: 16px;
+    .subtitle {
+      margin-top: 18px;
+      opacity: 0.8;
+      font-size: 15px;
       line-height: 1.6;
-      color: #d1d1d1;
-      max-width: 500px;
     }
 
-    .box {
-      background: #1e3047;
-      padding: 25px;
-      border-radius: 15px;
-      margin: 25px 0;
-      max-width: 500px;
+    /* RIGHT SIDE */
+    .right {
+      width: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 18px;
     }
 
-    .highlight {
-      color: #f6c20a;
+    h2 {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .highlight-box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 22px;
+      border-radius: 14px;
+      margin: 20px 0;
+    }
+
+    .gold {
+      color: #FFCC00;
       font-weight: 700;
-      margin-top: 15px;
     }
 
-    .download-box {
+    .cta-btn {
+      margin-top: 25px;
+      display: inline-block;
+      background: #FFD700;
+      color: #000;
+      padding: 18px 35px;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #ffdf48;
+    }
+
+    .footer {
       margin-top: 30px;
-      padding: 20px 25px;
-      background: #1e3047;
-      border-radius: 15px;
-      max-width: 500px;
+      font-size: 13px;
+      opacity: 0.6;
+      text-align: center;
     }
 
-    .download-box h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
-      font-weight: 700;
-      color: #f6c20a;
-    }
-
-    .download-box button {
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 10px;
-      background: #f6c20a;
-      color: #0d1b2a;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .download-box button:hover {
-      opacity: 0.9;
+    .download-link {
+      color: #FFCC00;
+      font-weight: 600;
     }
   </style>
 </head>
+
 <body>
-  <div class="left-section">
-    <h2>FREE INSIDE LOOK</h2>
-    <h1>ONE QUARTER EQUALS A D$LLAR</h1>
-    <p>7 Chapters to 7 Figures</p>
-    <p>The #1 Blueprint To Financial Freedom</p>
-    <p>© 2025 One Quarter Enterprises LLC</p>
-  </div>
+  <div class="container">
 
-  <div class="right-section">
-    <h1>Your Inside Look Is On the Way</h1>
-    <p>Before you open it, read this — it will make everything click.</p>
+    <!-- LEFT SIDE (NO LOGO) -->
+    <div class="left">
+      <div class="inside-look-label">FREE INSIDE LOOK</div>
 
-    <div class="box">
-      <h3>Mindset vs Structure</h3>
-      <p>You already claimed the Mindset Mandate — but mindset without structure is chaos. This is where the Blueprint separates you from 99% of people.</p>
+      <div class="title">
+        ONE<br>
+        QUARTER<br>
+        EQUALS A<br>
+        D$LLAR
+      </div>
+
+      <div class="subtitle">
+        7 Chapters to 7 Figures<br><br>
+        The #1 Blueprint To Financial Freedom<br>
+        © 2025 One Quarter Enterprises LLC
+      </div>
     </div>
 
-    <p class="highlight">You're Not Lucky. You're Structured.</p>
-    <p>The Inside Look gives you the foundation. The Blueprint gives you the full system — the 3 Account Setup, Scarcity Transfers, and the MVP Money Machine.</p>
+    <!-- RIGHT SIDE -->
+    <div class="right">
+      <h2>Your Inside Look Is On the Way</h2>
 
-    <div class="download-box">
-      <h3>Download the FREE Inside Look</h3>
-      <button>DOWNLOAD NOW</button>
+      <p>Before you open it, read this — it will make everything click.</p>
+
+      <div class="highlight-box">
+        <strong>Mindset vs Structure</strong><br><br>
+        You already claimed the Mindset Mandate — but mindset without structure is chaos.  
+        This is where the Blueprint separates you from 99% of people.
+      </div>
+
+      <p class="gold">You're Not Lucky. You're Structured.</p>
+
+      <p>The Inside Look gives you the foundation. The Blueprint gives you the full system — the 3 Account Setup, Scarcity Transfers, and the MVP Money Machine.</p>
+
+      <a class="cta-btn" href="YOUR-PURCHASE-LINK">Yes, I Need The Full Blueprint Architecture Now</a>
+
+      <div class="footer">
+        We respect your privacy. Your data is 100% secure.<br><br>
+        If you don’t receive the email in 5 minutes, 
+        <a class="download-link" href="YOUR-DIRECT-DOWNLOAD-FILE">download the inside look now.</a>
+      </div>
     </div>
+
   </div>
 </body>
 </html>
