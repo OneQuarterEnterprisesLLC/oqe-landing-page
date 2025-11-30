@@ -60,3 +60,39 @@
                                         
                                         <div class="ml-form-fieldRow">
                                             <div class="ml-field-group ml-field-name ml-validate-required">
+                                                <input type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Your Full Name" autocomplete="name">
+                                            </div>
+                                        </div>
+
+                                        <div class="ml-form-fieldRow">
+                                            <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                                <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Your Best Email Address" autocomplete="email">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    <div class="ml-form-recaptcha ml-validate-required my-4">
+                                        <div class="g-recaptcha" data-sitekey="6Ld-I3oUAAAAAGv_f_4FhJ1GhoT2gK-uK_aN_7aM" ></div>
+                                    </div>
+                                    
+                                    <div class="ml-form-embedSubmit">
+                                        <button type="submit" class="primary">
+                                            YES, SEND ME THE FREE INSIDE LOOK
+                                        </button>
+                                        <button disabled="disabled" style="display: none;" type="button" class="loading"> <div class="ml-form-embedSubmitLoad"></div> <span class="sr-only">Loading...</span> </button>
+                                    </div>
+                                    
+                                    <input type="hidden" name="ml-submit" value="1">
+                                    <input type="hidden" name="anticsrf" value="true">
+                                    <input type="hidden" name="success_url" value="https://www.onequarterdollar.com/bridge.html"> 
+
+                                </form>
+                            </div>
+                            
+                            <script>
+                                // Define the target URL
+                                const redirectUrl = 'https://www.onequarterdollar.com/bridge.html';
+
+                                // Find the specific success div for this form
+                                const successDiv = document.querySelector('#mlb2-17252
