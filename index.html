@@ -10,12 +10,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #0d1226; overflow-x: hidden; }
         .main-title { color: #FFD700; font-weight: 900; }
-        /* NOTE: The styling below might need slight adjustments as the new JS embed renders differently */
+        /* NOTE: Keeping the styling, which may require minor tweaks once the form renders */
         .ml-form-fieldRow input { border: 2px solid #555 !important; background-color: #0d1226 !important; color: #ffffff !important; padding: 0.75rem !important; border-radius: 8px !important; width: 100% !important; box-sizing: border-box !important; }
         .ml-form-fieldRow input::placeholder { color: #aaa; }
         .ml-form-embedSubmit button { width: 100% !important; background-color: #FFD700 !important; color: #0d1226 !important; border-radius: 8px !important; padding: 1rem 0 !important; font-weight: 900 !important; font-size: 1.25rem !important; text-transform: uppercase !important; transition: background-color 0.2s; }
         .ml-form-embedSubmit button:hover { background-color: #fdd835 !important; }
         .ml-form-embedWrapper, .ml-form-embedContainer { box-shadow: none !important; background-color: transparent !important; padding: 0 !important; }
+        .ml-embedded { margin-top: 1rem; } /* Add a little space above the form */
     </style>
 
     <script>
@@ -51,9 +52,7 @@
             <div class="bg-[#2a314f] p-6 rounded-xl shadow-xl border-2 border-yellow-500 flex flex-col justify-center">
                 <h3 class="text-2xl font-black text-white text-center mb-4">GET INSTANT ACCESS NOW</h3>
 
-                <script>
-                    ml('webforms', '172528025367218024', 'g0d5j3', 'true');
-                </script>
+                <div class="ml-embedded" data-form="UcrCoH"></div>
                 </div>
             
         </div>
