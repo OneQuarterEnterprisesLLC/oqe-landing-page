@@ -59,7 +59,8 @@
 
     <script>
         (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};l=d.createElement(e);l.async=1;l.src=u;n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);})
-        (window,document,'script','https://static.mailerlite.com/js/w/ml-webforms.min.js','ml_webforms');ml_webforms['webforms'].push('33979730');
+        // The URL below is changed to include ?v=1.1
+        (window,document,'script','https://static.mailerlite.com/js/w/ml-webforms.min.js?v=1.1','ml_webforms');ml_webforms['webforms'].push('33979730');
     </script>
 </head>
 <body class="flex flex-col items-center min-h-screen p-4">
@@ -145,6 +146,37 @@
 
                                 </form>
                             </div>
+                            
+                            <script>
+                                // Define the target URL
+                                const redirectUrl = 'https://www.onequarterdollar.com/bridge.html';
+
+                                // Find the specific success div for this form
+                                const successDiv = document.querySelector('#mlb2-33979730 .ml-form-successBody');
+
+                                // Observer to watch for the success message to be displayed (MailerLite shows this when successful)
+                                if (successDiv) {
+                                    const observer = new MutationObserver((mutationsList, observer) => {
+                                        for(const mutation of mutationsList) {
+                                            // Check if the success message is made visible
+                                            if (mutation.type === 'attributes' && mutation.attributeName === 'style' && successDiv.style.display !== 'none') {
+                                                
+                                                // Success detected, force the redirect after a small delay (100ms)
+                                                setTimeout(() => {
+                                                    window.location.href = redirectUrl;
+                                                }, 100); 
+
+                                                // Stop observing once success is detected
+                                                observer.disconnect();
+                                            }
+                                        }
+                                    });
+
+                                    // Start observing the style attribute changes on the success div
+                                    observer.observe(successDiv, { attributes: true });
+                                }
+                            </script>
+                            
                             <div class="ml-form-successBody row-success" style="display: none">
                                 <div class="ml-form-successContent">
                                     <h4>Success!</h4>
@@ -157,7 +189,8 @@
                 </div>
             
         </div>
-        </div>
+        
+    </div>
     
     <footer class="text-center pt-4 pb-8 w-full max-w-4xl mx-auto">
         <p class="text-xs text-gray-600">© 2025 One Quarter Enterprises LLC</p>
