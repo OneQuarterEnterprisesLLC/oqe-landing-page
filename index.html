@@ -18,9 +18,8 @@
             line-height: 1.1; /* Lighter line height for large text */
         }
         
-        /* This CSS snippet ensures the MailerLite embedded form uses a full-width button
-        and aligns with your card's general aesthetic after the script loads.
-        */
+        /* This CSS ensures the MailerLite embedded form uses a full-width button
+           and aligns with your card's general aesthetic. */
         .ml-form-embedSubmit button {
             width: 100% !important;
             background-color: #000000 !important;
@@ -40,6 +39,12 @@
             box-shadow: none !important;
             background-color: transparent !important;
             padding: 0 !important;
+        }
+
+        /* Target the name and email input fields to ensure they are full width */
+        .ml-form-embedInput {
+            width: 100% !important;
+            box-sizing: border-box !important;
         }
     </style>
 
