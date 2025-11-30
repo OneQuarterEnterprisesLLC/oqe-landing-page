@@ -1,90 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONE QUARTER EQUALS A D$LLAR - Free Inside Look</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Set a custom font family */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d1226; /* Deepest dark navy background for the whole page */
-        }
-        .text-title {
-            color: #FFD700; /* Solid Gold */
-            font-weight: 900;
-        }
-        .title-text {
-            color: #FFD700;
-            font-weight: 900;
-            line-height: 1.1; /* Lighter line height for large text */
-        }
-        /* Custom input focus color (using CSS for stability) */
-        input:focus {
-            border-color: #FFD700 !important;
-            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5) !important;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONE QUARTER EQUALS A D$LLAR - Free Inside Look</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Set a custom font family */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1226; /* Deepest dark navy background for the whole page */
+        }
+        .text-title {
+            color: #FFD700; /* Solid Gold */
+            font-weight: 900;
+        }
+        .title-text {
+            color: #FFD700;
+            font-weight: 900;
+            line-height: 1.1; /* Lighter line height for large text */
+        }
+        /* Custom input focus color (using CSS for stability) */
+        input:focus {
+            border-color: #FFD700 !important;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5) !important;
+        }
+
+        /* --------------------------------------------------------------------------------------
+        CUSTOM STYLES TO OVERRIDE MAILERLITE DEFAULTS AND MATCH YOUR TAILWIND DESIGN 
+        --------------------------------------------------------------------------------------
+        */
+        
+        /* General form container cleanup */
+        #mlb2-33979730.ml-form-embedContainer .ml-form-embedWrapper {
+            background-color: transparent !important; /* Remove default gray background */
+            box-shadow: none !important; /* Remove any default shadow */
+            padding: 0 !important;
+            max-width: 100% !important; 
+        }
+
+        /* Style for the Email Input Field */
+        #mlb2-33979730.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+            padding: 12px 16px !important;
+            border-color: #e5e7eb !important; /* Light gray border */
+            border-radius: 0.5rem !important; /* Rounded corners (equivalent to rounded-lg in Tailwind) */
+            height: auto !important; /* Allow padding to define height */
+        }
+        /* Focus state for the Email Input */
+        #mlb2-33979730.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus {
+             border-color: #FFD700 !important; /* Gold border on focus */
+             box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5) !important; /* Gold ring shadow */
+        }
+        
+        /* Style for the Submit Button */
+        #mlb2-33979730.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+            background-color: #000000 !important; /* Black background */
+            color: #ffffff !important; /* White text */
+            font-weight: 700 !important; /* Bold text */
+            font-size: 16px !important; /* Slightly larger font */
+            padding: 12px !important;
+            border-radius: 0.5rem !important; /* Rounded corners */
+            text-transform: uppercase !important;
+            transition: background-color 0.2s;
+        }
+        /* Hover state for the Submit Button */
+        #mlb2-33979730.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
+            background-color: #333333 !important; /* Darker black on hover */
+        }
+    </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4">
 
-    <div class="max-w-md w-full bg-white shadow-2xl rounded-xl overflow-hidden my-8">
+    <div class="max-w-md w-full bg-white shadow-2xl rounded-xl overflow-hidden my-8">
 
-        <header class="text-center p-8 bg-[#1c213d]">
-            
-            <div class="h-4"></div>
-            <h1 class="text-3xl sm:text-4xl text-white font-extrabold uppercase mb-2">
-                <span class="title-text">ONE QUARTER EQUALS A D$LLAR</span>
-            </h1>
-            <p class="text-lg text-yellow-400 font-bold">
-                7 Chapters to 7 Figures
-            </p>
-            <p class="text-sm text-gray-400">
-                The #1 Blueprint To Financial Freedom
-            </p>
-        </header>
+        <header class="text-center p-8 bg-[#1c213d]">
+            
+            <div class="h-4"></div>
+            <h1 class="text-3xl sm:text-4xl text-white font-extrabold uppercase mb-2">
+                <span class="title-text">ONE QUARTER EQUALS A D$LLAR</span>
+            </h1>
+            <p class="text-lg text-yellow-400 font-bold">
+                7 Chapters to 7 Figures
+            </p>
+            <p class="text-sm text-gray-400">
+                The #1 Blueprint To Financial Freedom
+            </p>
+        </header>
 
-        <div class="p-8">
-            <h2 class="text-xl font-bold text-gray-800 mb-2">
-                Get Your Free Inside Look
-            </h2>
-            <p class="text-gray-600 mb-6">
-                Start converting a Quarter of Effort into a Dollar of Wealth.
-            </p>
+        <div class="p-8">
+            <h2 class="text-xl font-bold text-gray-800 mb-2">
+                Get Your Free Inside Look
+            </h2>
+            <p class="text-gray-600 mb-6">
+                Start converting a Quarter of Effort into a Dollar of Wealth.
+            </p>
 
-            <form method="post" action="https://app.mailerlite.com/webforms/submit/33979730" class="space-y-4">
-                
-                <div class="ml-form-field-row ml-form-field-row-horizontal">
-                    <label for="name" class="text-sm font-medium text-gray-700 block">Your Name (Optional)</label>
-                    <input type="text" id="name" name="fields[name]" placeholder="John Doe"
-                           class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm">
-                </div>
-
-                <div class="ml-form-field-row ml-form-field-row-horizontal">
-                    <label for="email" class="text-sm font-medium text-gray-700 block">Enter Your Best Email *</label>
-                    <input type="email" id="email" name="fields[email]" required placeholder="you@example.com"
-                           class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm">
-                </div>
-                
-                <div class="ml-form-embedSubmit">
-                    <button type="submit"
-                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-bold text-gray-800 bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-150 ease-in-out">
-                        Get My Free Inside Look
-                    </button>
-                </div>
-                
-                <p class="text-center text-xs text-gray-500">
-                    We respect your privacy. Your data is 100% secure.
-                </p>
-                
-                <input type="hidden" name="ml-submit" value="1" />
-                <input type="hidden" name="anticsrf" value="true" />
-                <input type="hidden" name="checksum" value="a274534a1796d7411a037b3f9618b105f23d463b3614041b65e263d951012920" />
-                
-            </form>
-            </div>
-    </div>
-</body>
+            <div id="mlb2-33979730" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-33979730">
+                <div class="ml-form-align-center ">
+                    <div class="ml-form-embedWrapper embedDefault">
+                        <div class="ml-form-embedHeader " style="height: undefinedpx; ">
+                        </div>
+                        <div class="ml-form-embedBody defaultFormBody">
+                            <div class="ml-form-embedContent" style=" ">
+                                <h4></h4>
+                                <p></p>
+                            </div>
+                            <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/33979730" data-code="33979730" method="post" target="_blank">
+                                <div class="ml-form-formContent">
+                                    <div class="ml-form-fieldRow">
+                                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                            <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ml-form-recaptcha ml-validate-required">
+                                    <div class="g-recaptcha" data-sitekey="6Ld-I3oUAAAAAGv_f_4FhJ1GhoT2gK-uK_aN_7aM" ></div>
+                                </div>
+                                <div class="ml-form-embedSubmit">
+                                    <button type="submit" class="primary">Subscribe</button>
+                                    <button disabled="disabled" style="display: none;" type="button" class="loading"> <div class="ml-form-embedSubmitLoad"></div> <span class="sr-only">Loading...</span> </button>
+                                </div>
+                                <input type="hidden" name="ml-submit" value="1">
+                                <input type="hidden" name="anticsrf" value="true">
+                            </form>
+                        </div>
+                        <div class="ml-form-successBody row-success" style="display: none">
+                            <div class="ml-form-successContent">
+                                <h4>Success!</h4>
+                                <p>You have successfully subscribed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};l=d.createElement(e);l.async=1;l.src=u;n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);})
+                (window,document,'script','https://static.mailerlite.com/js/w/ml-webforms.min.js','ml_webforms');ml_webforms['webforms'].push('33979730');
+            </script>
+            </div>
+    </div>
+    
+    </body>
 </html>
