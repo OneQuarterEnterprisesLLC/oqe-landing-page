@@ -50,93 +50,13 @@
             <div class="bg-[#2a314f] p-6 rounded-xl shadow-xl border-2 border-yellow-500 flex flex-col justify-center">
                 <h3 class="text-2xl font-black text-white text-center mb-4">GET INSTANT ACCESS NOW</h3>
 
-                <div id="mlb2-33979730" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-33979730">
+                <div id="mlb2-172528025367218024" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-172528025367218024">
                     <div class="ml-form-align-center ">
                         <div class="ml-form-embedWrapper embedDefault">
                             <div class="ml-form-embedBody defaultFormBody">
                                 
-                                <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/33979730" data-code="33979730" method="post">
+                                <form class="ml-block-form" action="https://app.mailerlite.com/webforms/submit/172528025367218024" data-code="172528025367218024" method="post">
                                     <div class="ml-form-formContent">
                                         
                                         <div class="ml-form-fieldRow">
                                             <div class="ml-field-group ml-field-name ml-validate-required">
-                                                <input type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Your Full Name" autocomplete="name">
-                                            </div>
-                                        </div>
-
-                                        <div class="ml-form-fieldRow">
-                                            <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                                                <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Your Best Email Address" autocomplete="email">
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                    <div class="ml-form-recaptcha ml-validate-required my-4">
-                                        <div class="g-recaptcha" data-sitekey="6Ld-I3oUAAAAAGv_f_4FhJ1GhoT2gK-uK_aN_7aM" ></div>
-                                    </div>
-                                    
-                                    <div class="ml-form-embedSubmit">
-                                        <button type="submit" class="primary">
-                                            YES, SEND ME THE FREE INSIDE LOOK
-                                        </button>
-                                        <button disabled="disabled" style="display: none;" type="button" class="loading"> <div class="ml-form-embedSubmitLoad"></div> <span class="sr-only">Loading...</span> </button>
-                                    </div>
-                                    
-                                    <input type="hidden" name="ml-submit" value="1">
-                                    <input type="hidden" name="anticsrf" value="true">
-                                    <input type="hidden" name="success_url" value="https://www.onequarterdollar.com/bridge.html"> 
-
-                                </form>
-                            </div>
-                            
-                            <script>
-                                // Define the target URL
-                                const redirectUrl = 'https://www.onequarterdollar.com/bridge.html';
-
-                                // Find the specific success div for this form
-                                const successDiv = document.querySelector('#mlb2-33979730 .ml-form-successBody');
-
-                                // Observer to watch for the success message to be displayed (MailerLite shows this when successful)
-                                if (successDiv) {
-                                    const observer = new MutationObserver((mutationsList, observer) => {
-                                        for(const mutation of mutationsList) {
-                                            // Check if the success message is made visible
-                                            if (mutation.type === 'attributes' && mutation.attributeName === 'style' && successDiv.style.display !== 'none') {
-                                                
-                                                // Success detected, force the redirect after a small delay (100ms)
-                                                setTimeout(() => {
-                                                    window.location.href = redirectUrl;
-                                                }, 100); 
-
-                                                // Stop observing once success is detected
-                                                observer.disconnect();
-                                            }
-                                        }
-                                    });
-
-                                    // Start observing the style attribute changes on the success div
-                                    observer.observe(successDiv, { attributes: true });
-                                }
-                            </script>
-                            
-                            <div class="ml-form-successBody row-success" style="display: none">
-                                <div class="ml-form-successContent">
-                                    <h4>Success!</h4>
-                                    <p>Redirecting you to your free access now...</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            
-        </div>
-        
-    </div>
-    
-    <footer class="text-center pt-4 pb-8 w-full max-w-4xl mx-auto">
-        <p class="text-xs text-gray-600">© 2025 One Quarter Enterprises LLC</p>
-    </footer>
-</body>
-</html>
