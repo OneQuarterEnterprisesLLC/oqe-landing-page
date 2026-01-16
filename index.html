@@ -21,8 +21,6 @@
         .profile-frame { border: 8px solid #1e293b; outline: 1px solid #dc2626; position: relative; width: 100%; max-width: 400px; margin: auto; background: #000; }
         
         #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #0f172a; color: white; padding: 20px; z-index: 1000; border-top: 4px solid #dc2626; display: none; }
-        
-        /* INTERRUPT MODAL */
         #exit-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(15px); }
         .modal-box { border: 4px solid #dc2626; background: #0f172a; max-width: 500px; width: 95%; padding: 40px; position: relative; }
         
@@ -41,7 +39,7 @@
         .measurement-pill { background: #dc2626; color: white; padding: 2px 6px; font-size: 10px; font-weight: 900; }
         
         .brand-logo-container { border-top: 1px solid #1e293b; padding-top: 2rem; display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: 2rem; }
-        .brand-logo { max-width: 280px; width: 100%; height: auto; filter: contrast(1.1) brightness(1.1); box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+        .brand-logo { max-width: 320px; width: 100%; height: auto; filter: contrast(1.1) brightness(1.1); box-shadow: 0 0 15px rgba(0,0,0,0.5); }
         .price-text { text-shadow: 0 0 10px rgba(220, 38, 38, 0.4); }
     </style>
 </head>
@@ -110,20 +108,26 @@
             </div>
         </header>
 
-        <!-- SECTION 2: THE 19-YEAR STORY -->
-        <section class="grid grid-cols-1 md:grid-cols-2 border-b-8 border-black bg-white">
+        <!-- SECTION 2: THE 19-YEAR STORY (THE UNFILTERED TRUTH - FULLY RESTORED) -->
+        <section id="story" class="grid grid-cols-1 md:grid-cols-2 border-b-8 border-black bg-white">
             <div class="p-8 md:p-16 border-r-8 border-black bg-slate-900 text-slate-400">
-                <h2 class="text-3xl font-black uppercase italic mb-8 text-red-600 uppercase font-black italic text-left">THE HOLLOW <br>REALIZATION.</h2>
+                <h2 class="text-3xl font-black uppercase italic mb-8 text-red-600 uppercase font-black italic text-left leading-none">THE HOLLOW <br>REALIZATION.</h2>
                 <div class="space-y-6 text-lg font-medium leading-relaxed italic text-left text-slate-300">
-                    <p>In 2004, I was a driven artist **Passing Over Opportunities Repeatedly** because I had zero structure to retain value.</p>
-                    <p>By 2006, under the leadership of **Damien Dewberry**, I learned how to understand wealth and turn negative thoughts to positive. I hit a **passive 4-figure monthly income with a team of 32**.</p>
-                    <p>But because I was managing a personality-driven hustle instead of a non-human architecture, I watched that team of 32 fizzle down until only **one motivated non-producer** remained.</p>
+                    <p>In 2004, I was a driven hip-hop artist **Passing Over Opportunities Repeatedly** because I had zero structure to retain value.</p>
+                    
+                    <p>By 2006, I pivoted into sales and Network Marketing, recruited by a man who changed my internal operating system, **Damien Dewberry**. He taught me how to recruit, how to understand wealth, and how to turn negative thoughts into positive. Under his leadership, I learned the art of personal development and eventually hit a **passive 4-figure monthly income with a team of 32**.</p>
+                    
+                    <p>But because I was managing a personality-driven hustle instead of a non-human architecture, I watched that team of 32 fizzle down until only **one motivated non-producer** remained. For 19 years, off and on, I was fighting my own momentum because I had no machine until now.</p>
+                    
+                    <p>In 2016, I hit the wall. I mentored a student who executed with absolute precision. By their **first month**, they hit a 5-figure monthly revenue. By their **second month**, they hit it again. I helped them for over a year, watching them remain consistent until they finally went viral and got on the local news.</p>
+                    
                     <div class="font-black text-white border-l-4 border-red-600 pl-4 bg-red-950/30 py-4 italic text-2xl mb-6">They scaled past my plateau, and I had to decline their call.</div>
-                    <p>I was failing in a coffee network marketing company, promised compensation **I never contracted**. I was paying the **Anxiety Tax** because I was an architect without a firewall.</p>
+                    
+                    <p>I was failing in a coffee network marketing company at the time, promised compensation **I never contracted**. I was paying the **Anxiety Tax** long before I knew how to define it. I had to tell my student "No," because they had surpassed my own structural ceiling. I was an architect without a firewall.</p>
                 </div>
             </div>
 
-            <!-- COLUMN RIGHT: AUTHORITY STACK -->
+            <!-- COLUMN RIGHT: AUTHORITY STACK (HEARTBEAT > PIC > QUOTE > LOGO) -->
             <div class="p-8 md:p-16 bg-slate-950 flex flex-col items-center">
                 <!-- 01 HEARTBEAT -->
                 <div class="border-4 border-slate-700 p-8 bg-slate-900 industrial-shadow text-center w-full mb-10 text-center">
@@ -148,7 +152,7 @@
             </div>
         </section>
 
-        <!-- SECTION 4: THE DIAGNOSTIC -->
+        <!-- SECTION 4: THE DIAGNOSTIC (IDENTIFYING THE FRACTURE) -->
         <section id="diagnostic" class="p-8 md:p-16 border-b-8 border-black bg-slate-950">
             <h3 class="text-4xl font-black uppercase italic mb-8 text-white text-center uppercase font-black text-center text-center">01. AUDIT YOUR FRICTION</h3>
             <div class="instruction-box max-w-xl mx-auto industrial-shadow border border-slate-800 text-center text-slate-300">
@@ -157,10 +161,12 @@
                     <li>1. <span class="text-white font-black italic uppercase font-black italic">IDENTIFY,</span> Locate red knobs on the tracks below.</li>
                     <li>2. <span class="text-white font-black italic uppercase font-black italic">QUANTIFY,</span> Drag knobs to the <span class="text-red-500 font-black uppercase font-black italic font-black">RIGHT</span> for mixed funds and emotional decisions.</li>
                     <li>3. <span class="text-white font-black italic uppercase font-black italic">RESULT,</span> Move knobs back to the <span class="text-green-500 font-black uppercase font-black italic font-black">LEFT</span> as you install control.</li>
+                    <li class="pt-2 border-t border-slate-800 text-slate-500 uppercase text-center">The chart calculates your 12-month capital leakage in real-time.</li>
                 </ul>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start text-left max-w-4xl mx-auto">
                 <div class="space-y-12 text-white">
+                    <!-- SLIDER 1 -->
                     <div>
                         <div class="flex justify-between items-center mb-4">
                             <label class="mono text-[10px] font-black uppercase text-slate-400 tracking-widest italic font-black uppercase">Account Integrity</label>
@@ -169,6 +175,7 @@
                         <div class="knob-track bg-slate-800" id="track-shield"><div class="knob-handle" id="handle-shield" style="left: 80%;"></div></div>
                         <div class="flex justify-between mt-2 mono text-[8px] uppercase font-bold text-slate-600 italic font-black"><span>Systemic (Safe)</span><span>Chaos (Mixed)</span></div>
                     </div>
+                    <!-- SLIDER 2 -->
                     <div>
                         <div class="flex justify-between items-center mb-4">
                             <label class="mono text-[10px] font-black uppercase text-slate-400 tracking-widest italic font-black uppercase">Decision Friction</label>
@@ -177,23 +184,27 @@
                         <div class="knob-track bg-slate-800" id="track-lag"><div class="knob-handle" id="handle-lag" style="left: 70%;"></div></div>
                         <div class="flex justify-between mt-2 mono text-[8px] uppercase font-bold text-slate-600 italic font-black"><span>Logic-Led</span><span>Emotion-Led</span></div>
                     </div>
+                    <div class="result-panel p-8 industrial-shadow text-center">
+                        <div class="mono text-[10px] uppercase text-red-500 mb-4 font-black uppercase font-black text-center">Structural Classification,</div>
+                        <div class="text-3xl font-black italic tracking-tighter text-white uppercase text-center font-black text-center" id="class-title">Unprotected High-Performer</div>
+                    </div>
                 </div>
                 <div class="flex flex-col items-center">
                     <div class="chart-container"><canvas id="chaosChart"></canvas></div>
                     <div class="mt-12 text-6xl font-black italic tracking-tighter text-red-600 text-center font-black" id="tax-total">$0</div>
-                    <p class="mono text-[10px] text-slate-600 uppercase mt-4 italic uppercase font-black text-center text-center">Estimated 12-Month Capital Loss</p>
+                    <p class="mono text-[10px] text-slate-600 uppercase mt-4 italic uppercase font-black text-center text-center text-center">Estimated 12-Month Capital Loss</p>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 6: THE MANDATE (FULL VALUE STACK RESTORED) -->
+        <!-- SECTION 6: THE MANDATE (FINAL STACK - FULL SPECIFICATION) -->
         <section class="p-12 md:p-24 bg-slate-950 text-center">
             <a href="https://square.link/u/RDBg3rri" class="fear-banner p-10 mb-20 industrial-shadow font-black uppercase italic text-2xl md:text-4xl tracking-tighter hover:text-white transition-all block text-center uppercase font-black text-center">
                 LIMITED TIME OFFER ONLY. <br>
                 <span class="text-white font-black uppercase">I AM REMOVING THIS OFFER. PRICE INCREASES WHEN ALL POSITIONS ARE FILLED.</span>
             </a>
             <div class="max-w-4xl mx-auto">
-                <h3 class="text-5xl md:text-8xl font-black uppercase italic tracking-tighter leading-none italic mb-12 text-white text-center uppercase font-black text-center text-center">STOP THE <br><span class="text-red-600 italic underline decoration-8">LEAK.</span></h3>
+                <h3 class="text-5xl md:text-8xl font-black uppercase italic tracking-tighter leading-none italic mb-12 text-white text-center uppercase font-black text-center text-center uppercase font-black">STOP THE <br><span class="text-red-600 italic underline decoration-8">LEAK.</span></h3>
                 <div class="mb-12 p-1 border-4 border-red-600 bg-slate-900 text-left industrial-shadow">
                     <div class="bg-black text-white p-8 md:p-12 border border-slate-800">
                         <div class="text-center mb-12 border-b-4 border-red-600 pb-8 text-center text-center">
@@ -201,7 +212,7 @@
                             <p class="text-7xl md:text-9xl font-black italic tracking-tighter text-white uppercase text-center font-black text-center">$2,908</p>
                         </div>
                         <ul class="text-sm md:text-lg font-bold uppercase space-y-6 italic text-slate-400">
-                            <li class="flex justify-between border-b border-slate-800 pb-2 text-white font-black"><span>Systemized Accelerator + Tactical Toolkit,</span> <span class="text-white font-black">$1,997</span></li>
+                            <li class="flex justify-between border-b border-slate-800 pb-2 text-white font-black"><span>Accelerator + Tactical Toolkit,</span> <span class="text-white font-black">$1,997</span></li>
                             <li class="flex justify-between border-b border-slate-800 pb-2"><span>Universal Family Money Flow Manual + HVA Scripting,</span> <span class="text-white font-black">$777</span></li>
                             <li class="flex justify-between border-b border-slate-800 pb-2 text-white font-black"><span>Systemization Training Manual,</span> <span class="text-white font-black">$97</span></li>
                             <li class="flex justify-between border-b border-slate-800 pb-2 text-white font-black"><span>The OQEAD Blueprint (Book),</span> <span class="text-white font-black">$37</span></li>
