@@ -3,137 +3,486 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Quarter Equals A D$llar | Stop the Chaos Tax</title>
+    <title>OQEAD | Identify The Hidden Bank Fracture</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; color: #0f172a; }
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; overflow-x: hidden; }
         .mono { font-family: 'JetBrains Mono', monospace; }
-        .page-frame { border: 12px solid #0f172a; margin: 20px; background: white; position: relative; }
-        .industrial-shadow { box-shadow: 10px 10px 0px #0f172a; }
-        .blueprint-bg { background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 30px 30px; }
-        .electric-blue { color: #2563eb; }
-        .deadline-red { color: #dc2626; }
-        #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #0f172a; color: white; padding: 20px; z-index: 1000; border-top: 4px solid #2563eb; display: none; }
+        .page-frame { border: 12px solid #1e293b; min-height: 100vh; position: relative; background: #0f172a; }
+        .chart-container { position: relative; width: 100%; max-width: 600px; margin: auto; height: 320px; }
+        .industrial-shadow { box-shadow: 10px 10px 0px #000; }
+        .blueprint-bg { background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 30px 30px; }
+        .red-line { height: 4px; background: #dc2626; width: 80px; }
+        .knob-track { height: 12px; background: #1e293b; border-radius: 6px; position: relative; cursor: pointer; border: 1px solid #334155; }
+        .knob-handle { width: 26px; height: 26px; background: #dc2626; position: absolute; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; border: 3px solid #0f172a; box-shadow: 0 0 20px rgba(220, 38, 38, 0.5); z-index: 20; }
+        .result-panel { border: 2px solid #334155; background: #1e293b; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .profile-frame { border: 8px solid #1e293b; outline: 1px solid #dc2626; position: relative; width: 100%; max-width: 400px; margin: auto; background: #000; }
+        #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #0f172a; color: white; padding: 20px; z-index: 1000; border-top: 4px solid #dc2626; display: none; }
+        input { background: #1e293b !important; border: 2px solid #334155 !important; color: white !important; transition: all 0.2s; border-radius: 0 !important; }
+        input:focus { border-color: #dc2626 !important; outline: none; }
+        .fear-banner { background: #dc2626; color: white; font-weight: 900; animation: pulse-red 1.5s infinite; border: 4px solid #fff; cursor: pointer; display: block; text-decoration: none; text-align: center; }
+        @keyframes pulse-red { 0% { background: #dc2626; transform: scale(1); } 50% { background: #991b1b; transform: scale(1.01); } 100% { background: #dc2626; transform: scale(1); } }
+        
+        .legacy-frame { background: #000; border: 4px solid #1e293b; position: relative; min-height: 400px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #000; }
+        .legacy-frame img { width: 100%; height: auto; display: block; filter: grayscale(100%); transition: filter 0.5s ease; }
+        .legacy-frame:hover img { filter: grayscale(0%); }
+        
+        .cta-directive { border: 4px solid #dc2626; background: #1e293b; position: relative; }
+        .cta-directive::before { content: 'ACTION REQUIRED'; position: absolute; top: -12px; left: 20px; background: #dc2626; color: white; font-family: 'JetBrains Mono'; font-size: 10px; padding: 2px 8px; font-weight: 900; }
+        .instruction-box { background: #0f172a; border-left: 4px solid #dc2626; padding: 1.5rem; margin-bottom: 2rem; border-top: 1px solid #1e293b; border-bottom: 1px solid #1e293b; border-right: 1px solid #1e293b; }
+        .quote-block { border: 2px solid #334155; padding: 2rem; background: rgba(30, 41, 59, 0.3); font-style: italic; position: relative; border-left-width: 8px; border-left-color: #dc2626; }
+        
+        .price-text { text-shadow: 0 0 10px rgba(220, 38, 38, 0.4); }
+        .measurement-pill { background: #dc2626; color: white; padding: 2px 6px; font-size: 10px; font-weight: 900; }
+        
+        /* LOGO STYLING */
+        .brand-logo-container { border-top: 1px solid #1e293b; padding-top: 2rem; display: flex; flex-direction: column; align-items: center; width: 100%; }
+        .brand-logo { max-width: 280px; filter: contrast(1.1) brightness(1.1); box-shadow: 0 0 15px rgba(0,0,0,0.5); }
     </style>
 </head>
-<body class="blueprint-bg">
+<body class="blueprint-bg p-2 md:p-8">
 
-    <div class="page-frame">
+    <div class="page-frame mx-auto max-w-5xl overflow-hidden shadow-2xl">
         
-        <!-- HERO SECTION (SLC: PATTERN INTERRUPT) -->
-        <section class="max-w-4xl mx-auto px-6 py-24 text-center">
-            <p class="mono text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-6 italic">One Quarter Enterprises LLC // Phase 01</p>
+        <!-- SECTION 1: ABOVE THE FOLD (HORMOZI EFFICIENCY) -->
+        <header class="p-8 md:p-20 text-center bg-slate-950 relative border-b-8 border-black">
+            <div class="mono text-[10px] font-black uppercase tracking-[0.5em] text-red-500 mb-8 italic animate-pulse">
+                !! SYSTEM ALERT: YOUR BANK ACCOUNT IS A LEAKING VESSEL !!
+            </div>
             
-            <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase italic mb-8 text-slate-900">
-                STOP THE <br>
-                <span class="deadline-red underline decoration-8 underline-offset-8">CHAOS TAX</span>
+            <h1 class="text-4xl md:text-7xl font-black tracking-tighter leading-[0.95] uppercase italic mb-8 text-white text-center">
+                Identify The <span class="text-red-600 underline decoration-8 underline-offset-8 italic font-black uppercase">Hidden Bank Fracture</span>
             </h1>
-
-            <div class="h-3 w-48 bg-black mb-10 mx-auto"></div>
-
-            <p class="text-2xl md:text-3xl font-black leading-[1.3] text-slate-900 mb-12 uppercase italic">
-                A technical blueprint to plug your leaks and install the 3-Account Machine.
+            
+            <p class="text-xl md:text-3xl font-bold max-w-3xl mx-auto leading-tight italic text-slate-300 mb-12 uppercase text-center">
+                Stop the <span class="text-red-600 italic uppercase">"Revolving Door"</span> income cycle that makes 5-figures feel like survival.
             </p>
 
-            <div class="flex flex-col items-center opacity-80 mt-12">
-                <span class="mono text-xs uppercase tracking-[0.3em] font-bold mb-2">Read The Mandate Below</span>
-                <div class="animate-bounce text-4xl">↓</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start max-w-4xl mx-auto text-left">
+                <!-- PRIMARY AUTHORITY VISUAL (Donald Wiggins Solo) -->
+                <div class="profile-frame overflow-hidden grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl">
+                    <img src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t39.30808-6/608422848_122112039465133844_6432540429843652588_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=pgMlU7Bg8qQQ7kNvwEkzve0&_nc_oc=AdnQufEVM-KoRimLpq0wh4a2akIJujZjlDNcrmLHJ0KRSIG3Z9V2BshrHQ6Nx9_Jvng&_nc_zt=23&_nc_ht=scontent.fmkc1-1.fna&_nc_gid=hupeYaHuqKw3mzNJcALpFA&oh=00_AfrtYSjNYd2c2INFNl2nudtuWT7nGyL-M8KvK6385gklpA&oe=696FA340" 
+                         alt="Donald E.R. Wiggins" 
+                         referrerpolicy="no-referrer"
+                         crossorigin="anonymous"
+                         class="w-full h-auto object-cover block">
+                    <div class="absolute bottom-0 right-0 bg-red-600 text-white mono text-[10px] px-3 py-1 font-black uppercase italic">Wiggins, D.E.R. // Lead Architect</div>
+                </div>
+
+                <!-- HERO CAPTURE FORM (URGENCY ENHANCED) -->
+                <div class="text-left h-full">
+                    <div class="p-8 border-4 border-red-600 bg-slate-900 industrial-shadow h-full flex flex-col justify-center">
+                        <p class="mono text-xs uppercase font-black text-red-500 mb-6 italic underline tracking-widest text-center uppercase text-white">Verify Identity to Secure Accelerator Invitation</p>
+                        <form id="heroForm" onsubmit="handleMandate(event)" class="space-y-4">
+                            <input type="text" id="nameHero" required placeholder="FULL NAME" class="w-full p-4 mono text-sm uppercase">
+                            <input type="email" id="emailHero" required placeholder="PRIMARY EMAIL" class="w-full p-4 mono text-sm uppercase">
+                            
+                            <div class="pt-6">
+                                <div class="bg-black border-2 border-slate-700 p-6 mb-6 industrial-shadow relative overflow-hidden">
+                                    <div class="absolute top-0 right-0 bg-red-600 text-white mono text-[8px] px-2 py-1 font-black uppercase">Asset Stack</div>
+                                    <p class="mono text-[10px] uppercase font-black text-slate-500 mb-1 uppercase italic">TOTAL SYSTEM VALUATION,</p>
+                                    <p class="text-4xl font-black italic text-white mb-2 tracking-tighter">$2,908.00</p>
+                                    <p class="text-[10px] font-bold uppercase italic text-red-500 leading-tight">Secures OQEAD Accelerator invitation, Full Manual Stack, and exclusive Grade Card Proof.</p>
+                                </div>
+                                <button type="submit" class="w-full bg-red-600 text-white font-black text-3xl py-6 uppercase italic industrial-shadow hover:bg-white hover:text-black transition-all text-center price-text">
+                                    INSTALL FOR $37
+                                </button>
+                                <p class="text-[9px] mono text-red-500 mt-4 text-center uppercase tracking-tighter font-black underline italic">Warning: I am removing this offer. Price increases when positions are filled.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- SECTION 2: THE 19-YEAR STORY (THE UNFILTERED TRUTH) -->
+        <section id="story" class="grid grid-cols-1 md:grid-cols-2 border-b-8 border-black bg-white">
+            <div class="p-8 md:p-16 border-b-8 md:border-b-0 md:border-r-8 border-black flex flex-col justify-start bg-slate-900 text-slate-400">
+                <h2 class="text-3xl font-black uppercase italic mb-8 leading-none italic text-red-600 text-left">
+                    THE HOLLOW <br>REALIZATION.
+                </h2>
+                <div class="space-y-6 text-lg font-medium leading-relaxed italic text-left">
+                    <p>In 2004, I was a hip-hop artist, driven, but **Passing Over Opportunities Repeatedly** because I had zero structure to retain value.</p>
+                    <p>By 2006, I pivoted into sales and Network Marketing, recruited by a man who changed my internal operating system, **Damien Dewberry**. Under his leadership, I learned how to understand wealth and how to turn negative thoughts to positive. I hit a **passive 4-figure monthly income with a team of 32**.</p>
+                    <p>But because I was managing a personality-driven hustle instead of a non-human architecture, I watched that team of 32 fizzle down until only **one motivated non-producer** remained. For 19 years, off and on, I was fighting my own momentum because I had no machine until now.</p>
+                    <p>In 2016, I hit the wall. I mentored a student who executed with absolute precision. By their **first month**, they hit a 5-figure monthly revenue. By their **second month**, they hit it again. I helped them for over a year, watching them remain consistent until they finally went viral and got on the local news.</p>
+                    <div class="font-black text-white border-l-4 border-red-600 pl-4 bg-red-950/30 py-4 italic text-2xl mb-6">
+                        They scaled past my plateau, and I had to decline their call.
+                    </div>
+                    <p>I was failing in a coffee network marketing company at the time, promised compensation **I never contracted**. I was paying the **Anxiety Tax** long before I knew how to define it. I had to tell my student "No," because they had surpassed my own structural ceiling. I was an architect without a firewall.</p>
+                </div>
+            </div>
+
+            <!-- COLUMN RIGHT: LEGACY VISUAL STACK (HEARTBEAT > PIC > QUOTE > LOGO) -->
+            <div class="p-8 md:p-16 bg-slate-950 flex flex-col justify-start items-center">
+                
+                <!-- 01: THE HEARTBEAT (THE PROMISE) -->
+                <div class="border-4 border-slate-700 p-8 bg-slate-900 industrial-shadow text-center w-full mb-10">
+                    <h3 class="mono text-xs font-black uppercase text-red-500 mb-6 italic underline tracking-widest uppercase">// THE HEARTBEAT</h3>
+                    <p class="text-xl font-bold italic leading-tight text-slate-300 mb-6 uppercase text-center">
+                        "I made a promise to Damien Dewberry that I would find the heartbeat of this system. I spent 19 years searching for the leak. I found it."
+                    </p>
+                    <div class="h-1 w-20 bg-red-600 mx-auto"></div>
+                </div>
+
+                <!-- 02: THE VISUAL PROOF (REINFORCED CODE) -->
+                <div class="legacy-frame industrial-shadow mb-10 overflow-hidden w-full">
+                    <img data-visualcompletion="media-vc-image" class="w-full h-auto" alt="Wiggins & Dewberry Legacy Promise" referrerpolicy="origin-when-cross-origin" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t39.30808-6/615346087_122114521971133844_6532743372505297074_n.jpg?_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=127cfc&amp;_nc_ohc=mKdEQSjYke8Q7kNvwH-PPHT&amp;_nc_oc=AdnvS0x3EKPCI_Hj8J7pVqq7vgVhZ3YSvOWq9KtzMt4EETq7dOGv7DJ5iARfzfKOOtU&amp;_nc_zt=23&amp;_nc_ht=scontent.fmkc1-1.fna&amp;_nc_gid=0OdXlRPmOOun0MNZu6WAtA&amp;oh=00_AfpNrDJ3dReUKWhrVPu1bOqFM1pNYELuAN1Q7OtOBSmZ8A&amp;oe=696F79FD" onerror="handleImageError(this, 'promise')">
+                </div>
+
+                <!-- 03: THE BLUEPRINT QUOTE (CHAPTER 1) -->
+                <div class="quote-block mb-10 w-full">
+                    <p class="text-xl font-bold italic text-slate-300 leading-tight uppercase text-center">
+                        "Wealth is not an event of income; it is an outcome of architecture. You don't need more quarters; you need a machine that retention recognizes."
+                    </p>
+                    <p class="mono text-[10px] text-red-600 mt-4 font-black uppercase tracking-widest text-right uppercase">— THE MANDATE, CH. 1</p>
+                </div>
+
+                <!-- 04: QUARTER ENTERPRISES LOGO -->
+                <div class="brand-logo-container w-full" id="logoContainer">
+                    <img data-visualcompletion="media-vc-image" class="brand-logo" alt="Quarter Enterprises LLC Logo" referrerpolicy="no-referrer" crossorigin="anonymous" src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t39.30808-6/592398588_122104809297133844_2088303636807896910_n.jpg?stp=cp6_dst-jpg_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=833d8c&amp;_nc_ohc=6B7yB9mUmYsQ7kNvwGEqeNl&amp;_nc_oc=AdnWatsjzw0GO5puLVDKexQCFNHogqvy4IiWsothde0j59qNLXbW8K-_gh77Gm4DzeU&amp;_nc_zt=23&amp;_nc_ht=scontent.fmkc1-1.fna&amp;_nc_gid=XKteQUaia-foKcNU0Ck2Jg&amp;oh=00_AfrodYA3QwNeqHAqXAg3oG51f-Jxs2h_2N2QIUPhAsIIRw&amp;oe=696FA0D7" onerror="handleImageError(this, 'logo')">
+                    <p class="mono text-[8px] uppercase tracking-[0.4em] text-slate-600 mt-4 font-black text-center">Identity • Architecture • Mechanics</p>
+                </div>
+
+                <div class="mt-8 opacity-50 border-t border-slate-800 pt-8 w-full text-center">
+                    <p class="mono text-[8px] uppercase tracking-widest leading-relaxed text-slate-500 italic font-black uppercase">
+                        Diagnostic, Hidden Bank Fracture, Authorization, Wiggins, D.E.R., Validation, 19-Year Narrative.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <!-- THE MANDATE (SLC: THE STORY & EMOTIONAL HOOK) -->
-        <section class="max-w-3xl mx-auto px-6 py-10 border-t-4 border-black">
-            <div class="space-y-8 text-xl font-medium leading-relaxed text-slate-900">
-                <p>
-                    In 2004, I was a hip-hop artist. I was spending money faster than I could make it, chasing a dream with zero structure. By 2006, I stepped into the world of sales and networking, trying to finally find the floor.
-                </p>
-
-                <div class="border-4 border-black p-8 bg-slate-50 industrial-shadow italic font-bold">
-                    "I made a promise to Mr. Dewberry that I would find the heartbeat of this system. Not just for myself, but to ensure that anyone with 'The Quarter' could build their D$llar. After watching my advice build 5-figure months for others while I was still stuck in the cycle, I knew I had to codify the truth."
+        <!-- SECTION 3: THE BRIDGE -->
+        <section class="p-12 md:p-24 bg-slate-900 border-b-8 border-black text-center relative overflow-hidden">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="mono text-xs font-black text-red-500 uppercase mb-6 tracking-widest italic animate-pulse text-center">Bridge Module // Technical Handoff</div>
+                <h3 class="text-3xl md:text-5xl font-black uppercase italic mb-10 tracking-tighter italic text-white leading-tight text-center">
+                    The student’s viral success was the proof. <br>My decline of their call was the <span class="text-red-600 underline decoration-4 underline-offset-8 uppercase italic font-black">diagnosis.</span>
+                </h3>
+                
+                <div class="space-y-8 text-lg font-bold text-slate-400 italic leading-relaxed mb-12 text-center">
+                    <p>It proved that without a system, more revenue just creates a more expensive crisis. You are likely in that same "Mastery Gap" right now, working hard, making 5-figures, but feeling that vibration in your chest because you can't see where the value is escaping.</p>
+                    <p class="text-white uppercase tracking-tight font-black text-center text-2xl italic">"Before we can install the hardware, we have to find the holes in your pockets."</p>
                 </div>
 
-                <p>
-                    I stopped chasing companies and started building a machine. After 19 years of research, I have identified the only way wealth actually exists when you're starting from zero. Everything else is just noise.
-                </p>
+                <!-- SURGICAL DIRECTIVE BLOCK -->
+                <div class="cta-directive p-8 md:p-12 industrial-shadow">
+                    <div class="text-2xl md:text-4xl font-black text-white uppercase italic tracking-tighter leading-none mb-4 text-center italic">
+                        QUANTIFY THE LEAK IMMEDIATELY.
+                    </div>
+                    <p class="mono text-[10px] text-red-600 font-bold tracking-[0.3em] uppercase italic text-center">>> Begin the Structural Autopsy Below <<</p>
+                    <div class="mt-6 animate-bounce text-red-600 text-3xl text-center">↓</div>
+                </div>
+            </div>
+        </section>
 
-                <!-- SLC: FASCINATIONS (THE DISCOVERY - FOCUSED ON THE HEARTBEAT) -->
-                <div class="bg-white border-2 border-black p-8 my-12">
-                    <h3 class="text-2xl font-black uppercase italic mb-6 text-blue-600 tracking-tighter">Inside the Discovery:</h3>
-                    <ul class="space-y-4 font-bold uppercase text-sm tracking-tight text-slate-800">
-                        <li class="flex items-start">
-                            <span class="electric-blue mr-3 font-mono">>></span> 
-                            Why "Budgeting" is a Management Class trap.
-                        </li>
-                        <li class="flex items-start">
-                            <span class="electric-blue mr-3 font-mono">>></span> 
-                            The 3-Account "Heartbeat" Schematic that stops the Chaos Tax.
-                        </li>
-                        <li class="flex items-start">
-                            <span class="electric-blue mr-3 font-mono">>></span> 
-                            The Chaos Tax Audit: Identify exactly where your bank account is leaking capital.
-                        </li>
+        <!-- SECTION 4: THE DIAGNOSTIC -->
+        <section id="diagnostic" class="p-8 md:p-16 border-b-8 border-black bg-slate-950 text-center">
+            <div class="mb-12">
+                <h3 class="text-4xl font-black uppercase italic mb-8 text-white italic tracking-tighter uppercase text-center">01. AUDIT YOUR FRICTION</h3>
+                
+                <!-- NEW USER INSTRUCTIONS -->
+                <div class="instruction-box max-w-xl mx-auto text-left industrial-shadow border border-slate-800">
+                    <p class="mono text-[10px] font-black text-red-500 uppercase tracking-widest mb-4 italic underline underline-offset-4 uppercase text-center">!! COMMAND: AUDIT PROTOCOL !!</p>
+                    <ul class="text-xs text-slate-300 uppercase font-bold space-y-3 italic">
+                        <li>1. <span class="text-white font-black italic uppercase">IDENTIFY,</span> Locate the red knobs on the tracks below.</li>
+                        <li>2. <span class="text-white font-black italic uppercase">QUANTIFY,</span> Drag the knobs to the <span class="text-red-500 font-black">RIGHT</span> to match your level of mixed funds and emotional decision making.</li>
+                        <li>3. <span class="text-white font-black italic uppercase">RESULT,</span> Move knobs back to the <span class="text-green-500 font-black">LEFT</span> as you install systematic control.</li>
+                        <li class="pt-2 border-t border-slate-800 text-slate-500 uppercase text-center">The chart calculates your 12-month capital leakage in real-time.</li>
                     </ul>
                 </div>
+            </div>
 
-                <p class="text-center font-black uppercase italic text-blue-600 pt-8">
-                    Request your copy of the Schematic below to begin.
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start text-left">
+                <div class="space-y-12 text-white">
+                    <!-- SLIDER 1 -->
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <label class="mono text-[10px] font-black uppercase text-slate-400 tracking-widest italic uppercase">Account Integrity (Mixing Survival & Growth)</label>
+                            <span class="measurement-pill mono" id="val-shield">80%</span>
+                        </div>
+                        <div class="knob-track bg-slate-800" id="track-shield">
+                            <div class="knob-handle" id="handle-shield" style="left: 80%;"></div>
+                        </div>
+                        <div class="flex justify-between mt-2 mono text-[8px] uppercase font-bold text-slate-600 italic">
+                            <span>Systemic (Safe)</span>
+                            <span>Chaos (Mixed)</span>
+                        </div>
+                    </div>
+
+                    <!-- SLIDER 2 -->
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <label class="mono text-[10px] font-black uppercase text-slate-400 tracking-widest italic uppercase">Decision Friction (Moving Money on Emotion)</label>
+                            <span class="measurement-pill mono" id="val-lag">70%</span>
+                        </div>
+                        <div class="knob-track bg-slate-800" id="track-lag">
+                            <div class="knob-handle" id="handle-lag" style="left: 70%;"></div>
+                        </div>
+                        <div class="flex justify-between mt-2 mono text-[8px] uppercase font-bold text-slate-600 italic">
+                            <span>Logic-Led (Manual)</span>
+                            <span>Emotion-Led (Friction)</span>
+                        </div>
+                    </div>
+
+                    <div class="result-panel p-8 industrial-shadow">
+                        <div class="mono text-[10px] uppercase text-red-500 mb-4 tracking-widest font-black italic text-center underline uppercase">Structural Classification,</div>
+                        <div class="text-3xl font-black italic tracking-tighter text-white mb-6 uppercase text-center" id="class-title">Unprotected High-Performer</div>
+                        <div class="space-y-4 text-xs mono uppercase text-slate-400 leading-relaxed italic text-center" id="class-desc">
+                            You are managing a leak, not building a machine, Your wealth is a variable, not a structural outcome, You are paying the maximum Chaos Tax.
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="chart-container">
+                        <canvas id="chaosChart"></canvas>
+                    </div>
+                    <div class="mt-12 text-center">
+                        <div class="mono text-[10px] uppercase text-slate-500 mb-2 italic font-black uppercase tracking-widest italic uppercase text-center">Total Capital Loss to Chaos Tax,</div>
+                        <div class="text-6xl font-black italic tracking-tighter text-red-600 text-center" id="tax-total">$0</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: HARDWARE -->
+        <section class="p-8 md:p-24 border-b-8 border-black bg-white text-slate-900 text-center">
+            <h3 class="text-3xl md:text-5xl font-black uppercase italic mb-12 tracking-tighter italic uppercase text-center">THE 3-ACCOUNT HARDWARE</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="border-4 border-black p-6 bg-slate-50 industrial-shadow">
+                    <h4 class="text-xl font-black uppercase italic mb-4 italic text-red-600 uppercase text-center">01, The Shield</h4>
+                    <p class="text-xs font-bold uppercase leading-relaxed text-slate-600 italic text-center">Operating firewall, Household survival and business liability are legally separated, No debit card on the engine side.</p>
+                </div>
+                <div class="border-4 border-black p-6 bg-slate-50 industrial-shadow">
+                    <h4 class="text-xl font-black uppercase italic mb-4 italic text-red-600 uppercase text-center">02, The Vault</h4>
+                    <p class="text-xs font-bold uppercase leading-relaxed text-slate-600 italic text-center">Revenue control center, Blocks impulse extraction, Enforces growth rules that motivation cannot override.</p>
+                </div>
+                <div class="border-4 border-black p-6 bg-slate-50 industrial-shadow">
+                    <h4 class="text-xl font-black uppercase italic mb-4 italic text-red-600 uppercase text-center">03, The Engine</h4>
+                    <p class="text-xs font-bold uppercase leading-relaxed text-slate-600 italic text-center">Legacy container, One-way transfers only, Where capital compounds uninterrupted by the friction of survival.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: THE MANDATE (SLC, FINAL OFFER) -->
+        <section class="p-12 md:p-24 bg-slate-950 text-center">
+            
+            <!-- SCARCITY BANNER AS BUTTON TO SQUARE -->
+            <a href="https://square.link/u/RDBg3rri" class="fear-banner p-10 mb-20 industrial-shadow font-black uppercase italic text-2xl md:text-4xl tracking-tighter hover:text-white transition-all block text-center">
+                LIMITED TIME OFFER ONLY. <br>
+                <span class="text-white">PRICE INCREASES WHEN ALL POSITIONS ARE FILLED.</span>
+            </a>
+
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-5xl md:text-8xl font-black uppercase italic tracking-tighter leading-none italic mb-12 text-white uppercase text-center">
+                    STOP THE <br><span class="text-red-600 italic underline decoration-8">LEAK.</span>
+                </h3>
+                
+                <p class="text-xl md:text-3xl font-bold italic leading-tight text-slate-400 mb-16 italic uppercase text-center">
+                    Secure your "First Mover Advantage" before I remove this offer.
                 </p>
+
+                <div class="mb-12 p-1 border-4 border-red-600 bg-slate-900 text-left industrial-shadow">
+                    <div class="bg-black text-white p-8 md:p-12 border border-slate-800">
+                        <div class="text-center mb-12 border-b-4 border-red-600 pb-8">
+                            <p class="mono text-sm uppercase font-black text-red-500 mb-2 italic tracking-widest uppercase">TOTAL SYSTEM VALUATION</p>
+                            <p class="text-7xl md:text-9xl font-black italic tracking-tighter text-white uppercase">$2,908</p>
+                        </div>
+
+                        <ul class="text-sm md:text-lg font-bold uppercase space-y-6 italic text-slate-400">
+                            <li class="flex justify-between border-b border-slate-800 pb-2"><span>Systemized Accelerator + Tactical Toolkit,</span> <span class="text-white font-black">$1,997</span></li>
+                            <li class="flex justify-between border-b border-slate-800 pb-2"><span>Universal Family Flow Manual + HVA Scripting,</span> <span class="text-white font-black">$777</span></li>
+                            <li class="flex justify-between border-b border-slate-800 pb-2"><span>Systemization Training Manual,</span> <span class="text-white font-black">$97</span></li>
+                            <li class="flex justify-between border-b border-slate-800 pb-2"><span>The OQEAD Blueprint (Book),</span> <span class="text-white font-black">$37</span></li>
+                            <li class="flex justify-between pt-6 text-white font-black italic uppercase text-xl">
+                                <span>Exclusive Grade Card Proof,</span>
+                                <span class="text-green-500 font-black">INCLUDED</span>
+                            </li>
+                            <li class="flex justify-between text-white font-black italic uppercase text-xl">
+                                <span>The Capital Flow Manual,</span>
+                                <span class="text-green-500 font-black">INCLUDED</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <a href="https://square.link/u/RDBg3rri" class="inline-flex w-full bg-red-600 text-white font-black text-3xl md:text-7xl py-12 md:py-16 uppercase italic industrial-shadow hover:bg-white hover:text-black transition-all justify-center items-center text-center leading-none price-text">
+                    INSTALL FOR $37
+                </a>
+
+                <div class="mt-12 bg-blue-600 text-white p-6 mono text-xs md:text-lg font-bold uppercase italic industrial-shadow text-center">
+                    60-DAY IMPLEMENTATION GUARANTEE: DOUBLE YOUR MONEY BACK IF THE FRACTURE REMAINS.
+                </div>
             </div>
         </section>
 
-        <!-- THE INTAKE FORM (SLC: THE CALL TO ACTION) -->
-        <section class="max-w-4xl mx-auto px-6 pb-24">
-            <div class="max-w-md mx-auto border-4 border-black p-8 bg-white industrial-shadow">
-                <span class="bg-red-600 text-white text-xs mono px-4 py-1 font-bold italic uppercase">FREE SCHEMATIC</span>
-                <h4 class="text-3xl font-black mt-4 uppercase italic text-slate-900 mb-6 leading-none">Request The Capital Flow</h4>
-                <!-- MailerLite Form Embed (jpkeHU) -->
-                <div class="ml-embedded" data-form="jpkeHU"></div>
+        <!-- FOOTER -->
+        <footer class="p-12 md:p-24 bg-black border-t-4 border-red-900 text-left">
+            <div class="max-w-4xl mx-auto border-l-4 border-red-900 pl-8 text-slate-500">
+                <div class="mono text-[10px] font-black uppercase text-slate-400 mb-6 italic italic text-slate-600 uppercase tracking-widest text-center md:text-left">Architecture Status: Critical Leakage Detected</div>
+                <div class="space-y-4 text-[9px] mono uppercase leading-relaxed italic text-slate-700 text-center md:text-left">
+                    <p>Technical Disclosure: Results are not typical, This diagnostic reflects 19 years of observational research, Your outcomes depend entirely on your discipline and adherence to the architecture.</p>
+                    <p>Disclaimer: Donald E.R. Wiggins and One Quarter Enterprises LLC are not financial advisors, This is a structural framework, not financial advice, Consult with a qualified professional before making significant financial decisions.</p>
+                    <p class="text-slate-400 mt-8 font-black tracking-widest text-center md:text-left uppercase italic uppercase">© 2026 One Quarter Enterprises LLC. All Rights Reserved.</p>
+                </div>
             </div>
-        </section>
-
-        <footer class="text-center py-12 border-t-4 border-black bg-white">
-            <p class="text-[10px] font-black uppercase text-slate-400 tracking-[0.5em]">System Disclosure & Liability Waiver
-
-The results mentioned in this preview (5-figure revenue, viral growth, media coverage) reflect specific execution and market conditions. They are exceptional results and are not typical for all users. Your financial outcomes will vary based on your business model, effort, and adherence to the architecture.
-
-Author's Disclaimer: Donald E.R. Wiggins and One Quarter Enterprises LLC are not financial advisors, certified public accountants, lawyers, or registered investment professionals. All content, recommendations, and blueprints are for educational and informational purposes only and should not be considered professional financial or legal advice. Always consult with a qualified professional before making significant financial decisions.
-
-Proprietary Notice: The OQEAD System is protected intellectual property. Unauthorized distribution of this material is prohibited.
-
-© 2026 One Quarter Enterprises LLC. All Rights Reserved</p>
         </footer>
+
     </div>
 
     <!-- COOKIE BANNER -->
     <div id="cookie-banner">
         <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-white">
-            <p class="mono text-xs uppercase tracking-widest">System Alert: This site uses cookies to optimize your logic flow.</p>
-            <div class="flex gap-4">
-                <button onclick="acceptCookies()" class="bg-blue-600 px-6 py-2 mono text-xs font-bold uppercase hover:bg-blue-700 transition">Accept</button>
-            </div>
+            <p class="mono text-xs uppercase tracking-widest font-bold text-white italic text-white uppercase">System Alert: This site uses cookies to optimize your logic flow.</p>
+            <button onclick="acceptCookies()" class="bg-red-600 px-6 py-2 mono text-xs font-bold uppercase hover:bg-red-700 transition">Accept</button>
         </div>
     </div>
 
-    <!-- SCRIPTS MOVED TO BOTTOM FOR SPEED -->
     <script>
-        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},
-        l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
-        }) (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-        ml('account', '1924779');
-
-        window.chatbaseConfig = { chatbotId: "LqQm-wIUNIr8Atcfigm0N" }
+        function handleMandate(e) { e.preventDefault(); window.location.href = "https://square.link/u/RDBg3rri"; }
         
-        function acceptCookies() {
-            document.cookie = "cookie_consent=accepted; max-age=2592000; path=/";
-            document.getElementById("cookie-banner").style.display = "none";
+        function acceptCookies() { 
+            document.cookie = "cookie_consent=accepted; max-age=2592000; path=/"; 
+            const banner = document.getElementById("cookie-banner"); 
+            if (banner) banner.style.display = "none"; 
         }
 
-        window.onload = function() { 
-            if (!document.cookie.includes("cookie_consent")) {
-                document.getElementById("cookie-banner").style.display = "block"; 
+        function handleImageError(img, type) {
+            if (type === 'logo') {
+              img.parentElement.innerHTML = `
+                <div class="p-6 border-2 border-slate-700 bg-slate-900 flex flex-col items-center justify-center industrial-shadow">
+                    <div class="text-white font-black text-2xl mono tracking-tighter italic uppercase text-center">QUARTER ENTERPRISES LLC</div>
+                    <div class="h-1 w-20 bg-red-600 mt-2"></div>
+                </div>
+              `;
+            } else if (type === 'promise') {
+               img.parentElement.innerHTML = `
+                <div class="p-10 text-center flex flex-col items-center justify-center h-full">
+                    <div class="text-red-600 text-6xl mb-4 italic font-black mono tracking-tighter uppercase italic">"The Promise"</div>
+                    <p class="text-slate-400 text-xs mono uppercase italic tracking-widest leading-relaxed text-center">
+                        Architecture visualized through 19 years of research.<br>
+                        [ LEGACY PHOTO: WIGGINS & DEWBERRY ]
+                    </p>
+                </div>
+               `;
             }
+        }
+
+        let shieldIntegrity = 80, decisionLag = 70, chart;
+
+        function initChart() {
+            const ctx = document.getElementById('chaosChart').getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Year 1', 'Year 5', 'Year 10', 'Year 19'],
+                    datasets: [{
+                        label: 'Chaos Tax Loss ($)',
+                        data: calculateTaxPath(),
+                        backgroundColor: '#dc2626',
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { display: false }, x: { grid: { display: false }, ticks: { font: { family: 'JetBrains Mono', size: 9 }, color: '#475569' } } }
+                }
+            });
+        }
+
+        function calculateTaxPath() { const base = (shieldIntegrity + decisionLag) * 250; return [base, base * 6, base * 18, base * 45]; }
+
+        function updateDiagnostic() {
+            const total = (shieldIntegrity + decisionLag) * 4500;
+            const displayTotal = document.getElementById('tax-total');
+            if (displayTotal) displayTotal.innerText = "$" + total.toLocaleString();
+            
+            const shieldEl = document.getElementById('val-shield');
+            const lagEl = document.getElementById('val-lag');
+            if(shieldEl) shieldEl.innerText = Math.round(shieldIntegrity) + "%";
+            if(lagEl) lagEl.innerText = Math.round(decisionLag) + "%";
+
+            const title = document.getElementById('class-title');
+            const desc = document.getElementById('class-desc');
+            const score = shieldIntegrity + decisionLag;
+
+            if(title && desc) {
+                if(score > 120) {
+                    title.innerText = "Unprotected High-Performer (CRITICAL)";
+                    title.className = "text-3xl font-black italic tracking-tighter text-red-600 mb-6 uppercase text-center";
+                    desc.innerHTML = "You are managing a leak, not building a machine, Survival logic is overriding legacy logic, You are scaling a structural glitch.";
+                } else if (score > 60) {
+                    title.innerText = "Revolving Door Earner";
+                    title.className = "text-3xl font-black italic tracking-tighter text-yellow-500 mb-6 uppercase text-center";
+                    desc.innerHTML = "Momentum is being neutralized by friction, Architecture is present but unenforced, You are paying a moderate Chaos Tax.";
+                } else {
+                    title.innerText = "Mastery Class Apprentice";
+                    title.className = "text-3xl font-black italic tracking-tighter text-green-500 mb-6 uppercase text-center";
+                    desc.innerHTML = "- Minimal structural friction detected, Logic is beginning to override impulse, Install the Machine to finalize the architecture.";
+                }
+            }
+
+            if (chart) {
+                chart.data.datasets[0].data = calculateTaxPath();
+                chart.update();
+            }
+        }
+
+        function setupSliders() {
+            const setup = (trackId, handleId, callback) => {
+                const track = document.getElementById(trackId);
+                const handle = document.getElementById(handleId);
+                if (!track || !handle) return;
+
+                const move = (e) => {
+                    const rect = track.getBoundingClientRect();
+                    let clientX = e.clientX || (e.touches && e.touches[0].clientX);
+                    let x = clientX - rect.left;
+                    x = Math.max(0, Math.min(x, rect.width));
+                    const p = (x / rect.width) * 100;
+                    handle.style.left = p + "%";
+                    callback(p);
+                };
+                
+                const start = (e) => {
+                    move(e);
+                    window.addEventListener('mousemove', move);
+                    window.addEventListener('mouseup', stop);
+                    window.addEventListener('touchmove', move, { passive: false });
+                    window.addEventListener('touchend', stop);
+                };
+                
+                const stop = () => {
+                    window.removeEventListener('mousemove', move);
+                    window.removeEventListener('mouseup', stop);
+                    window.removeEventListener('touchmove', move);
+                    window.removeEventListener('touchend', stop);
+                };
+                
+                track.addEventListener('mousedown', start);
+                track.addEventListener('touchstart', start, { passive: false });
+            };
+            setup('track-shield', 'handle-shield', (p) => { shieldIntegrity = p; updateDiagnostic(); });
+            setup('track-lag', 'handle-lag', (p) => { decisionLag = p; updateDiagnostic(); });
+        }
+
+        window.onload = () => {
+            const banner = document.getElementById("cookie-banner");
+            if (banner) {
+              if (!document.cookie.includes("cookie_consent")) {
+                  banner.style.display = "block"; 
+              }
+            }
+            initChart();
+            setupSliders();
+            updateDiagnostic();
         };
+
+        window.chatbaseConfig = { chatbotId: "LqQm-wIUNIr8Atcfigm0N" };
     </script>
     <script src="https://www.chatbase.co/embed.min.js" id="LqQm-wIUNIr8Atcfigm0N" defer></script>
 </body>
