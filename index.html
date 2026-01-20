@@ -12,7 +12,7 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; overflow-x: hidden; }
         .mono { font-family: 'JetBrains Mono', monospace; }
-        .page-frame { border: 12px solid #1e293b; min-height: 100vh; position: relative; background: #0f172a; }
+        .page-frame { border: 12px solid #1e293b; min-height: 100vh; position: relative; background: #0f172a; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
         .chart-container { position: relative; width: 100%; max-width: 800px; margin: auto; height: 350px; }
         .industrial-shadow { box-shadow: 10px 10px 0px #000; }
         .blueprint-bg { background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 30px 30px; }
@@ -42,8 +42,7 @@
         .alpha-pill-box { border: 1px solid #334155; padding: 1rem; background: #0f172a; transition: border-color 0.3s ease; }
         .alpha-pill-box:hover { border-color: #dc2626; }
 
-        .skeptic-notice { border: 1px dashed #334155; padding: 1.5rem; background: rgba(30, 41, 59, 0.2); }
-        
+        .skeptic-notice { border: 1px dashed #dc2626; padding: 1.5rem; background: rgba(220, 38, 38, 0.05); }
         #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #0f172a; color: white; padding: 20px; z-index: 1000; border-top: 4px solid #dc2626; display: none; }
         .disclaimer-text { font-size: 10px; color: #64748b; line-height: 1.5; text-align: justify; border-top: 1px solid #1e293b; padding-top: 1.5rem; margin-top: 2rem; }
     </style>
@@ -55,16 +54,10 @@
         <div class="modal-box industrial-shadow text-center">
             <div class="mono text-[10px] font-black text-red-500 uppercase tracking-widest mb-6 italic underline uppercase font-black">!! CRITICAL INTERRUPT: ALPHA 6 SELECTION !!</div>
             <h2 class="text-3xl font-black uppercase italic leading-[0.9] text-white mb-6 text-center">THE MACHINE IS STILL DISCONNECTED.</h2>
-            <p class="text-slate-400 italic mb-8 leading-relaxed text-sm text-center">
-                Architect, you are navigating away while the **Chaos Tax** is still active in your accounts. I am only selecting 4 more Alphas. Secure the hardware now.
-            </p>
+            <p class="text-slate-400 italic mb-8 leading-relaxed text-sm text-center">Architect, secure the hardware before you exit. I am only selecting 4 more Alphas.</p>
             <div class="space-y-4">
-                <a href="https://square.link/u/RDBg3rri" class="block w-full bg-red-600 text-white font-black py-8 text-2xl uppercase italic text-center hover:bg-white hover:text-black transition-all">
-                    SECURE YOUR ALPHA 6 SEAT ($37)
-                </a>
-                <button onclick="closeExitModal()" class="block w-full text-slate-600 mono text-[10px] uppercase font-bold hover:text-red-500 transition tracking-tighter">
-                    [ Proceed to exit and accept the capital leakage ]
-                </button>
+                <a href="https://square.link/u/gCCvyGpp" class="block w-full bg-red-600 text-white font-black py-8 text-2xl uppercase italic text-center hover:bg-white hover:text-black transition-all">SECURE ALPHA 6 SEAT ($37)</a>
+                <button onclick="closeExitModal()" class="block w-full text-slate-600 mono text-[10px] uppercase font-bold hover:text-red-500 transition tracking-tighter">[ Proceed to exit and accept the capital leakage ]</button>
             </div>
         </div>
     </div>
@@ -73,37 +66,40 @@
         
         <!-- SECTION 1: HEADER -->
         <header class="p-8 md:p-20 text-center bg-slate-950 relative border-b-8 border-black text-center">
-            <div class="mono text-[10px] font-black uppercase tracking-[0.5em] text-red-500 mb-8 italic animate-pulse">
-                !! PHASE 1: ALPHA 6 FOUNDING ARCHITECT SEARCH !!
-            </div>
+            <div class="mono text-[10px] font-black uppercase tracking-[0.5em] text-red-500 mb-8 italic animate-pulse">!! PHASE 1: ALPHA 6 FOUNDING ARCHITECT SEARCH !!</div>
             <h1 class="text-4xl md:text-7xl font-black tracking-tighter leading-[0.95] uppercase italic mb-8 text-white text-center">
                 Identify The <span class="text-red-600 underline decoration-8 underline-offset-8 italic font-black uppercase">Hidden Bank Fracture</span>
             </h1>
-            <p class="text-xl md:text-3xl font-bold max-w-3xl mx-auto leading-tight italic text-slate-300 mb-12 uppercase text-center">
-                Stop the <span class="text-red-600 italic uppercase">"Revolving Door"</span> income cycle and secure your Founding Architect seat.
-            </p>
+            <p class="text-xl md:text-3xl font-bold max-w-3xl mx-auto leading-tight italic text-slate-300 mb-12 uppercase text-center">Stop the <span class="text-red-600 italic uppercase">"Revolving Door"</span> income cycle and secure your Founding Architect seat.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start max-w-4xl mx-auto text-left">
                 <div class="profile-frame overflow-hidden grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl">
-                    <img src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t39.30808-6/608422848_122112039465133844_6432540429843652588_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=pgMlU7Bg8qQQ7kNvwEkzve0&_nc_oc=AdnQufEVM-KoRimLpq0wh4a2akIJujZjlDNcrmLHJ0KRSIG3Z9V2BshrHQ6Nx9_Jvng&_nc_zt=23&_nc_ht=scontent.fmkc1-1.fna&_nc_gid=hupeYaHuqKw3mzNJcALpFA&oh=00_AfrtYSjNYd2c2INFNl2nudtuWT7nGyL-M8KvK6385gklpA&oe=696FA340" 
-                         alt="Donald E.R. Wiggins" referrerpolicy="no-referrer" crossorigin="anonymous" class="w-full h-auto object-cover block">
+                    <img src="https://scontent.fmkc1-1.fna.fbcdn.net/v/t39.30808-6/608422848_122112039465133844_6432540429843652588_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=pgMlU7Bg8qQQ7kNvwEkzve0&_nc_oc=AdnQufEVM-KoRimLpq0wh4a2akIJujZjlDNcrmLHJ0KRSIG3Z9V2BshrHQ6Nx9_Jvng&_nc_zt=23&_nc_ht=scontent.fmkc1-1.fna&_nc_gid=hupeYaHuqKw3mzNJcALpFA&oh=00_AfrtYSjNYd2c2INFNl2nudtuWT7nGyL-M8KvK6385gklpA&oe=696FA340" alt="Lead Architect" referrerpolicy="no-referrer" crossorigin="anonymous" class="w-full h-auto object-cover block">
                     <div class="absolute bottom-0 right-0 bg-red-600 text-white mono text-[10px] px-3 py-1 font-black uppercase italic">Wiggins, D.E.R. // Lead Architect</div>
                 </div>
 
                 <div class="text-left h-full">
-                    <div class="p-8 border-4 border-red-600 bg-slate-900 industrial-shadow h-full flex flex-col justify-center">
-                        <p class="mono text-xs uppercase font-black text-red-500 mb-6 italic underline tracking-widest text-center uppercase text-white font-black">Founding Architect Application Status</p>
-                        <form onsubmit="handleMandate(event)" class="space-y-4">
-                            <input type="text" required placeholder="FULL NAME" class="w-full p-4 mono text-sm uppercase text-white bg-slate-800">
-                            <input type="email" required placeholder="PRIMARY EMAIL" class="w-full p-4 mono text-sm uppercase text-white bg-slate-800">
-                            <div class="pt-6">
-                                <div class="bg-black border-2 border-slate-700 p-6 mb-6 industrial-shadow relative">
-                                    <p class="mono text-[10px] uppercase font-black text-slate-500 mb-1 uppercase font-black italic">FOUNDING SUBSIDY PRICE,</p>
-                                    <p class="text-4xl font-black italic text-white mb-2 tracking-tighter">$37.00</p>
-                                    <p class="text-[10px] font-bold uppercase italic text-red-500">MSRP: $2,908. Subsidized entry for Alpha 6 Case Study Portfolio.</p>
+                    <div id="mlb2-35113893" class="p-8 border-4 border-red-600 bg-slate-900 industrial-shadow h-full flex flex-col justify-center ml-subscribe-form ml-subscribe-form-35113893">
+                        <p class="mono text-xs uppercase font-black text-red-500 mb-6 italic underline tracking-widest text-center uppercase text-white font-black">Verify Identity to Secure Accelerator Invitation</p>
+                        <!-- NATIVE MAILERLITE FORM INTEGRATION -->
+                        <form class="ml-block-form space-y-4" action="https://assets.mailerlite.com/jsonp/1924779/forms/175114001485661320/subscribe" data-code="" method="post" target="_blank">
+                            <div class="ml-form-formContent">
+                                <div class="ml-form-fieldRow mb-4">
+                                    <input type="text" name="fields[name]" required placeholder="FULL NAME" class="w-full p-4 mono text-sm uppercase text-white bg-slate-800 border-2 border-slate-700">
                                 </div>
-                                <button type="submit" class="w-full bg-red-600 text-white font-black text-2xl py-6 uppercase italic industrial-shadow hover:bg-white hover:text-black transition-all text-center">SECURE YOUR ALPHA 6 SEAT ($37)</button>
-                                <p class="text-[9px] mono text-red-500 mt-4 text-center uppercase tracking-tighter font-black underline italic">Warning: Removing offer when 4 remaining seats are filled.</p>
+                                <div class="ml-form-fieldRow mb-4">
+                                    <input type="email" name="fields[email]" required placeholder="PRIMARY EMAIL" class="w-full p-4 mono text-sm uppercase text-white bg-slate-800 border-2 border-slate-700">
+                                </div>
+                                <div class="pt-6">
+                                    <div class="bg-black border-2 border-slate-700 p-6 mb-6 industrial-shadow relative text-center">
+                                        <p class="mono text-[10px] uppercase font-black text-slate-500 mb-1 italic">FOUNDING SUBSIDY PRICE,</p>
+                                        <p class="text-4xl font-black italic text-white mb-2 tracking-tighter">$37.00</p>
+                                    </div>
+                                    <input type="hidden" name="ml-submit" value="1">
+                                    <input type="hidden" name="anticsrf" value="true">
+                                    <button type="submit" class="w-full bg-red-600 text-white font-black text-xl py-6 uppercase italic industrial-shadow hover:bg-white hover:text-black transition-all text-center primary">SECURE YOUR ALPHA 6 SEAT ($37)</button>
+                                    <p class="text-[9px] mono text-red-500 mt-4 text-center uppercase tracking-tighter font-black underline italic">Warning: Removing offer once remaining seats are filled.</p>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -111,21 +107,15 @@
             </div>
         </header>
 
-        <!-- SECTION 2: BRIDGED STORY -->
+        <!-- SECTION 2: THE BRIDGED STORY -->
         <section id="story" class="grid grid-cols-1 md:grid-cols-2 border-b-8 border-black bg-white">
             <div class="p-8 md:p-16 border-r-8 border-black bg-slate-900 text-slate-400">
                 <h2 class="text-3xl font-black uppercase italic mb-8 text-red-600 uppercase font-black italic text-left leading-none">THE HOLLOW <br>REALIZATION.</h2>
                 <div class="space-y-6 text-lg font-medium leading-relaxed italic text-left text-slate-300">
                     <p>In 2004, I was a driven hip-hop artist **Passing Over Opportunities Repeatedly** because I had zero structure to retain value.</p>
-                    
-                    <p>By 2006, I pivoted into sales and Network Marketing, recruited by a man who changed my internal operating system, **Damien Dewberry**. Under his leadership, I eventually hit a **passive 4-figure monthly income with a team of 32**.</p>
-                    
-                    <p>But because I was managing a personality-driven hustle instead of a non-human architecture, I watched that team of 32 fizzle down until only **one motivated non-producer** remained. For the next decade, I was fighting my own momentum because I had no machine.</p>
-
-                    <p>In 2016, I hit the wall. I mentored a student who executed with absolute precision. By her **first month**, they hit a 5-figure monthly revenue. It scaled so fast she ended up on the news (**Kay Customz**).</p>
-                    
+                    <p>By 2006, I pivoted into sales and Network Marketing under **Damien Dewberry**. He changed my operating system. I hit a **passive 4-figure monthly income with a team of 32**—but without architecture, that team fizzled down to one motivator. For a decade, I fought my own momentum because I had no machine.</p>
+                    <p>In 2016, I hit the wall. I mentored a student who executed with absolute precision. By their **first month**, they hit a 5-figure monthly revenue. It scaled so fast she ended up on the news (**Kay Customz**).</p>
                     <div class="font-black text-white border-l-4 border-red-600 pl-4 bg-red-950/30 py-4 italic text-2xl mb-6">She scaled past my plateau. I was an architect without a machine.</div>
-                    
                     <p>I found the leak. It wasn't my motivation; it was my architecture. Wealth is not an event of income; it is an outcome of architecture. I spent 19 years searching for this heartbeat.</p>
                 </div>
 
@@ -144,7 +134,7 @@
             <div class="p-8 md:p-16 bg-slate-950 flex flex-col items-center">
                 <div class="border-4 border-slate-700 p-8 bg-slate-900 industrial-shadow text-center w-full mb-10 text-center">
                     <h3 class="mono text-xs font-black uppercase text-red-500 mb-6 italic underline uppercase tracking-widest font-black text-center text-center">// THE HEARTBEAT</h3>
-                    <p class="text-xl font-bold italic leading-tight text-slate-300 mb-6 uppercase text-center text-center">"I found the leak. It wasn't my motivation; it was my architecture."</p>
+                    <p class="text-xl font-bold italic leading-tight text-slate-300 mb-6 uppercase text-center text-center">"I found the heartbeat of this system. I spent 19 years searching for the leak. I found it."</p>
                     <div class="h-1 w-20 bg-red-600 mx-auto"></div>
                 </div>
                 <div class="legacy-frame industrial-shadow mb-10 overflow-hidden w-full">
@@ -166,15 +156,12 @@
             <h3 class="text-4xl font-black uppercase italic mb-8 text-white text-center uppercase font-black text-center text-center text-center">01. CALCULATE YOUR CHAOS TAX</h3>
             <div class="instruction-box max-w-xl mx-auto industrial-shadow border border-slate-800 text-center text-slate-300">
                 <p class="mono text-[10px] font-black text-red-500 uppercase tracking-widest mb-4 italic underline text-center uppercase font-black text-center text-center text-center">!! COMMAND: AUDIT PROTOCOL !!</p>
-                <p class="text-sm font-bold italic mb-4">The math below calculates your <span class="text-red-500 underline font-black">Chaos Tax</span>. Based on a market benchmark of <span class="text-white font-black">$150/hr</span>, wasting just 10 hours a week results in a loss of over <span class="text-red-500 font-black">$72,000 annually.</span></p>
-                <ul class="text-xs font-bold space-y-3 italic border-t border-slate-800 pt-4 text-left">
-                    <li>1. <span class="text-white font-black italic uppercase font-black italic">IDENTIFY,</span> Locate red knobs on the tracks below.</li>
-                    <li>2. <span class="text-white font-black italic uppercase font-black italic">QUANTIFY,</span> Set your weekly admin friction (hours).</li>
-                </ul>
+                <p class="text-sm font-bold italic mb-4 text-center">The math below calculates your <span class="text-red-500 underline font-black">Chaos Tax</span>. Based on a market benchmark of <span class="text-white font-black">$150/hr</span>, wasting just 10 hours a week results in a loss of over <span class="text-red-500 font-black">$72,000 annually.</span></p>
+                <p class="text-xs font-bold italic text-center text-center">Adjust knobs to set Weekly Friction Hours.</p>
             </div>
             
-            <div class="max-w-4xl mx-auto space-y-12 mb-16">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+            <div class="max-w-4xl mx-auto space-y-12 mb-16 text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div class="text-white">
                         <div class="flex justify-between items-center mb-4">
                             <label class="mono text-[10px] font-black uppercase text-slate-400 tracking-widest italic font-black uppercase">Account Integrity (Shield)</label>
@@ -194,13 +181,12 @@
                 </div>
             </div>
 
-            <!-- RESULTS PANEL & CHART -->
             <div class="max-w-4xl mx-auto border-t border-slate-800 pt-16">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div class="result-panel p-8 industrial-shadow text-center">
                         <div class="mono text-[10px] uppercase text-red-500 mb-4 font-black uppercase font-black text-center">Structural Classification,</div>
                         <div class="text-3xl font-black italic tracking-tighter text-white uppercase text-center font-black text-center" id="class-title">Unprotected High-Performer</div>
-                        <div class="text-[10px] mono uppercase text-slate-400 mt-4 leading-relaxed italic" id="class-desc">Scaling a leak is not growth; it is a structural catastrophe. You are paying a heavy Chaos Tax.</div>
+                        <div class="text-[10px] mono uppercase text-slate-400 mt-4 leading-relaxed italic text-center" id="class-desc">Scaling a leak is not growth; it is a structural catastrophe. You are paying a heavy Chaos Tax.</div>
                     </div>
                     <div class="flex flex-col items-center">
                         <div class="chart-container"><canvas id="chaosChart"></canvas></div>
@@ -208,23 +194,17 @@
                         <p class="mono text-[10px] text-slate-600 uppercase mt-4 italic uppercase font-black text-center text-center text-center">Estimated 12-Month Chaos Tax Loss</p>
                     </div>
                 </div>
-
                 <!-- SKEPTICISM PROTOCOL 1 -->
                 <div class="mt-12 skeptic-notice text-center max-w-2xl mx-auto">
-                    <p class="mono text-[10px] text-red-500 uppercase font-black italic mb-2 tracking-widest">!! SKEPTICISM PROTOCOL: LOGIC VERIFICATION !!</p>
-                    <p class="text-xs font-bold italic text-slate-400 uppercase leading-relaxed">
-                        Architecture requires proof. If you are skeptical about these calculations or the Alpha 6 system, ask the Machine. Click the chatbot in the bottom right and ask anything you want. Verify the system before you install it.
-                    </p>
+                    <p class="mono text-[10px] text-red-500 font-black italic mb-2 tracking-widest uppercase">!! SKEPTICISM PROTOCOL: ASK THE MACHINE !!</p>
+                    <p class="text-xs font-bold italic text-slate-400 uppercase leading-relaxed text-center">Still skeptical about the math? Ask the chatbot below anything about the Chaos Tax benchmark, ALPHA 6 selection, or the 12.5% Equity Model.</p>
                 </div>
             </div>
         </section>
 
-        <!-- LIMITED TIME OFFER & ALPHA 6 CTA -->
+        <!-- CTA SECTION -->
         <section class="p-12 md:p-24 bg-slate-950 text-center">
-            <a href="https://square.link/u/RDBg3rri" class="fear-banner p-10 mb-20 industrial-shadow font-black uppercase italic text-2xl md:text-4xl tracking-tighter hover:text-white transition-all block text-center uppercase font-black text-center">
-                LIMITED TIME OFFER ONLY. <br>
-                <span class="text-white font-black uppercase">I AM REMOVING THIS OFFER. PRICE INCREASES WHEN ALPHA 6 SEATS ARE FILLED.</span>
-            </a>
+            <a href="https://square.link/u/gCCvyGpp" class="fear-banner p-10 mb-20 industrial-shadow font-black uppercase italic text-2xl md:text-4xl tracking-tighter hover:text-white block">LIMITED TIME OFFER ONLY. <br><span class="text-white font-black uppercase">I AM REMOVING THIS OFFER. PRICE INCREASES WHEN ALPHA 6 SEATS ARE FILLED.</span></a>
             <div class="max-w-4xl mx-auto">
                 <h3 class="text-5xl md:text-8xl font-black uppercase italic tracking-tighter leading-none italic mb-12 text-white text-center uppercase font-black text-center text-center uppercase font-black">STOP THE <br><span class="text-red-600 italic underline decoration-8">LEAK.</span></h3>
                 
@@ -250,7 +230,8 @@
                     <p class="text-[10px] font-bold italic text-slate-600 uppercase">Use the chatbot below to ask anything about ALPHA 6 selection, the $37 Founding Subsidy, or the 12.5% Equity Model.</p>
                 </div>
 
-                <a href="https://square.link/u/RDBg3rri" class="inline-flex w-full bg-red-600 text-white font-black text-3xl md:text-6xl py-12 md:py-16 uppercase italic industrial-shadow hover:bg-white hover:text-black transition-all justify-center items-center text-center leading-none font-black text-center uppercase">SECURE YOUR ALPHA 6 SEAT ($37)</a>
+                <a href="https://square.link/u/gCCvyGpp" class="inline-flex w-full bg-red-600 text-white font-black text-3xl md:text-6xl py-12 md:py-16 uppercase italic industrial-shadow hover:bg-white hover:text-black transition-all justify-center items-center text-center leading-none font-black text-center uppercase">SECURE YOUR ALPHA 6 SEAT ($37)</a>
+                <!-- GUARANTEE BLOCK -->
                 <div class="mt-12 bg-blue-600 text-white p-6 mono text-xs md:text-lg font-bold uppercase italic text-center font-black text-center text-center">60-DAY IMPLEMENTATION GUARANTEE: DOUBLE YOUR MONEY BACK IF THE FRACTURE REMAINS.</div>
             </div>
         </section>
@@ -281,16 +262,22 @@
     </div>
 
     <script>
-        function handleMandate(e) { e.preventDefault(); window.location.href = "https://square.link/u/RDBg3rri"; }
-        function acceptCookies() { document.cookie = "cookie_consent=accepted; max-age=2592000; path=/"; const banner = document.getElementById("cookie-banner"); if (banner) banner.style.display = "none"; }
-        function closeExitModal() { const m = document.getElementById('exit-modal'); if(m) m.style.display = 'none'; }
+        function acceptCookies() { document.cookie = "cookie_consent=accepted; max-age=2592000; path=/"; document.getElementById("cookie-banner").style.display = "none"; }
+        function closeExitModal() { document.getElementById('exit-modal').style.display = 'none'; }
 
-        function handleImageError(img, type) {
-            img.parentElement.innerHTML = `<div class="p-10 text-center border border-slate-800 mono text-xs italic text-slate-700 uppercase">${type === 'logo' ? 'QUARTER ENT LLC' : 'SYSTEM VISUAL'}</div>`;
+        // NATIVE MAILERLITE SUCCESS HANDLER
+        // This function is automatically called by webforms.min.js when form ID 35113893 succeeds
+        function ml_webform_success_35113893() {
+            try {
+                window.top.location.href = 'https://square.link/u/gCCvyGpp';
+            } catch (e) {
+                window.location.href = 'https://square.link/u/gCCvyGpp';
+            }
         }
 
-        let shieldIntegrity = 80, decisionLag = 20, chart;
+        function handleImageError(img, type) { img.parentElement.innerHTML = `<div class="p-10 text-center border border-slate-800 mono text-xs italic text-slate-700 uppercase">${type === 'logo' ? 'QUARTER ENT LLC' : 'SYSTEM VISUAL'}</div>`; }
 
+        let shieldIntegrity = 80, decisionLag = 20, chart;
         function calculateTaxPath() { 
             const annualLoss = (decisionLag * 48 * 150) + ((100 - shieldIntegrity) * 500); 
             return [annualLoss * 0.2, annualLoss * 0.6, annualLoss, annualLoss * 1.5]; 
@@ -327,12 +314,14 @@
         }
 
         function initChart() {
-            const ctx = document.getElementById('chaosChart').getContext('2d');
-            chart = new Chart(ctx, {
-                type: 'bar',
-                data: { labels: ['Q1', 'Q2', 'Q3', 'Q4'], datasets: [{ label: 'Chaos Tax Loss', data: calculateTaxPath(), backgroundColor: '#dc2626' }] },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { display: false }, x: { grid: { display: false }, ticks: { font: { family: 'JetBrains Mono', size: 9 }, color: '#475569' } } } }
-            });
+            try {
+                const ctx = document.getElementById('chaosChart').getContext('2d');
+                chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: { labels: ['Q1', 'Q2', 'Q3', 'Q4'], datasets: [{ label: 'Chaos Tax Loss', data: calculateTaxPath(), backgroundColor: '#dc2626' }] },
+                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { display: false }, x: { grid: { display: false }, ticks: { font: { family: 'JetBrains Mono', size: 9 }, color: '#475569' } } } }
+                });
+            } catch(e) {}
         }
 
         function setupSliders() {
@@ -356,8 +345,7 @@
         }
         
         window.onload = () => { 
-            const banner = document.getElementById("cookie-banner");
-            if (banner && !document.cookie.includes("cookie_consent")) { banner.style.display = "block"; }
+            if (!document.cookie.includes("cookie_consent")) { document.getElementById("cookie-banner").style.display = "block"; }
             initChart(); setupSliders(); updateDiagnostic(); 
             let modalShown = false;
             document.addEventListener("mouseleave", (e) => { if (e.clientY < 0 && !modalShown) { document.getElementById('exit-modal').style.display = 'flex'; modalShown = true; } });
@@ -365,5 +353,7 @@
         window.chatbaseConfig = { chatbotId: "LqQm-wIUNIr8Atcfigm0N" };
     </script>
     <script src="https://www.chatbase.co/embed.min.js" id="LqQm-wIUNIr8Atcfigm0N" defer></script>
+    <!-- MAILERLITE WEBFORM SCRIPT -->
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
 </body>
 </html>
