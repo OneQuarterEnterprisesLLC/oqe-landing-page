@@ -34,17 +34,17 @@
             position: relative; 
             width: 100%; 
             max-width: 500px; 
-            height: 420px; /* Optimized height for full frame */
+            height: 420px;
             overflow: hidden; 
             margin: auto;
             background: transparent;
         }
         .profile-native iframe { 
             position: absolute; 
-            top: -65px; /* Shave FB header but keep face intact */
+            top: -65px;
             left: 50%; 
             transform: translateX(-50%) scale(1.12); 
-            pointer-events: none; /* CRITICAL: Prevents Facebook navigation */
+            pointer-events: none;
             user-select: none;
         }
 
@@ -56,7 +56,7 @@
         .scroll-item { width: 340px; padding: 0 20px; flex-shrink: 0; }
         
         .cover-mask { 
-            height: 340px; /* Increased height to prevent title cutoff */
+            height: 340px;
             width: 100%; 
             overflow: hidden; 
             position: relative; 
@@ -65,12 +65,12 @@
         }
         .cover-mask iframe { 
             position: absolute; 
-            top: -45px; /* Reduced negative margin to preserve book titles */
+            top: -45px;
             transform: scale(0.82); 
             transform-origin: top center; 
             left: 50%; 
             margin-left: -250px; 
-            pointer-events: none; /* CRITICAL: Prevents Facebook navigation */
+            pointer-events: none;
             user-select: none;
         }
         
@@ -84,9 +84,9 @@
 
         /* VISUAL MASKING - ALL FB IFRAMES LOCKED */
         .visual-mask { position: relative; overflow: hidden; background: #000; border: 4px solid #1e293b; box-shadow: 10px 10px 0px #000; }
-        .visual-mask iframe { pointer-events: none; user-select: none; } /* Global click prevention */
+        .visual-mask iframe { pointer-events: none; user-select: none; }
         
-        /* REPAIR: DEWBERRY LEGACY MASK (NO CUTOFF) */
+        /* REPAIR: DEWBERRY LEGACY MASK */
         .visual-mask.legacy { 
             height: 480px; 
             width: 100%; 
@@ -110,6 +110,25 @@
         .quote-block { border: 2px solid #334155; padding: 2rem; background: rgba(30, 41, 59, 0.3); font-style: italic; position: relative; border-left-width: 8px; border-left-color: #dc2626; }
         .measurement-pill { background: #dc2626; color: white; padding: 2px 6px; font-size: 10px; font-weight: 900; }
         
+        /* TIMELINE STYLING */
+        .timeline-marker { 
+            border-left: 3px solid #dc2626; 
+            padding-left: 1rem; 
+            margin: 2rem 0; 
+            position: relative;
+        }
+        .timeline-marker::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: #dc2626;
+            border: 3px solid #0f172a;
+            border-radius: 50%;
+        }
+        
         #exit-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(15px); }
         .modal-box { border: 4px solid #dc2626; background: #0f172a; max-width: 500px; width: 95%; padding: 40px; position: relative; }
         
@@ -123,7 +142,7 @@
         .slash-valuation {
             position: relative;
             display: inline-block;
-            color: #64748b; /* Slate-500 for "dimmed" look */
+            color: #64748b;
         }
         .slash-valuation::after {
             content: '';
@@ -132,7 +151,7 @@
             right: -10px;
             top: 50%;
             height: 8px;
-            background: #dc2626; /* Red strikethrough */
+            background: #dc2626;
             transform: rotate(-5deg) translateY(-50%);
             opacity: 0.9;
             box-shadow: 0 2px 4px rgba(0,0,0,0.5);
@@ -164,7 +183,7 @@
             <p class="text-xl md:text-3xl font-bold max-w-3xl mx-auto leading-tight italic text-slate-300 mb-12 uppercase">Stop the <span class="text-red-600">"Revolving Door"</span> income cycle through Venture Architecture.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start max-w-4xl mx-auto text-left">
-                <!-- REPAIR: NATIVE STATIC VISUAL (NO FRAME, NO FB WRAP, NO CLICKS) -->
+                <!-- REPAIR: NATIVE STATIC VISUAL -->
                 <div class="profile-native">
                     <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02Hf88cwQau1pRvq5Q6xnFQ6VZ9zaLGYEJZAbvN6aZyBApb3xtR2G62BK4YK8BYYczl%26id%3D61584015328318&show_text=false&width=500" width="500" height="497" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
@@ -189,7 +208,7 @@
             </div>
         </header>
 
-        <!-- CAROUSEL (FIXED: NO CUTOFF TOPS, NO CLICKS) -->
+        <!-- CAROUSEL -->
         <div class="scroll-wrapper">
             <div class="scroll-track">
                 <div class="scroll-item">
@@ -252,32 +271,81 @@
             </div>
         </section>
 
-        <!-- STORY (DEWBERRY REPAIRED - NO CUTOFF) -->
+        <!-- COMPLETE STORY: THE 19-YEAR LOGIC ERROR -->
         <section id="story" class="grid grid-cols-1 md:grid-cols-2 border-b-8 border-black bg-white">
-            <div class="p-8 md:p-16 border-r-8 border-black bg-slate-900 text-slate-400 text-left">
-                <h2 class="text-3xl font-black uppercase italic mb-8 text-red-600 leading-none">THE HOLLOW <br>REALIZATION.</h2>
-                <div class="space-y-6 text-lg font-medium leading-relaxed italic text-slate-300">
-                    <p>In 2004, I was a driven hip-hop artist **Passing Over Opportunities Repeatedly** because I had zero structure to retain value.</p>
-                    <p>By 2006, I pivoted into sales under **Damien Dewberry**. He changed my operating system. I watched a team of 32 fizzle because I relied on humans, not hardware.</p>
-                    <p>In 2016, I hit the wall. I mentored a student who executed perfectly. She hit 5-figures in her **first month** (**Kay Customz**). She scaled past my own plateau.</p>
-                    <div class="font-black text-white border-l-4 border-red-600 pl-4 bg-red-950/30 py-4 italic text-2xl mb-6 uppercase leading-tight">I realized I was an architect without a machine.</div>
-                    <p>Wealth is not an event of income; it is an outcome of architecture. I spent 19 years searching for this heartbeat. Tonight, I give it to you.</p>
+            <div class="p-8 md:p-16 border-r-8 border-black bg-slate-900 text-slate-300 text-left overflow-y-auto max-h-[1200px]">
+                <h2 class="text-3xl md:text-5xl font-black uppercase italic mb-2 text-red-600 leading-none">THE 19-YEAR<br>LOGIC ERROR.</h2>
+                <p class="mono text-[11px] text-slate-500 uppercase tracking-widest mb-8 italic">// System Debugger Report: 2004-2025 //</p>
+
+                <div class="space-y-8 text-base md:text-lg font-medium leading-relaxed italic">
+                    
+                    <div class="timeline-marker">
+                        <p class="mono text-red-500 text-xs font-black mb-2 uppercase">2004 // The Label</p>
+                        <p>I walked into a home in Kansas City expecting a routine meeting. Before long I was signed to <span class="text-white font-bold">All Of Nothin Records</span>, a local label trying to make noise. The first person I met was <span class="text-white font-bold">Damien Dewberry</span>. He reached out his hand: <span class="text-white">"I'm Damien Dewberry, Marketing Director of All Of Nothin Records."</span> That handshake imprinted a logic I wouldn't understand for nearly two decades.</p>
+                    </div>
+
+                    <div class="timeline-marker">
+                        <p class="mono text-red-500 text-xs font-black mb-2 uppercase">December 2006 // Plugged In</p>
+                        <p>After the label dissipated, I ran into Mr. Dewberry again in December 2006. That reunion changed the trajectory of my life forever. By January 2007, I was <span class="text-white font-bold">"plugged in."</span></p>
+                    </div>
+
+                    <div class="timeline-marker">
+                        <p class="mono text-red-500 text-xs font-black mb-2 uppercase">2007-2014 // Team Infinity</p>
+                        <p>Under his leadership, I brought in 9 personal recruits and built a team of 32, but I became more than a recruit. I was his <span class="text-white font-bold">"right hand."</span> I became an intricate part of leading and directing <span class="text-white font-bold">Team Infinity</span>. It got to the point where Mr. Dewberry was calling me from Texas for advice on how we should build and which direction the movement should go. We weren't a small movement. I was at the <span class="text-white font-bold">center of the architecture</span>.</p>
+                    </div>
+
+                    <div class="timeline-marker border-red-800">
+                        <p class="mono text-red-600 text-xs font-black mb-2 uppercase">March 2014 // The Promise</p>
+                        <p>Damien got ill and knew his time was short. Before he passed in <span class="text-white font-bold">March 2014</span>, I made him a promise: <span class="text-red-400 font-bold">I would take the logic (7 Steps To 7 Figures) we built and finally make it work the right way. Without recruiting a living soul.</span></p>
+                    </div>
+
+                    <div class="timeline-marker border-yellow-600">
+                        <p class="mono text-yellow-500 text-xs font-black mb-2 uppercase">2014-2024 // The Proof</p>
+                        <p>After 2014, using the logic we created, I helped a friend set up their business to test my engineering. The results were the proof I needed:</p>
+                        <ul class="list-none space-y-2 mt-4 text-white font-bold">
+                            <li class="flex items-center gap-3"><span class="text-red-500 text-2xl">→</span> Within thirty days, they hit 5-figures.</li>
+                            <li class="flex items-center gap-3"><span class="text-red-500 text-2xl">→</span> By the second month, they hit it again.</li>
+                            <li class="flex items-center gap-3"><span class="text-red-500 text-2xl">→</span> Shortly after, they went viral on the local news.</li>
+                        </ul>
+                        <p class="mt-4 text-slate-400">I was the one <span class="text-white">silently directing the flow</span>. But even as they scaled, I realized I was still building on foundations I didn't own. I was still chasing companies instead of building <span class="text-white font-bold">the Machine</span> I promised Damien I would create.</p>
+                    </div>
+
+                    <div class="border-l-4 border-green-600 pl-4 py-2 bg-green-950/20">
+                        <p class="mono text-green-500 text-xs font-black mb-2 uppercase">2025 // The Machine Is Born</p>
+                        <p>It took me <span class="text-white font-bold">10 more years</span> to stop the hustle and start the engineering. I went back to the drawing board to fulfill my word, and by 2025 <span class="text-white font-bold text-xl block my-2">One Quarter Equals A D$llar:<br>7 Chapters To 7 Figures</span> was born.</p>
+                    </div>
+
+                    <div class="bg-red-950/30 border-2 border-red-600 p-6 mt-8 industrial-shadow">
+                        <p class="text-white font-black text-lg uppercase italic leading-tight">I'm the architect who found the glitch.</p>
+                        <p class="text-red-400 text-sm mt-2 uppercase font-bold">I finally found a way to plug the logic into a concrete system built for longevity and growth.</p>
+                    </div>
+
+                    <p class="text-slate-400 text-base border-t border-slate-800 pt-6">I've documented the exact technical architecture I used to fix the leak and turn a "hustle" into a systemized machine. If you are tired of the "hustle" and failing at business, I can guarantee it is not your work ethic or lack of skills. It is that you need a system that can help you scale your capital ensuring steady continuous growth.</p>
+                    
+                    <p class="text-white font-black text-xl uppercase italic text-center mt-8">Start directing the flow.</p>
                 </div>
             </div>
 
-            <div class="p-8 md:p-16 bg-slate-950 flex flex-col items-center text-center">
-                <div class="border-4 border-slate-700 p-8 bg-slate-900 industrial-shadow w-full mb-10">
-                    <h3 class="mono text-xs font-black text-red-500 mb-6 italic underline uppercase tracking-widest">// THE HEARTBEAT</h3>
-                    <p class="text-xl font-bold italic leading-tight text-slate-300 mb-6 uppercase">"I found the heartbeat of this system. I spent 19 years searching for the leak. I found it."</p>
+            <div class="p-8 md:p-16 bg-slate-950 flex flex-col items-center text-center relative">
+                <div class="border-4 border-slate-700 p-8 bg-slate-900 industrial-shadow w-full mb-10 sticky top-8">
+                    <h3 class="mono text-xs font-black text-red-500 mb-6 italic underline uppercase tracking-widest">// THE ARCHITECT'S HEARTBEAT</h3>
+                    <p class="text-2xl font-bold italic leading-tight text-slate-300 mb-6 uppercase">"I was at the center of the architecture, silently directing the flow."</p>
                     <div class="h-1 w-20 bg-red-600 mx-auto"></div>
                 </div>
-                <!-- LEGACY ASSET (NO LONGER CUT OFF) -->
+                
+                <!-- DEWBERRY LEGACY VISUAL -->
                 <div class="visual-mask legacy mb-10">
                     <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02QE3mqqvV3kSfwDoYVjvY2ZeZMZ84CBarZ5rqHcsgCRZMWGN8ny7w7V5V2zYjHgEkl%26id%3D61584015328318&show_text=false&width=500" width="500" height="590" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
-                <div class="quote-block mb-10 w-full font-black italic">
-                    <p class="text-xl font-bold italic text-slate-300 leading-tight uppercase tracking-tighter">"Wealth is not an event of income; it is an outcome of architecture."</p>
+
+                <div class="quote-block mb-10 w-full">
+                    <p class="text-xl font-bold italic text-slate-300 leading-tight uppercase tracking-tighter">"I made him a promise: I would take the 7 Steps To 7 Figures logic we built and finally make it work—the right way."</p>
                     <p class="mono text-[10px] text-red-600 mt-4 font-black text-right uppercase tracking-widest">— THE MANDATE, CH. 1</p>
+                </div>
+
+                <div class="bg-black border border-slate-800 p-6 w-full industrial-shadow">
+                    <p class="mono text-[10px] text-slate-500 uppercase mb-2">System Status</p>
+                    <p class="text-green-500 font-black uppercase italic">Logic Error: Corrected.<br>Architecture: Online.</p>
                 </div>
             </div>
         </section>
@@ -298,32 +366,32 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <div class="deep-dive-card industrial-shadow">
-                    <p class="mono text-red-500 font-black mb-4 text-xs italic uppercase">01. THE BLUEPRINT (FOUNDATION)</p>
-                    <p class="text-sm text-slate-400 italic leading-relaxed">Fixes the **Internal Hardware Leaks**. We dismantle the P.O.O.R. mindset and install the Law of Multipliers. You stop thinking linearly and start building exponentially.</p>
+                    <p class="mono text-red-500 font-black mb-4 text-xs italic uppercase">01. THE BLUEPRINT (7 CHAPTERS)</p>
+                    <p class="text-sm text-slate-400 italic leading-relaxed">Fixes the **Internal Hardware Leaks**. We dismantle the P.O.O.R. mindset and install the <span class="text-white font-bold">7 Steps To 7 Figures</span> logic Damien and I architected. You stop thinking linearly and start building exponentially.</p>
                 </div>
                 <div class="deep-dive-card industrial-shadow">
                     <p class="mono text-red-500 font-black mb-4 text-xs italic uppercase">02. SYSTEM TRAINING (IDENTITY)</p>
-                    <p class="text-sm text-slate-400 italic leading-relaxed">Fixes the **Personality Ceiling**. We move you from "Chief Everything Officer" to "The Architect." Build assets that produce revenue independently of your mood.</p>
+                    <p class="text-sm text-slate-400 italic leading-relaxed">Fixes the **Personality Ceiling**. We move you from "Chief Everything Officer" to "The Architect." Build assets that produce revenue independently of your mood or presence.</p>
                 </div>
                 <div class="deep-dive-card industrial-shadow">
                     <p class="mono text-red-500 font-black mb-4 text-xs italic uppercase">03. MONEY FLOW MANUAL (THE SHIELD)</p>
-                    <p class="text-sm text-slate-400 italic leading-relaxed">Fixes the **Financial Firewall Breach**. We install the 3-Account protocol to prevent lifestyle creep from suffocating your business. Protect your capital at the source.</p>
+                    <p class="text-sm text-slate-400 italic leading-relaxed">Fixes the **Financial Firewall Breach**. We install the 3-Account protocol I used to stop the capital leak. Protect your overflow at the source and prevent lifestyle creep from suffocating your growth.</p>
                 </div>
                 <div class="deep-dive-card industrial-shadow">
                     <p class="mono text-red-500 font-black mb-4 text-xs italic uppercase">04. SYSTEMIZATION TOOLKIT (TECHNICAL)</p>
-                    <p class="text-sm text-slate-400 italic leading-relaxed">Fixes the **Technical Friction Tax**. Complete blueprints for Square and MailerLite delivery engines. Non-human logic that handles dollar capture while you sleep.</p>
+                    <p class="text-sm text-slate-400 italic leading-relaxed">Fixes the **Technical Friction Tax**. Complete blueprints for Square and MailerLite delivery engines—the exact non-human logic that handles dollar capture while you sleep. No coding required.</p>
                 </div>
                 <div class="deep-dive-card industrial-shadow">
                     <p class="mono text-red-500 font-black mb-4 text-xs italic uppercase">05. HVA SCRIPTING (SALES LOGIC)</p>
-                    <p class="text-sm text-slate-400 italic leading-relaxed">Fixes the **Revenue Conversion Leak**. High-value activity scripting to automate your "Ask." Close deals without the personality-driven exhaustion.</p>
+                    <p class="text-sm text-slate-400 italic leading-relaxed">Fixes the **Revenue Conversion Leak**. High-value activity scripting to automate your "Ask." Close deals based on architecture, not personality-driven exhaustion.</p>
                 </div>
                 <div class="deep-dive-card industrial-shadow">
                     <p class="mono text-red-500 font-black mb-4 text-xs italic uppercase">06. CAPITAL FLOW (COMPOUND)</p>
-                    <p class="text-sm text-slate-400 italic leading-relaxed">Fixes the **Legacy Stagnation Trap**. We turn the "Overflow" of your machine into irreversible upward momentum in Account #3. This is how the One Quarter becomes the Generational Dollar.</p>
+                    <p class="text-sm text-slate-400 italic leading-relaxed">Fixes the **Legacy Stagnation Trap**. We turn the "Overflow" from Account #3 into irreversible upward momentum. This is how the One Quarter becomes the Generational Dollar.</p>
                 </div>
             </div>
 
-            <!-- SECONDARY CAPTURE - FIXED DUPLICATE ID -->
+            <!-- SECONDARY CAPTURE -->
             <div class="max-w-xl mx-auto mt-24 bg-slate-950 p-10 border-4 border-slate-700 industrial-shadow text-center">
                 <div id="mlb2-35113893-bottom" class="ml-subscribe-form">
                     <p class="mono text-xs text-red-500 font-black mb-8 italic uppercase tracking-widest">// JOIN THE ARCHITECT'S NETWORK //</p>
@@ -336,7 +404,7 @@
             </div>
         </section>
 
-        <!-- THE MACHINE (MAIN PIC REPLACEMENT) -->
+        <!-- THE MACHINE -->
         <section class="grid grid-cols-1 md:grid-cols-2 border-y-8 border-black bg-slate-950">
             <div class="bg-black flex items-center justify-center overflow-hidden border-r-4 border-slate-900 min-h-[400px]">
                 <div class="visual-mask main-machine" style="border:none; box-shadow:none;">
@@ -346,14 +414,14 @@
             <div class="p-8 md:p-20 flex flex-col justify-center text-left">
                 <p class="mono text-[10px] font-black text-red-600 tracking-widest uppercase italic mb-6">// THE NON-HUMAN ENGINE</p>
                 <h3 class="text-4xl md:text-6xl font-black uppercase italic text-white mb-8 leading-none">THE MACHINE.</h3>
-                <p class="text-slate-300 text-lg italic leading-relaxed mb-8">This is where the manual ends and the hardware begins. We install the structural assets that produce independently of your emotional state.</p>
+                <p class="text-slate-300 text-lg italic leading-relaxed mb-8">This is where the manual ends and the hardware begins. We install the structural assets that produce independently of your emotional state—the fulfillment of the promise made in 2014.</p>
                 <div class="bg-slate-900 p-6 border-l-4 border-red-600">
                     <p class="mono text-xs text-lime-300 uppercase italic">SYSTEM STATUS: READY FOR INSTALLATION</p>
                 </div>
             </div>
         </section>
 
-        <!-- FINAL ASK - WITH STRIKETHROUGH PRICE RESTORED -->
+        <!-- FINAL ASK WITH STRIKETHROUGH -->
         <section class="p-12 md:p-24 bg-slate-950 text-center border-b-8 border-black">
             <h3 class="text-5xl md:text-8xl font-black uppercase italic tracking-tighter leading-none italic mb-12 text-white">STOP THE <br><span class="text-red-600 underline decoration-8">LEAK.</span></h3>
             
@@ -361,13 +429,12 @@
                 <div class="bg-black text-white p-8 md:p-12 border border-slate-800 text-center">
                     <div class="text-center mb-12 border-b-4 border-red-600 pb-8">
                         <p class="mono text-sm uppercase font-black text-red-500 mb-2 italic tracking-widest">TOTAL SYSTEM VALUATION</p>
-                        <!-- RESTORED STRIKETHROUGH PRICE -->
                         <p class="text-7xl md:text-9xl font-black italic tracking-tighter uppercase slash-valuation">$2,908</p>
                         <p class="mono text-xs uppercase text-slate-500 mt-2 italic">Retail Value You Won't Pay</p>
                     </div>
                     <ul class="text-sm md:text-lg font-bold uppercase space-y-6 italic text-slate-400 text-left">
-                        <li class="flex justify-between border-b border-slate-800 pb-2 text-white font-black"><span>Accelerator + Manuals,</span> <span class="text-white">$2,871</span></li>
-                        <li class="flex justify-between border-b border-slate-800 pb-2 text-white font-black"><span>The OQEAD Blueprint (Book),</span> <span class="text-white">$37</span></li>
+                        <li class="flex justify-between border-b border-slate-800 pb-2 text-white font-black"><span>Accelerator + 6 Manuals,</span> <span class="text-white">$2,871</span></li>
+                        <li class="flex justify-between border-b border-slate-800 pb-2 text-white font-black"><span>The OQEAD Blueprint (7 Chapters),</span> <span class="text-white">$37</span></li>
                         <li class="flex justify-between pt-6 text-white font-black italic uppercase text-xl"><span>Total Entry Subsidy,</span> <span class="text-green-500 font-black">98% DISCOUNT</span></li>
                     </ul>
                 </div>
@@ -377,15 +444,14 @@
             <div class="mt-8 bg-blue-600 text-white p-6 mono text-xs md:text-lg font-bold uppercase italic text-center">60-DAY IMPLEMENTATION GUARANTEE: DOUBLE YOUR MONEY BACK IF THE FRACTURE REMAINS.</div>
         </section>
 
-        <!-- FOOTER & LEGAL FIREWALL -->
+        <!-- FOOTER -->
         <footer class="p-12 md:p-24 bg-black text-center">
             <div class="mt-20 text-left border-t border-slate-800 pt-12 max-w-4xl mx-auto">
                 <p class="text-lg text-slate-300 italic leading-relaxed font-black">
                     <span class="text-red-600 font-black mono not-italic uppercase tracking-tighter mr-4 text-2xl">P.S.</span> 
-                    In case you scrolled to the end: I'm showing you how to stop the 'Bank Fracture' that's leaking your capital. I'm giving you the full 
-                    <span class="line-through decoration-red-600 text-white font-bold">$2,908</span> OQEAD stack for <span class="text-white font-bold">$37</span>. 
-                    If it doesn't work, I'll give you double your money back. 
-                    <a href="https://square.link/u/gCCvyGpp" class="text-red-500 underline font-black hover:text-white transition-colors ml-1 uppercase">Click here to install the system.</a>
+                    I made a promise in 2014 to build a Machine that worked without recruiting. It took 10 years of engineering, but <span class="line-through decoration-red-600 text-white font-bold">$2,908</span> worth of architecture is now available for <span class="text-white font-bold">$37</span> to the Alpha 6 Founders. 
+                    If this system doesn't stop your capital leak, I'll give you double your money back. 
+                    <a href="https://square.link/u/gCCvyGpp" class="text-red-500 underline font-black hover:text-white transition-colors ml-1 uppercase">Fulfill the promise. Install the Machine.</a>
                 </p>
             </div>
 
@@ -393,7 +459,7 @@
                 <p class="mono text-[11px] font-black text-red-600 tracking-widest uppercase mb-4 italic">Architecture Status: Critical Leakage Detected</p>
                 <p class="mono text-[10px] font-black text-slate-400 mb-2 underline italic uppercase">OFFICIAL LEGAL DISCLAIMER & DISCLOSURE</p>
                 <p class="text-[10px] text-slate-700 text-justify leading-relaxed uppercase">
-                    This guide and the One Quarter Equals A Dollar system are based solely on the author's personal experience, principles learned from nearly two decades of self-study and disciplined execution, and the systems developed during their journey from P.O.O.R to financial understanding. The author is not a financial advisor, certified public accountant, lawyer, or registered investment professional. All content, recommendations, and blueprints are for educational and informational purposes only and should not be considered professional financial or legal advice. Always consult with a qualified financial or legal professional before making any significant financial decisions. Results are not typical and depend entirely on individual adherence to the architecture.
+                    This guide and the One Quarter Equals A Dollar system are based solely on the author's personal experience, principles learned from nearly two decades of self-study and disciplined execution alongside Damien Dewberry, and the systems developed during their journey from P.O.O.R to financial understanding. The author is not a financial advisor, certified public accountant, lawyer, or registered investment professional. All content, recommendations, and blueprints are for educational and informational purposes only and should not be considered professional financial or legal advice. Always consult with a qualified financial or legal professional before making any significant financial decisions. Results are not typical and depend entirely on individual adherence to the architecture.
                 </p>
                 <p class="mono text-[9px] text-slate-700 mt-8 font-black italic uppercase">© 2026 One Quarter Enterprises LLC. All Rights Reserved.</p>
             </div>
@@ -412,11 +478,9 @@
             
             if(btn) btn.innerText = "VERIFYING IDENTITY...";
             
-            // Collect from the submitted form only
             const email = form.querySelector('input[name="email"]').value;
             const name = form.querySelector('input[name="name"]').value;
             
-            // MailerLite integration with fallback redirect
             if(window.ml) {
                 ml('subs', { email: email, name: name }, function() {
                     window.location.href = "https://square.link/u/gCCvyGpp";
@@ -425,7 +489,6 @@
                 window.location.href = "https://square.link/u/gCCvyGpp";
             }
             
-            // Force redirect after 3.5s regardless
             setTimeout(() => { 
                 window.location.href = "https://square.link/u/gCCvyGpp"; 
             }, 3500);
@@ -500,7 +563,6 @@
             setupSliders(); 
             updateDiagnostic();
             
-            // Exit intent detection
             let modalShown = false;
             document.addEventListener("mouseleave", (e) => { 
                 if (e.clientY < 0 && !modalShown) { 
@@ -511,7 +573,6 @@
             });
         };
         
-        // Chatbase configuration
         window.chatbaseConfig = { chatbotId: "LqQm-wIUNIr8Atcfigm0N" };
     </script>
     <script src="https://www.chatbase.co/embed.min.js" id="LqQm-wIUNIr8Atcfigm0N" defer></script>
