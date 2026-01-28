@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OQEAD | Identify The Hidden Bank Fracture</title>
+    <title>⚠️ ALPHA 6 ROSTER NEAR CAPACITY | OQEAD System Access</title>
     <!-- Dependencies -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -24,12 +24,23 @@
         .industrial-shadow { box-shadow: 10px 10px 0px #000; }
         .blueprint-bg { background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 30px 30px; }
         
+        /* URGENCY BAR - DATE FREE */
+        .urgency-bar { 
+            background: #dc2626;
+            border-bottom: 4px solid #000;
+            animation: pulse-bar 2s infinite;
+        }
+        @keyframes pulse-bar {
+            0%, 100% { background: #dc2626; }
+            50% { background: #b91c1c; }
+        }
+        
         /* KNOB CONTROLS */
         .knob-track { height: 12px; background: #1e293b; border-radius: 6px; position: relative; cursor: pointer; border: 1px solid #334155; }
         .knob-handle { width: 26px; height: 26px; background: #dc2626; position: absolute; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; border: 3px solid #0f172a; box-shadow: 0 0 20px rgba(220, 38, 38, 0.5); z-index: 20; }
         .result-panel { border: 2px solid #334155; background: #1e293b; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         
-        /* REPAIR: NATIVE PROFILE INTEGRATION (ZERO FB WRAP & NO CLICKS) */
+        /* NATIVE PROFILE INTEGRATION */
         .profile-native { 
             position: relative; 
             width: 100%; 
@@ -48,7 +59,7 @@
             user-select: none;
         }
 
-        /* CAROUSEL - FIXED: TOP FOCUS FOR MANUAL TITLES */
+        /* CAROUSEL */
         .scroll-wrapper { width: 100%; overflow: hidden; background: #000; border-bottom: 8px solid #1e293b; padding: 60px 0; position: relative; }
         .scroll-track { display: flex; width: calc(340px * 12); animation: scroll 45s linear infinite; }
         .scroll-track:hover { animation-play-state: paused; }
@@ -82,11 +93,10 @@
         .deep-dive-card:hover { border-bottom-color: #dc2626; transform: translateY(-5px); }
         .deep-dive-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #dc2626; }
 
-        /* VISUAL MASKING - ALL FB IFRAMES LOCKED */
+        /* VISUAL MASKING */
         .visual-mask { position: relative; overflow: hidden; background: #000; border: 4px solid #1e293b; box-shadow: 10px 10px 0px #000; }
         .visual-mask iframe { pointer-events: none; user-select: none; }
         
-        /* REPAIR: DEWBERRY LEGACY MASK */
         .visual-mask.legacy { 
             height: 480px; 
             width: 100%; 
@@ -129,6 +139,22 @@
             border-radius: 50%;
         }
         
+        /* SCARCITY STYLES */
+        .scarcity-pulse { 
+            animation: urgent-pulse 1.5s infinite;
+            border: 3px solid #dc2626;
+        }
+        @keyframes urgent-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            50% { box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
+        }
+        
+        .roster-warning {
+            background: #000;
+            border: 3px dashed #dc2626;
+            color: #dc2626;
+        }
+        
         #exit-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 2000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(15px); }
         .modal-box { border: 4px solid #dc2626; background: #0f172a; max-width: 500px; width: 95%; padding: 40px; position: relative; }
         
@@ -160,47 +186,74 @@
 </head>
 <body class="blueprint-bg p-2 md:p-8">
 
+    <!-- URGENCY HEADER BAR - NO DATES -->
+    <div class="urgency-bar text-white text-center py-3 px-4 fixed top-0 left-0 right-0 z-50 mono text-xs md:text-sm font-black uppercase tracking-wider industrial-shadow">
+        ⚠️ ALPHA 6 ROSTER: 4 OF 6 SEATS FILLED • SUBSIDY TERMINATES WHEN ROSTER CAPS ⚠️
+    </div>
+
     <div id="exit-modal">
         <div class="modal-box industrial-shadow text-center">
-            <div class="mono text-[10px] font-black text-red-500 uppercase tracking-widest mb-6 italic underline">!! CRITICAL INTERRUPT: ALPHA 6 SELECTION !!</div>
+            <div class="mono text-[10px] font-black text-red-500 uppercase tracking-widest mb-6 italic underline">!! ROSTER CAPACITY WARNING !!</div>
             <h2 class="text-3xl font-black uppercase italic leading-[0.9] text-white mb-6 text-center">THE MACHINE IS STILL DISCONNECTED.</h2>
-            <p class="text-slate-400 italic mb-8 leading-relaxed text-sm text-center">Secure the hardware before you exit. I am only selecting 4 more Alphas.</p>
+            <p class="text-red-400 font-bold mb-4 mono text-sm uppercase">Full System Price: $2,908 Value</p>
+            <p class="text-slate-400 italic mb-8 leading-relaxed text-sm text-center">If you exit now, you forfeit the Alpha 6 subsidy. Once the 6th seat fills, the $37 access point vanishes and the Blueprint price resets to full retail. This is your only warning.</p>
             <div class="space-y-4">
-                <a href="https://square.link/u/gCCvyGpp" class="block w-full bg-red-600 text-white font-black py-8 text-2xl uppercase italic text-center hover:bg-white hover:text-black transition-all industrial-shadow">SECURE ALPHA 6 SEAT ($37)</a>
-                <button onclick="closeExitModal()" class="block w-full text-slate-600 mono text-[10px] uppercase font-bold hover:text-red-500 transition tracking-tighter">[ Proceed to exit and accept the capital leakage ]</button>
+                <a href="https://square.link/u/gCCvyGpp" class="block w-full bg-red-600 text-white font-black py-8 text-2xl uppercase italic text-center hover:bg-white hover:text-black transition-all industrial-shadow scarcity-pulse">CLAIM $37 ACCESS NOW</a>
+                <button onclick="closeExitModal()" class="block w-full text-slate-600 mono text-[10px] uppercase font-bold hover:text-red-500 transition tracking-tighter">[ Exit and lose Alpha 6 pricing forever ]</button>
             </div>
         </div>
     </div>
 
-    <div class="page-frame mx-auto max-w-5xl overflow-hidden shadow-2xl">
+    <div class="page-frame mx-auto max-w-5xl overflow-hidden shadow-2xl mt-16">
         
-        <!-- HEADER & NATIVE PROFILE -->
+        <!-- HEADER -->
         <header class="p-8 md:p-20 text-center bg-slate-950 relative border-b-8 border-black">
-            <div class="mono text-[10px] font-black uppercase tracking-[0.5em] text-red-500 mb-8 italic animate-pulse">!! PHASE 1: ALPHA 6 FOUNDING ARCHITECT SEARCH !!</div>
+            <div class="mono text-[10px] font-black uppercase tracking-[0.5em] text-red-500 mb-4 italic animate-pulse">!! PHASE 1: ALPHA 6 FOUNDING ARCHITECT SEARCH !!</div>
+            
+            <!-- SCARCITY NOTICE - NO DATES -->
+            <div class="max-w-2xl mx-auto mb-8 border-4 border-red-600 bg-black p-4 industrial-shadow scarcity-pulse">
+                <p class="mono text-red-500 font-black text-xs uppercase tracking-widest mb-2">⚠️ Critical Roster Update</p>
+                <p class="text-white font-bold uppercase italic text-sm">This is NOT a "launch special." This is a <span class="text-red-500">Founding Architect Subsidy</span> that vanishes the moment the 6th Alpha joins. No countdown. No warning. Just closed.</p>
+            </div>
+
             <h1 class="text-4xl md:text-7xl font-black tracking-tighter leading-[0.95] uppercase italic mb-8 text-white">
                 Identify The <span class="text-red-600 underline decoration-8 underline-offset-8">Hidden Bank Fracture</span>
             </h1>
             <p class="text-xl md:text-3xl font-bold max-w-3xl mx-auto leading-tight italic text-slate-300 mb-12 uppercase">Stop the <span class="text-red-600">"Revolving Door"</span> income cycle through Venture Architecture.</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start max-w-4xl mx-auto text-left">
-                <!-- REPAIR: NATIVE STATIC VISUAL -->
+                <!-- PROFILE VISUAL -->
                 <div class="profile-native">
                     <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02Hf88cwQau1pRvq5Q6xnFQ6VZ9zaLGYEJZAbvN6aZyBApb3xtR2G62BK4YK8BYYczl%26id%3D61584015328318&show_text=false&width=500" width="500" height="497" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
 
                 <div class="text-left h-full">
+                    <!-- ROSTER STATUS BOX -->
+                    <div class="roster-warning p-4 mb-6 text-center">
+                        <p class="mono text-xs uppercase font-black mb-2">Alpha 6 Roster Status</p>
+                        <div class="flex justify-center items-center gap-4 text-3xl font-black italic mb-2">
+                            <span class="text-red-500">4/6</span>
+                            <span class="text-slate-600 text-xl">FILLED</span>
+                        </div>
+                        <div class="w-full bg-slate-800 h-4 border border-slate-600 mb-2">
+                            <div class="bg-red-600 h-full" style="width: 66%"></div>
+                        </div>
+                        <p class="text-[10px] uppercase text-red-400 font-bold">2 Seats Remain. Then $37 Vanishes.</p>
+                    </div>
+
                     <div id="mlb2-35113893-top" class="ml-form-wrapper industrial-shadow h-full flex flex-col justify-center ml-subscribe-form">
-                        <p class="mono text-xs uppercase font-black text-red-500 mb-6 italic underline tracking-widest text-center">Verify Identity to Secure Invitation</p>
+                        <p class="mono text-xs uppercase font-black text-red-500 mb-6 italic underline tracking-widest text-center">Secure Full System Access ($2,908 Value)</p>
                         <form onsubmit="handleMandate(event)" class="space-y-4" data-form-id="top">
                             <input type="text" name="name" required placeholder="FULL NAME" class="w-full p-4 mono text-sm bg-slate-800 border-2 border-slate-700 text-white font-black uppercase italic">
                             <input type="email" name="email" required placeholder="PRIMARY EMAIL" class="w-full p-4 mono text-sm bg-slate-800 border-2 border-slate-700 text-white font-black uppercase italic">
                             <div class="pt-6 text-center">
                                 <div class="bg-black border-2 border-slate-700 p-6 mb-6 industrial-shadow relative">
-                                    <p class="mono text-[10px] uppercase font-black text-slate-500 mb-1 italic">FOUNDING SUBSIDY PRICE,</p>
-                                    <p class="text-4xl font-black italic text-white mb-2 tracking-tighter">$37.00</p>
+                                    <p class="mono text-[10px] uppercase font-black text-slate-500 mb-1 italic">COMPLETE SYSTEM SUBSIDY,</p>
+                                    <p class="text-5xl font-black italic text-white mb-2 tracking-tighter">$37.00</p>
+                                    <p class="text-red-500 text-xs font-black uppercase">Full Roster = Price Reset</p>
                                 </div>
-                                <button type="submit" id="submit-btn-top" class="w-full bg-red-600 text-white font-black py-6 uppercase italic border-2 border-white hover:bg-white hover:text-black transition-all">SECURE YOUR ALPHA 6 SEAT ($37)</button>
-                                <p class="text-[9px] mono text-red-500 mt-4 text-center uppercase font-black underline italic">Warning: Removing offer when remaining seats are filled.</p>
+                                <button type="submit" id="submit-btn-top" class="w-full bg-red-600 text-white font-black py-6 uppercase italic border-2 border-white hover:bg-white hover:text-black transition-all scarcity-pulse">CLAIM ALPHA 6 ACCESS ($37)</button>
+                                <p class="text-[9px] mono text-red-500 mt-4 text-center uppercase font-black underline italic">⚠️ You get the complete $2,908 system for $37. When the 6th seat fills, subsidy ends.</p>
                             </div>
                         </form>
                     </div>
@@ -271,7 +324,7 @@
             </div>
         </section>
 
-        <!-- COMPLETE STORY: THE 19-YEAR LOGIC ERROR -->
+        <!-- COMPLETE STORY -->
         <section id="story" class="grid grid-cols-1 md:grid-cols-2 border-b-8 border-black bg-white">
             <div class="p-8 md:p-16 border-r-8 border-black bg-slate-900 text-slate-300 text-left overflow-y-auto max-h-[1200px]">
                 <h2 class="text-3xl md:text-5xl font-black uppercase italic mb-2 text-red-600 leading-none">THE 19-YEAR<br>LOGIC ERROR.</h2>
@@ -320,7 +373,7 @@
                         <p class="text-red-400 text-sm mt-2 uppercase font-bold">I finally found a way to plug the logic into a concrete system built for longevity and growth.</p>
                     </div>
 
-                    <p class="text-slate-400 text-base border-t border-slate-800 pt-6">I've documented the exact technical architecture I used to fix the leak and turn a "hustle" into a systemized machine. If you are tired of the "hustle" and failing at business, I can guarantee it is not your work ethic or lack of skills. It is that you need a system that can help you scale your capital ensuring steady continuous growth. Secure this Limited Time Offer Today!</p>
+                    <p class="text-slate-400 text-base border-t border-slate-800 pt-6">I've documented the exact technical architecture I used to fix the leak and turn a "hustle" into a systemized machine. If you are tired of the "hustle" and failing at business, I can guarantee it is not your work ethic or lack of skills. It is that you need a system that can help you scale your capital ensuring steady continuous growth.</p>
                     
                     <p class="text-white font-black text-xl uppercase italic text-center mt-8">Start directing the flow.</p>
                 </div>
@@ -350,18 +403,12 @@
             </div>
         </section>
 
-        <!-- LOGO & COMPLETE 6-PART VALUE STACK -->
-        <section class="p-12 bg-slate-950 text-center border-y-8 border-black">
-            <div class="visual-mask logo">
-                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0EHK2A1hwbxZB4vQ66jRYgn9Kajmez8cttE8BjhBifp8bMXno1zvxKeRcWiz53LWhl%26id%3D61584015328318&show_text=false&width=500" width="500" height="698" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-            </div>
-            <p class="mono text-[10px] uppercase tracking-[0.4em] text-slate-700 mt-8 font-black italic">Identity • Architecture • Mechanics</p>
-        </section>
-
+        <!-- VALUE STACK -->
         <section class="p-8 md:p-20 bg-slate-900 border-b-8 border-black text-left">
             <div class="max-w-4xl mx-auto text-center mb-16">
                 <h3 class="mono text-red-500 font-black text-xs tracking-widest uppercase mb-4 text-center">// THE ARCHITECT'S VALUE STACK</h3>
                 <h2 class="text-3xl md:text-6xl font-black uppercase italic text-white leading-tight text-center">THE OQEAD MECHANICS: <br><span class="text-red-600">6 PLUGS FOR THE 6 LEAKS.</span></h2>
+                <p class="text-slate-400 mt-6 max-w-2xl mx-auto uppercase italic text-sm">The complete $2,908 system is included in your Alpha 6 subsidy. When the roster fills, the Blueprint price resets separately.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -392,14 +439,16 @@
             </div>
 
             <!-- SECONDARY CAPTURE -->
-            <div class="max-w-xl mx-auto mt-24 bg-slate-950 p-10 border-4 border-slate-700 industrial-shadow text-center">
+            <div class="max-w-xl mx-auto mt-24 bg-slate-950 p-10 border-4 border-red-600 industrial-shadow text-center scarcity-pulse">
                 <div id="mlb2-35113893-bottom" class="ml-subscribe-form">
-                    <p class="mono text-xs text-red-500 font-black mb-8 italic uppercase tracking-widest">// JOIN THE ARCHITECT'S NETWORK //</p>
+                    <p class="mono text-xs text-red-500 font-black mb-2 italic uppercase tracking-widest">⚠️ Roster Status: 4/6 Filled</p>
+                    <p class="text-white font-bold uppercase mb-6 text-lg">Get the $2,908 System for $37<br><span class="text-red-500 text-sm">(Before the subsidy vanishes)</span></p>
                     <form onsubmit="handleMandate(event)" class="space-y-4" data-form-id="bottom">
                         <input type="text" name="name" required placeholder="FULL NAME" class="w-full p-4 mono text-sm bg-slate-800 border-2 border-slate-700 text-white font-black uppercase italic">
                         <input type="email" name="email" required placeholder="PRIMARY EMAIL" class="w-full p-4 mono text-sm bg-slate-800 border-2 border-slate-700 text-white font-black uppercase italic">
-                        <button type="submit" id="submit-btn-bottom" class="w-full bg-slate-800 text-white font-black py-6 uppercase italic border-2 border-red-600 hover:bg-red-600 transition-all tracking-tighter">SECURE NETWORK POSITION</button>
+                        <button type="submit" id="submit-btn-bottom" class="w-full bg-red-600 text-white font-black py-6 uppercase italic border-2 border-white hover:bg-white hover:text-black transition-all tracking-tighter">SECURE FULL SYSTEM ($37)</button>
                     </form>
+                    <p class="text-[10px] mono text-red-500 mt-4 uppercase font-black">2 Seats Remain • Then Price Resets to Full Retail</p>
                 </div>
             </div>
         </section>
@@ -415,33 +464,64 @@
                 <p class="mono text-[10px] font-black text-red-600 tracking-widest uppercase italic mb-6">// THE NON-HUMAN ENGINE</p>
                 <h3 class="text-4xl md:text-6xl font-black uppercase italic text-white mb-8 leading-none">THE MACHINE.</h3>
                 <p class="text-slate-300 text-lg italic leading-relaxed mb-8">This is where the manual ends and the hardware begins. We install the structural assets that produce independently of your emotional state—the fulfillment of the promise made in 2014.</p>
+                
+                <!-- SCARCITY INSERT -->
+                <div class="bg-red-950/30 border-2 border-red-600 p-6 mb-6">
+                    <p class="text-red-400 font-black uppercase text-sm mb-2">⚠️ Alpha 6 Only</p>
+                    <p class="text-white text-sm uppercase italic">The $37 subsidy includes the complete Machine (all 6 manuals + Blueprint). When the 6th architect joins, this offer vaporizes and the Blueprint price stands alone at full value.</p>
+                </div>
+                
                 <div class="bg-slate-900 p-6 border-l-4 border-red-600">
                     <p class="mono text-xs text-lime-300 uppercase italic">SYSTEM STATUS: READY FOR INSTALLATION</p>
                 </div>
             </div>
         </section>
 
-        <!-- FINAL ASK WITH STRIKETHROUGH -->
+        <!-- FINAL ASK -->
         <section class="p-12 md:p-24 bg-slate-950 text-center border-b-8 border-black">
             <h3 class="text-5xl md:text-8xl font-black uppercase italic tracking-tighter leading-none italic mb-12 text-white">STOP THE <br><span class="text-red-600 underline decoration-8">LEAK.</span></h3>
+            
+            <!-- ROSTER STATUS BIG -->
+            <div class="max-w-3xl mx-auto mb-12 bg-black border-4 border-red-600 p-8 industrial-shadow">
+                <p class="mono text-red-500 font-black uppercase text-sm tracking-widest mb-4">⚠️ Founding Architect Roster ⚠️</p>
+                <div class="flex justify-center items-center gap-6 mb-4">
+                    <div class="text-center">
+                        <p class="text-6xl font-black text-red-500 italic">4</p>
+                        <p class="text-xs uppercase text-slate-500">Filled</p>
+                    </div>
+                    <div class="text-slate-600 text-4xl">/</div>
+                    <div class="text-center">
+                        <p class="text-6xl font-black text-white italic">6</p>
+                        <p class="text-xs uppercase text-slate-500">Total</p>
+                    </div>
+                </div>
+                <div class="w-full bg-slate-800 h-6 border-2 border-slate-600 mb-4">
+                    <div class="bg-gradient-to-r from-red-600 to-red-800 h-full" style="width: 66%"></div>
+                </div>
+                <p class="text-white font-bold uppercase text-lg">When the 6th seat fills, the $37 subsidy ends permanently.</p>
+                <p class="text-slate-400 text-sm mt-2 uppercase">No countdown. No warning. Just closed.</p>
+            </div>
             
             <div class="max-w-4xl mx-auto mb-16 p-1 border-4 border-red-600 bg-slate-900 industrial-shadow text-left">
                 <div class="bg-black text-white p-8 md:p-12 border border-slate-800 text-center">
                     <div class="text-center mb-12 border-b-4 border-red-600 pb-8">
-                        <p class="mono text-sm uppercase font-black text-red-500 mb-2 italic tracking-widest">TOTAL SYSTEM VALUATION</p>
+                        <p class="mono text-sm uppercase font-black text-red-500 mb-2 italic tracking-widest">COMPLETE SYSTEM VALUATION</p>
                         <p class="text-7xl md:text-9xl font-black italic tracking-tighter uppercase slash-valuation">$2,908</p>
-                        <p class="mono text-xs uppercase text-slate-500 mt-2 italic">Retail Value You Won't Pay</p>
+                        <p class="mono text-xs uppercase text-slate-500 mt-2 italic">Full Retail Value • You Pay $37 Today</p>
                     </div>
                     <ul class="text-sm md:text-lg font-bold uppercase space-y-6 italic text-slate-400 text-left">
                         <li class="flex justify-between border-b border-slate-800 pb-2 text-white font-black"><span>Accelerator + 6 Manuals,</span> <span class="text-white">$2,871</span></li>
                         <li class="flex justify-between border-b border-slate-800 pb-2 text-white font-black"><span>The OQEAD Blueprint (7 Chapters),</span> <span class="text-white">$37</span></li>
-                        <li class="flex justify-between pt-6 text-white font-black italic uppercase text-xl"><span>Total Entry Subsidy,</span> <span class="text-green-500 font-black">98% DISCOUNT</span></li>
+                        <li class="flex justify-between pt-6 text-white font-black italic uppercase text-xl"><span>Your Alpha 6 Investment,</span> <span class="text-green-500 font-black">$37 Total</span></li>
                     </ul>
                 </div>
             </div>
 
-            <a href="https://square.link/u/gCCvyGpp" class="inline-flex w-full bg-red-600 text-white font-black text-3xl md:text-6xl py-12 md:py-16 uppercase italic industrial-shadow hover:bg-white hover:text-black transition-all justify-center items-center text-center">INSTALL FOR $37</a>
+            <a href="https://square.link/u/gCCvyGpp" class="inline-flex w-full bg-red-600 text-white font-black text-3xl md:text-6xl py-12 md:py-16 uppercase italic industrial-shadow hover:bg-white hover:text-black transition-all justify-center items-center text-center scarcity-pulse">INSTALL THE MACHINE — $37</a>
+            
             <div class="mt-8 bg-blue-600 text-white p-6 mono text-xs md:text-lg font-bold uppercase italic text-center">60-DAY IMPLEMENTATION GUARANTEE: DOUBLE YOUR MONEY BACK IF THE FRACTURE REMAINS.</div>
+            
+            <p class="mt-6 text-red-500 text-sm uppercase italic text-center max-w-2xl mx-auto font-bold">Warning: If you see "Roster Full" when you return, the $37 access point is gone. The Blueprint price will reset to full retail and the subsidy will not be honored.</p>
         </section>
 
         <!-- FOOTER -->
@@ -449,9 +529,9 @@
             <div class="mt-20 text-left border-t border-slate-800 pt-12 max-w-4xl mx-auto">
                 <p class="text-lg text-slate-300 italic leading-relaxed font-black">
                     <span class="text-red-600 font-black mono not-italic uppercase tracking-tighter mr-4 text-2xl">P.S.</span> 
-                    I made a promise in 2014 to build a Machine that worked without recruiting. It took 10 years of engineering, but <span class="line-through decoration-red-600 text-white font-bold">$2,908</span> worth of architecture is now available for <span class="text-white font-bold">$37</span> to the Alpha 6 Founders. 
-                    If this system doesn't stop your capital leak, I'll give you double your money back. 
-                    <a href="https://square.link/u/gCCvyGpp" class="text-red-500 underline font-black hover:text-white transition-colors ml-1 uppercase">Fulfill the promise. Install the Machine.</a>
+                    I made a promise in 2014 to build a Machine that worked without recruiting. It took 10 years of engineering. <span class="line-through decoration-red-600 text-white font-bold">$2,908</span> worth of architecture is available for <span class="text-white font-bold text-2xl">$37</span> to the Alpha 6 Founders ONLY. 
+                    Once the 6th architect claims their seat, this subsidy evaporates. The Blueprint price resets. And I won't reopen this rate. 
+                    <a href="https://square.link/u/gCCvyGpp" class="text-red-500 underline font-black hover:text-white transition-colors ml-1 uppercase block mt-2">Secure your seat before the roster caps.</a>
                 </p>
             </div>
 
@@ -459,7 +539,7 @@
                 <p class="mono text-[11px] font-black text-red-600 tracking-widest uppercase mb-4 italic">Architecture Status: Critical Leakage Detected</p>
                 <p class="mono text-[10px] font-black text-slate-400 mb-2 underline italic uppercase">OFFICIAL LEGAL DISCLAIMER & DISCLOSURE</p>
                 <p class="text-[10px] text-slate-700 text-justify leading-relaxed uppercase">
-                    This guide and the One Quarter Equals A Dollar system are based solely on the author's personal experience, principles learned from nearly two decades of self-study and disciplined execution alongside Damien Dewberry, and the systems developed during their journey from P.O.O.R to financial understanding. The author is not a financial advisor, certified public accountant, lawyer, or registered investment professional. All content, recommendations, and blueprints are for educational and informational purposes only and should not be considered professional financial or legal advice. Always consult with a qualified financial or legal professional before making any significant financial decisions. Results are not typical and depend entirely on individual adherence to the architecture.
+                    This guide and the One Quarter Equals A Dollar system are based solely on the author's personal experience, principles learned from nearly two decades of self-study and disciplined execution alongside Damien Dewberry, and the systems developed during their journey from P.O.O.R to financial understanding. The author is not a financial advisor, certified public accountant, lawyer, or registered investment professional. All content, recommendations, and blueprints are for educational and informational purposes only and should not be considered professional financial or legal advice. Always consult with a qualified financial or legal professional before making any significant financial decisions. Results are not typical and depend entirely on individual adherence to the architecture. Alpha 6 pricing ($37) is limited to the first 6 founding architects and will terminate without warning when roster capacity is reached, at which point pricing will reset to standard retail rates.
                 </p>
                 <p class="mono text-[9px] text-slate-700 mt-8 font-black italic uppercase">© 2026 One Quarter Enterprises LLC. All Rights Reserved.</p>
             </div>
