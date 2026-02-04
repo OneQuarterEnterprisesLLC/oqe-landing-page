@@ -31,9 +31,38 @@
         .chart-container { position: relative; width: 100%; height: 250px; }
         
         .instruction-box { background: #0f172a; border-left: 4px solid #ef4444; padding: 1.5rem; margin-bottom: 2rem; border: 1px solid #1e293b; border-left-width: 4px; border-left-color: #ef4444; }
+
+        /* Cookie Banner & Exit Popup Styles */
+        #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #0f172a; border-top: 2px solid #22d3ee; padding: 15px; z-index: 10000; display: none; text-align: center; }
+        #exit-intent-popup { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.98); z-index: 10001; align-items: center; justify-content: center; padding: 20px; }
     </style>
 </head>
 <body class="blueprint-bg p-4 md:p-8">
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner">
+        <p class="text-xs text-slate-400 mono italic">
+            // COOKIE AUDIT: We use tracking to measure architectural efficiency. 
+            <a href="https://onequarterenterprisesllc.github.io/onequarter.llc-privacy/" class="electric-cyan underline">Privacy Policy</a> //
+            <button onclick="acceptCookies()" class="ml-4 bg-slate-800 px-4 py-1 border border-slate-600 hover:border-cyan-400 text-[10px] font-black">ACCEPT</button>
+        </p>
+    </div>
+
+    <!-- Exit Intent Popup -->
+    <div id="exit-intent-popup">
+        <div class="max-w-lg w-full bg-slate-900 border-4 border-red-500 p-8 industrial-shadow rounded-2xl text-center">
+            <p class="alert-red font-black tracking-widest uppercase mb-4 text-sm mono italic">// LAST CHANCE INSTALLATION //</p>
+            <h2 class="text-3xl font-black italic uppercase text-white mb-6">Unplug the leak before you go.</h2>
+            <p class="text-slate-400 mb-8 leading-relaxed italic">The "7-Chapter Schematic" stops the Chaos Tax instantly. Secure your copy now and lock in your family's financial architecture.</p>
+            
+            <!-- PASTE YOUR SQUARE CHECKOUT LINK BELOW IN THE 'href' ATTRIBUTE -->
+            <a href=https://square.link/u/RDBg3rri target="_blank" rel="noopener noreferrer" class="block w-full bg-red-600 hover:bg-red-500 text-white font-black py-5 industrial-shadow uppercase italic tracking-widest text-lg transition-colors">
+                SECURE THE BLUEPRINT NOW
+            </a>
+            
+            <button onclick="closeExitPopup()" class="mt-8 text-slate-600 text-[10px] mono uppercase tracking-tighter hover:text-white underline">I'll keep paying the Chaos Tax</button>
+        </div>
+    </div>
 
     <header class="max-w-4xl mx-auto text-center mb-12">
         <p class="alert-red font-bold tracking-widest uppercase mb-4 text-sm mono italic">// SYSTEMIC BRIEFING: OPERATIONAL AUDIT //</p>
@@ -46,7 +75,6 @@
     </header>
 
     <section class="max-w-5xl mx-auto bg-slate-900 border-4 border-slate-800 p-8 md:p-12 industrial-shadow rounded-2xl mb-16">
-        
         <div class="text-center mb-10">
             <h2 class="text-2xl font-black uppercase italic electric-cyan underline decoration-slate-700 underline-offset-8">01. Initialize Chaos Tax Diagnostic</h2>
         </div>
@@ -110,27 +138,27 @@
         <div class="grid gap-6 md:grid-cols-2">
             <div class="bg-slate-900 border border-slate-700 p-6 rounded-xl">
                 <h3 class="electric-cyan font-black text-xl mb-2 uppercase italic">1. One Quarter Equals A D$llar</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">This core blueprint is the operating system for converting limited resources (your quarter) into a self-sustaining engine. It identifies the "Holes in the Pockets" and replaces reactive habits with structural discipline.</p>
+                <p class="text-slate-400 text-sm leading-relaxed">This core blueprint is the operating system for converting limited resources (your quarter) into a self-sustaining engine.</p>
             </div>
             <div class="bg-slate-900 border border-slate-700 p-6 rounded-xl">
                 <h3 class="electric-cyan font-black text-xl mb-2 uppercase italic">2. The Systemization Training Manual</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">This manual provides the practical bridge between these ideas and the physical creation of your machine. It delivers the mindset conditioning required to maintain this level of structure.</p>
+                <p class="text-slate-400 text-sm leading-relaxed">This manual provides the practical bridge between these ideas and the physical creation of your machine.</p>
             </div>
             <div class="bg-slate-900 border border-slate-700 p-6 rounded-xl">
                 <h3 class="electric-cyan font-black text-xl mb-2 uppercase italic">3. The Universal Family Money Flow Manual</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">This step-by-step schematic governs the internal and external laws of your future legacy. It ensures your money behaves according to the intelligence behind it for the family.</p>
+                <p class="text-slate-400 text-sm leading-relaxed">This step-by-step schematic governs the internal and external laws of your future legacy.</p>
             </div>
             <div class="bg-slate-900 border border-slate-700 p-6 rounded-xl">
                 <h3 class="electric-cyan font-black text-xl mb-2 uppercase italic">4. The Systemization Toolkit</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">This heavy-duty step-by-step defense system is designed to separate your personal life from your business liability. It creates the "Protective Shell" required to hold wealth without it leaking through this Chaos Tax.</p>
+                <p class="text-slate-400 text-sm leading-relaxed">Heavy-duty defense system designed to separate your personal life from your business liability.</p>
             </div>
             <div class="bg-slate-900 border border-slate-700 p-6 rounded-xl">
                 <h3 class="electric-cyan font-black text-xl mb-2 uppercase italic">5. The Systemization HVA Scripting</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">This exact set of templates for High-Value Actions produces disproportionate results relative to effort. It replaces manual labor with this "Automated Multiplication."</p>
+                <p class="text-slate-400 text-sm leading-relaxed">Templates for High-Value Actions that produce disproportionate results relative to effort.</p>
             </div>
             <div class="bg-slate-900 border border-slate-700 p-6 rounded-xl">
                 <h3 class="electric-cyan font-black text-xl mb-2 uppercase italic">6. The Capital Flow—The 3 Account Machine</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">This mechanical rule for account separation forces every dollar into a specific path: Operating, Systemization, or Compounding. It is the structural mandate that transforms this quarter into this dollar.</p>
+                <p class="text-slate-400 text-sm leading-relaxed">Mechanical rule for account separation forces every dollar into a specific path.</p>
             </div>
         </div>
     </main>
@@ -146,6 +174,7 @@
     <footer class="max-w-4xl mx-auto mt-20 pt-8 border-t border-slate-800 text-center text-slate-500 text-xs">
         <p class="font-bold uppercase tracking-widest mb-2">Identity • Architecture • Mechanics</p>
         <p>© 2026 One Quarter Enterprises LLC. All Rights Reserved.</p>
+        <a href="https://onequarterenterprisesllc.github.io/onequarter.llc-privacy/" target="_blank" class="electric-cyan underline font-bold text-sm block mt-4 uppercase tracking-tighter">Privacy Policy</a>
         <p class="mt-4 text-slate-600 italic">This system is an installation manual. Results are a function of structural discipline and alignment.</p>
     </footer>
 
@@ -159,29 +188,38 @@
 
         function updateDiagnostic() {
             const path = calculateTaxPath();
-            document.getElementById('tax-total').innerText = "$" + Math.round(path[2]).toLocaleString();
-            document.getElementById('val-shield').innerText = Math.round(shieldIntegrity) + "%";
-            document.getElementById('val-lag').innerText = Math.round(decisionLag) + " hrs";
+            const taxTotalElem = document.getElementById('tax-total');
+            if (taxTotalElem) taxTotalElem.innerText = "$" + Math.round(path[2]).toLocaleString();
+            
+            const valShieldElem = document.getElementById('val-shield');
+            if (valShieldElem) valShieldElem.innerText = Math.round(shieldIntegrity) + "%";
+            
+            const valLagElem = document.getElementById('val-lag');
+            if (valLagElem) valLagElem.innerText = Math.round(decisionLag) + " hrs";
 
             const title = document.getElementById('class-title');
             const desc = document.getElementById('class-desc');
             const score = (100 - shieldIntegrity) + (decisionLag * 2);
 
-            if (score > 60) {
-                title.innerText = "Breach: CRITICAL"; title.style.color = "#ef4444";
-                desc.innerText = "Structural failure detected. Leakage exceeds safe thresholds.";
-            } else if (score > 20) {
-                title.innerText = "Revolving Door Earner"; title.style.color = "#eab308";
-                desc.innerText = "Growth is being neutralized by operational friction.";
-            } else {
-                title.innerText = "Structural Apprentice"; title.style.color = "#22c55e";
-                desc.innerText = "Low friction. Ready to lock in legacy architecture.";
+            if (title && desc) {
+                if (score > 60) {
+                    title.innerText = "Breach: CRITICAL"; title.style.color = "#ef4444";
+                    desc.innerText = "Structural failure detected. Leakage exceeds safe thresholds.";
+                } else if (score > 20) {
+                    title.innerText = "Revolving Door Earner"; title.style.color = "#eab308";
+                    desc.innerText = "Growth is being neutralized by operational friction.";
+                } else {
+                    title.innerText = "Structural Apprentice"; title.style.color = "#22c55e";
+                    desc.innerText = "Low friction. Ready to lock in legacy architecture.";
+                }
             }
             if (chart) { chart.data.datasets[0].data = path; chart.update(); }
         }
 
         function initChart() {
-            const ctx = document.getElementById('chaosChart').getContext('2d');
+            const canvas = document.getElementById('chaosChart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
             chart = new Chart(ctx, {
                 type: 'bar',
                 data: { labels: ['Q1', 'Q2', 'Q3', 'Q4'], datasets: [{ label: 'Leakage', data: calculateTaxPath(), backgroundColor: '#ef4444' }] },
@@ -192,6 +230,7 @@
         function setupSliders() {
             const setup = (trackId, handleId, callback, maxVal) => {
                 const track = document.getElementById(trackId), handle = document.getElementById(handleId);
+                if (!track || !handle) return;
                 const move = (e) => {
                     const rect = track.getBoundingClientRect();
                     let x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
@@ -208,7 +247,40 @@
             setup('track-lag', 'handle-lag', (v) => { decisionLag = v; updateDiagnostic(); }, 40);
         }
 
-        window.onload = () => { initChart(); setupSliders(); updateDiagnostic(); };
+        // Mechanics Logic
+        window.onload = () => { 
+            initChart(); 
+            setupSliders(); 
+            updateDiagnostic(); 
+            
+            // Cookie Banner initialization
+            if (!localStorage.getItem('oqe_cookies_accepted')) {
+                const banner = document.getElementById('cookie-banner');
+                if (banner) banner.style.display = 'block';
+            }
+        };
+
+        function acceptCookies() {
+            localStorage.setItem('oqe_cookies_accepted', 'true');
+            const banner = document.getElementById('cookie-banner');
+            if (banner) banner.style.display = 'none';
+        }
+
+        let popupShown = false;
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0 && !popupShown) {
+                const popup = document.getElementById('exit-intent-popup');
+                if (popup) {
+                    popup.style.display = 'flex';
+                    popupShown = true;
+                }
+            }
+        });
+
+        function closeExitPopup() {
+            const popup = document.getElementById('exit-intent-popup');
+            if (popup) popup.style.display = 'none';
+        }
     </script>
 
     <script>
