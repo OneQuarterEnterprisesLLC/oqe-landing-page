@@ -3,290 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Revenue Sieve Diagnosis | OQEAD Installation</title>
+    <title>Make Your Money Grow on Its Own – Easy Plan for $37</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <script>
-        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
         (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
         ml('account', '1924779');
     </script>
-
     <style>
-        body { background-color: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        .electric-cyan { color: #22d3ee; }
-        .mono { font-family: 'JetBrains Mono', monospace; }
-        .industrial-shadow { box-shadow: 8px 8px 0px #000000; }
-        .alert-red { color: #ef4444; }
-        .blueprint-bg { background-image: radial-gradient(#1e293b 1px, transparent 1px); background-size: 30px 30px; }
-        
-        /* Calculator Controls */
-        .knob-track { height: 12px; background: #1e293b; border-radius: 6px; position: relative; cursor: pointer; border: 1px solid #334155; }
-        .knob-handle { width: 26px; height: 26px; background: #ef4444; position: absolute; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; border: 3px solid #0f172a; box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); z-index: 20; }
-        .measurement-pill { background: #ef4444; color: white; padding: 2px 8px; font-size: 10px; font-weight: 900; border-radius: 4px; }
-        .chart-container { position: relative; width: 100%; height: 250px; }
-        
-        .instruction-box { background: #0f172a; border-left: 4px solid #ef4444; padding: 1.5rem; margin-bottom: 2rem; border: 1px solid #1e293b; border-left-width: 4px; border-left-color: #ef4444; }
-
-        /* Cookie Banner & Exit Popup Styles */
-        #cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; background: #0f172a; border-top: 2px solid #22d3ee; padding: 15px; z-index: 10000; display: none; text-align: center; }
-        #exit-intent-popup { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.98); z-index: 10001; align-items: center; justify-content: center; padding: 20px; }
+        body { background-color: #ffffff; color: #111827; font-family: 'Inter', sans-serif; }
+        .corporate-blue { background-color: #1e40af; color: white; }
+        .corporate-blue:hover { background-color: #1e3a8a; }
+        .highlight-gold { color: #d97706; }
+        .section-bg { background-color: #f9fafb; }
+        .slider-track { height: 12px; background: #e5e7eb; border-radius: 6px; position: relative; cursor: pointer; }
+        .slider-handle { width: 28px; height: 28px; background: #1e40af; position: absolute; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; border: 4px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .preview-img { max-width: 100%; border: 1px solid #e5e7eb; border-radius: 8px; }
     </style>
 </head>
-<body class="blueprint-bg p-4 md:p-8">
-
-    <!-- Cookie Banner -->
-    <div id="cookie-banner">
-        <p class="text-xs text-slate-400 mono italic">
-            // COOKIE AUDIT: We use tracking to measure architectural efficiency. 
-            <a href="https://onequarterenterprisesllc.github.io/onequarter.llc-privacy/" class="electric-cyan underline">Privacy Policy</a> //
-            <button onclick="acceptCookies()" class="ml-4 bg-slate-800 px-4 py-1 border border-slate-600 hover:border-cyan-400 text-[10px] font-black">ACCEPT</button>
-        </p>
-    </div>
+<body class="antialiased">
 
     <!-- Exit Intent Popup -->
-    <div id="exit-intent-popup">
-        <div class="max-w-lg w-full bg-slate-900 border-4 border-red-500 p-8 industrial-shadow rounded-2xl text-center">
-            <p class="alert-red font-black tracking-widest uppercase mb-4 text-sm mono italic">// LAST CHANCE INSTALLATION //</p>
-            <h2 class="text-3xl font-black italic uppercase text-white mb-6">Unplug the leak before you go.</h2>
-            <p class="text-slate-400 mb-8 leading-relaxed italic">The "7-Chapter Schematic" stops the Chaos Tax instantly. Secure your copy now and lock in your family's financial architecture.</p>
-            
-            <!-- PASTE YOUR SQUARE CHECKOUT LINK BELOW IN THE 'href' ATTRIBUTE -->
-            <a href=https://square.link/u/RDBg3rri target="_blank" rel="noopener noreferrer" class="block w-full bg-red-600 hover:bg-red-500 text-white font-black py-5 industrial-shadow uppercase italic tracking-widest text-lg transition-colors">
-                SECURE THE BLUEPRINT NOW
-            </a>
-            
-            <button onclick="closeExitPopup()" class="mt-8 text-slate-600 text-[10px] mono uppercase tracking-tighter hover:text-white underline">I'll keep paying the Chaos Tax</button>
+    <div id="exit-intent-popup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9999; align-items:center; justify-content:center; padding:20px;">
+        <div class="bg-white border-4 border-red-600 p-8 rounded-xl max-w-lg text-center shadow-2xl">
+            <p class="text-red-600 font-bold uppercase text-sm mb-4">// LAST CHANCE //</p>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Don't Leave Without Your Plan</h2>
+            <p class="text-gray-600 mb-8">Secure the full system now at $37 – special price ends soon.</p>
+            <a href="https://square.link/u/RDBg3rri" target="_blank" class="block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg uppercase text-lg">Buy the Full Plan Now</a>
+            <button onclick="document.getElementById('exit-intent-popup').style.display='none';" class="mt-6 text-gray-500 underline text-sm">No thanks</button>
         </div>
     </div>
 
-    <header class="max-w-4xl mx-auto text-center mb-12">
-        <p class="alert-red font-bold tracking-widest uppercase mb-4 text-sm mono italic">// SYSTEMIC BRIEFING: OPERATIONAL AUDIT //</p>
-        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-6 uppercase italic text-white">
-            The <span class="electric-cyan">Leak</span> That Silently Ruin Businesses.
-        </h1>
-        <p class="text-xl md:text-2xl font-medium text-slate-300">
-            The "Chaos Tax" that burns through your hard-earned cash...and what to do to stop it
-        </p>
+    <!-- Hero -->
+    <header class="text-center py-20 px-6 bg-gradient-to-b from-gray-50 to-white">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">Make Your Money Grow on Its Own</h1>
+        <p class="text-xl md:text-2xl text-gray-700 mb-10 max-w-3xl mx-auto">Stop money leaks forever. Get the complete easy system for just $37 – limited pre-launch special.</p>
+        <div class="max-w-2xl mx-auto mb-12">
+            <img src="https://www.dropbox.com/scl/fi/7959i54zpfc2sgse0gt96/616816655_122115024747133844_2904137800389295925_n.jpg?rlkey=7if4da4u6sv5jbf575afgq54k&st=y7ghdylx&dl=1" alt="The Systemization Toolkit – Money Growing Machine" class="rounded-xl shadow-2xl mx-auto">
+        </div>
+        <a href="https://square.link/u/RDBg3rri" class="inline-block corporate-blue font-bold py-5 px-12 rounded-lg text-xl uppercase tracking-wide">Buy the Full Plan Now – $37</a>
     </header>
 
-    <section class="max-w-5xl mx-auto bg-slate-900 border-4 border-slate-800 p-8 md:p-12 industrial-shadow rounded-2xl mb-16">
-        <div class="text-center mb-10">
-            <h2 class="text-2xl font-black uppercase italic electric-cyan underline decoration-slate-700 underline-offset-8">01. Initialize Chaos Tax Diagnostic</h2>
+    <!-- Top Email Capture -->
+    <section class="max-w-4xl mx-auto px-6 py-12 text-center section-bg rounded-xl my-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Get Your Free Money Leak Report</h2>
+        <p class="text-lg text-gray-600 mb-8">Enter your info to see your custom preview and start fixing leaks today.</p>
+        <div class="ml-embedded max-w-md mx-auto" data-form="4xZNT2"></div>
+    </section>
+
+    <!-- Money Waste Calculator -->
+    <section class="max-w-5xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">How Much Money Are You Losing?</h2>
+        <p class="text-center text-gray-600 mb-10 max-w-3xl mx-auto">Move the controls to see your yearly money waste from leaks and extra work.</p>
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                <p class="font-bold mb-2">Step 1: Money Separation %</p>
+                <p class="text-sm text-gray-500">100% = Fully separate. 0% = All mixed.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                <p class="font-bold mb-2">Step 2: Weekly Lost Hours</p>
+                <p class="text-sm text-gray-500">Time fixing problems or doing things by hand.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+                <p class="font-bold mb-2">Step 3: Your Number</p>
+                <p class="text-sm text-gray-500">See the yearly cost of leaks.</p>
+            </div>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div class="instruction-box">
-                <p class="mono text-[10px] font-black text-red-500 uppercase mb-2">Step 1: Set Integrity</p>
-                <p class="text-xs text-slate-400 leading-relaxed italic">Drag the <strong>Account Integrity</strong> knob to reflect your current financial separation. 100% means total firewall; 0% means business and survival accounts are fully mixed.</p>
-            </div>
-            <div class="instruction-box">
-                <p class="mono text-[10px] font-black text-red-500 uppercase mb-2">Step 2: Measure Friction</p>
-                <p class="text-xs text-slate-400 leading-relaxed italic">Adjust <strong>Weekly Friction Hours</strong> to account for time lost to reactive decision-making, manual billing, and "putting out fires."</p>
-            </div>
-            <div class="instruction-box">
-                <p class="mono text-[10px] font-black text-red-500 uppercase mb-2">Step 3: Audit Results</p>
-                <p class="text-xs text-slate-400 leading-relaxed italic">Review the <strong>12-Month Capital Leakage</strong>. This is the estimated "Chaos Tax" you are currently paying due to architectural failure.</p>
-            </div>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-10">
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="space-y-8">
                 <div>
-                    <div class="flex justify-between mb-4">
-                        <label class="mono text-[10px] uppercase font-bold text-slate-400 tracking-widest">Account Integrity (%)</label>
-                        <span class="measurement-pill mono" id="val-shield">80%</span>
+                    <div class="flex justify-between mb-2">
+                        <label class="font-semibold">Money Separation (%)</label>
+                        <span id="val-shield" class="font-bold text-blue-600">80%</span>
                     </div>
-                    <div class="knob-track bg-slate-800" id="track-shield">
-                        <div class="knob-handle" id="handle-shield" style="left: 80%;"></div>
+                    <div class="slider-track" id="track-shield">
+                        <div class="slider-handle" id="handle-shield" style="left:80%;"></div>
                     </div>
                 </div>
-
                 <div>
-                    <div class="flex justify-between mb-4">
-                        <label class="mono text-[10px] uppercase font-bold text-slate-400 tracking-widest">Weekly Friction Hours</label>
-                        <span class="measurement-pill mono" id="val-lag">20 hrs</span>
+                    <div class="flex justify-between mb-2">
+                        <label class="font-semibold">Weekly Lost Hours</label>
+                        <span id="val-lag" class="font-bold text-blue-600">20 hrs</span>
                     </div>
-                    <div class="knob-track bg-slate-800" id="track-lag">
-                        <div class="knob-handle" id="handle-lag" style="left: 50%;"></div>
+                    <div class="slider-track" id="track-lag">
+                        <div class="slider-handle" id="handle-lag" style="left:50%;"></div>
                     </div>
                 </div>
-
-                <div class="bg-slate-950 border-2 border-slate-800 p-6 text-center industrial-shadow">
-                    <div class="text-2xl font-black italic tracking-tighter text-white uppercase" id="class-title">Detecting Breach...</div>
-                    <div class="text-[10px] mono uppercase text-slate-500 mt-2 italic leading-relaxed" id="class-desc">Adjust sliders to begin audit.</div>
+                <div class="bg-gray-50 p-8 text-center rounded-xl shadow-md">
+                    <div class="text-2xl font-bold uppercase text-gray-900" id="class-title">Checking...</div>
+                    <div class="text-sm text-gray-600 mt-2" id="class-desc">Move controls to see your level.</div>
                 </div>
             </div>
-
-            <div class="flex flex-col items-center">
-                <div class="chart-container">
-                    <canvas id="chaosChart"></canvas>
-                </div>
-                <div class="mt-8 text-5xl md:text-6xl font-black italic tracking-tighter text-red-500" id="tax-total">$0</div>
-                <p class="mono text-[10px] text-slate-500 uppercase mt-2 italic font-bold">12-Month Capital Leakage Estimate</p>
+            <div class="text-center">
+                <div class="h-80"><canvas id="chaosChart"></canvas></div>
+                <div class="mt-8 text-5xl md:text-6xl font-extrabold text-red-600" id="tax-total">$0</div>
+                <p class="text-sm text-gray-500 mt-2 font-medium">Yearly Money Waste Estimate</p>
             </div>
         </div>
     </section>
 
-    <main class="max-w-5xl mx-auto mb-20">
-        <h2 class="text-2xl font-black mb-10 uppercase tracking-widest text-center border-b-4 border-slate-700 pb-4">The "Back-End" Architecture Stack</h2>
-        
-        <div class="grid gap-6 md:grid-cols-2">
-            <div class="bg-slate-900 border border-slate-700 p-6 rounded-xl">
-                <h3 class="electric-cyan font-black text-xl mb-2 uppercase italic">1. One Quarter Equals A D$llar</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">This core blueprint is the operating system for converting limited resources (your quarter) into a self-sustaining engine.</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-700 p-6 rounded-xl">
-                <h3 class="electric-cyan font-black text-xl mb-2 uppercase italic">2. The Systemization Training Manual</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">This manual provides the practical bridge between these ideas and the physical creation of your machine.</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-700 p-6 rounded-xl">
-                <h3 class="electric-cyan font-black text-xl mb-2 uppercase italic">3. The Universal Family Money Flow Manual</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">This step-by-step schematic governs the internal and external laws of your future legacy.</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-700 p-6 rounded-xl">
-                <h3 class="electric-cyan font-black text-xl mb-2 uppercase italic">4. The Systemization Toolkit</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Heavy-duty defense system designed to separate your personal life from your business liability.</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-700 p-6 rounded-xl">
-                <h3 class="electric-cyan font-black text-xl mb-2 uppercase italic">5. The Systemization HVA Scripting</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Templates for High-Value Actions that produce disproportionate results relative to effort.</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-700 p-6 rounded-xl">
-                <h3 class="electric-cyan font-black text-xl mb-2 uppercase italic">6. The Capital Flow—The 3 Account Machine</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">Mechanical rule for account separation forces every dollar into a specific path.</p>
-            </div>
+    <!-- Story Section -->
+    <section class="max-w-4xl mx-auto px-6 py-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">My Story – Why I Built This System</h2>
+        <div class="max-w-3xl mx-auto">
+            <p class="text-lg text-gray-700 mb-6">
+                I saw money disappearing everywhere. For 19 years, I fixed leaks in businesses. In one meeting with a 20-year-old company, I found they lost $132,000 every year without knowing. My first early member set up 3 safe money spots and started their product. Now I created this simple system to help you stop losses and make money grow by itself.
+            </p>
+            <ul class="text-left text-gray-700 space-y-3 text-lg">
+                <li>• Found big hidden losses for others – now for you.</li>
+                <li>• Built easy steps anyone can do.</li>
+                <li>• Low price now to get real results and stories.</li>
+            </ul>
         </div>
-    </main>
-
-    <section class="max-w-2xl mx-auto mb-20 bg-slate-900 p-10 rounded-2xl border-4 border-slate-700 industrial-shadow">
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-black uppercase electric-cyan italic tracking-tighter">Direct the Flow</h2>
-            <p class="text-slate-400 mt-2">Initialize the installation by entering your credentials below.</p>
-        </div>
-        <div class="ml-embedded" data-form="4xZNT2"></div>
     </section>
 
-    <footer class="max-w-4xl mx-auto mt-20 pt-8 border-t border-slate-800 text-center text-slate-500 text-xs">
-        <p class="font-bold uppercase tracking-widest mb-2">Identity • Architecture • Mechanics</p>
+    <!-- What You Get -->
+    <section class="max-w-5xl mx-auto px-6 py-16 section-bg rounded-xl my-12">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">What You Get for $37 (Full System)</h2>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">1. One Quarter Equals A Dollar (Main Guide)</h3>
+                    <p class="text-gray-600">The big idea book. Shows how to take a small amount of money and make it grow big on its own — stop working forever just to stay the same.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">2. Systemization Training Manual</h3>
+                    <p class="text-gray-600">Teaches you how to think and act like the boss of your money system. Turns ideas into real steps without getting lost.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">3. Universal Family Money Flow Manual</h3>
+                    <p class="text-gray-600">Easy rules to protect money at home and make it grow for your family for years to come.</p>
+                </div>
+            </div>
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">4. Systemization Toolkit (29-Page Steps Book)</h3>
+                    <p class="text-gray-600">The main how-to binder with checklists, plans, and steps. Covers safe money spots, building your product, auto emails, weekly checks, stopping problems, and growing bigger.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">5. Quick Money Words (Scripts)</h3>
+                    <p class="text-gray-600">Simple ready words to get fast cash and happy customers quickly.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">6. 3 Safe Money Spots (Flow Machine)</h3>
+                    <p class="text-gray-600">Rules to split money into 3 safe places so it stays protected and grows automatically. (Extra free gift in emails later.)</p>
+                </div>
+            </div>
+        </div>
+        <p class="text-center text-gray-600 mt-10 max-w-3xl mx-auto">Main guide downloads now. Rest comes by email step-by-step. Limited special – price goes up after pre-launch.</p>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="max-w-4xl mx-auto px-6 py-16 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">60-Day Double Money-Back Promise</h2>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">Try it 60 days. If money still leaks and doesn't grow, just say so. Get $74 back. No hard questions — you win either way.</p>
+    </section>
+
+    <!-- Bottom CTA + Capture -->
+    <section class="text-center py-20 px-6 bg-gradient-to-b from-white to-gray-50">
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">Ready to Make Your Money Work for You?</h2>
+        <a href="https://square.link/u/RDBg3rri" class="inline-block corporate-blue font-bold py-5 px-12 rounded-lg text-2xl uppercase tracking-wide mb-12">Buy the Full Plan Now – $37</a>
+        <div class="max-w-md mx-auto">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">Start with Your Free Report</h3>
+            <div class="ml-embedded" data-form="4xZNT2"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-12 text-gray-500 text-sm border-t border-gray-200">
+        <p class="font-semibold mb-2">Identity • Architecture • Mechanics</p>
         <p>© 2026 One Quarter Enterprises LLC. All Rights Reserved.</p>
-        <a href="https://onequarterenterprisesllc.github.io/onequarter.llc-privacy/" target="_blank" class="electric-cyan underline font-bold text-sm block mt-4 uppercase tracking-tighter">Privacy Policy</a>
-        <p class="mt-4 text-slate-600 italic">This system is an installation manual. Results are a function of structural discipline and alignment.</p>
+        <a href="https://onequarterenterprisesllc.github.io/onequarter.llc-privacy/" target="_blank" class="text-blue-600 hover:underline">Privacy Policy</a>
+        <p class="mt-4 text-gray-600">This is a guide to build your system. Results depend on how well you follow the steps.</p>
     </footer>
 
     <script>
+        // Exit popup
+        let popupShown = false;
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0 && !popupShown) {
+                document.getElementById('exit-intent-popup').style.display = 'flex';
+                popupShown = true;
+            }
+        });
+
+        // Full interactive calculator
         let shieldIntegrity = 80, decisionLag = 20, chart;
 
-        function calculateTaxPath() { 
-            const annualLoss = (decisionLag * 48 * 150) + ((100 - shieldIntegrity) * 500); 
-            return [annualLoss * 0.2, annualLoss * 0.6, annualLoss, annualLoss * 1.5]; 
+        function calculateTaxPath() {
+            const annualLoss = (decisionLag * 48 * 150) + ((100 - shieldIntegrity) * 500);
+            return [annualLoss * 0.2, annualLoss * 0.6, annualLoss, annualLoss * 1.5];
         }
 
         function updateDiagnostic() {
             const path = calculateTaxPath();
-            const taxTotalElem = document.getElementById('tax-total');
-            if (taxTotalElem) taxTotalElem.innerText = "$" + Math.round(path[2]).toLocaleString();
-            
-            const valShieldElem = document.getElementById('val-shield');
-            if (valShieldElem) valShieldElem.innerText = Math.round(shieldIntegrity) + "%";
-            
-            const valLagElem = document.getElementById('val-lag');
-            if (valLagElem) valLagElem.innerText = Math.round(decisionLag) + " hrs";
+            document.getElementById('tax-total').innerText = "$" + Math.round(path[2]).toLocaleString();
+
+            document.getElementById('val-shield').innerText = Math.round(shieldIntegrity) + "%";
+            document.getElementById('val-lag').innerText = Math.round(decisionLag) + " hrs";
 
             const title = document.getElementById('class-title');
             const desc = document.getElementById('class-desc');
             const score = (100 - shieldIntegrity) + (decisionLag * 2);
-
             if (title && desc) {
                 if (score > 60) {
-                    title.innerText = "Breach: CRITICAL"; title.style.color = "#ef4444";
-                    desc.innerText = "Structural failure detected. Leakage exceeds safe thresholds.";
+                    title.innerText = "High Risk";
+                    title.style.color = "#dc2626";
+                    desc.innerText = "Big leaks detected – money disappearing fast.";
                 } else if (score > 20) {
-                    title.innerText = "Revolving Door Earner"; title.style.color = "#eab308";
-                    desc.innerText = "Growth is being neutralized by operational friction.";
+                    title.innerText = "Medium Risk";
+                    title.style.color = "#d97706";
+                    desc.innerText = "Growth slowed by extra work and leaks.";
                 } else {
-                    title.innerText = "Structural Apprentice"; title.style.color = "#22c55e";
-                    desc.innerText = "Low friction. Ready to lock in legacy architecture.";
+                    title.innerText = "Low Risk";
+                    title.style.color = "#16a34a";
+                    desc.innerText = "Good setup – ready to grow money easily.";
                 }
             }
-            if (chart) { chart.data.datasets[0].data = path; chart.update(); }
+
+            if (chart) {
+                chart.data.datasets[0].data = path;
+                chart.update();
+            }
         }
 
         function initChart() {
-            const canvas = document.getElementById('chaosChart');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
+            const ctx = document.getElementById('chaosChart').getContext('2d');
             chart = new Chart(ctx, {
                 type: 'bar',
-                data: { labels: ['Q1', 'Q2', 'Q3', 'Q4'], datasets: [{ label: 'Leakage', data: calculateTaxPath(), backgroundColor: '#ef4444' }] },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { display: false }, x: { grid: { display: false }, ticks: { font: { family: 'JetBrains Mono', size: 10 }, color: '#475569' } } } }
+                data: {
+                    labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                    datasets: [{ data: calculateTaxPath(), backgroundColor: '#dc2626', borderWidth: 0 }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { display: false }, x: { grid: { display: false } } }
+                }
             });
         }
 
         function setupSliders() {
             const setup = (trackId, handleId, callback, maxVal) => {
-                const track = document.getElementById(trackId), handle = document.getElementById(handleId);
+                const track = document.getElementById(trackId);
+                const handle = document.getElementById(handleId);
                 if (!track || !handle) return;
+
                 const move = (e) => {
+                    e.preventDefault();
                     const rect = track.getBoundingClientRect();
                     let x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
                     x = Math.max(0, Math.min(x, rect.width));
-                    const p = (x / rect.width) * 100;
-                    handle.style.left = p + "%";
-                    callback((p / 100) * maxVal);
+                    const percent = (x / rect.width) * 100;
+                    handle.style.left = percent + "%";
+                    callback((percent / 100) * maxVal);
                 };
-                const start = (e) => { e.preventDefault(); window.addEventListener('mousemove', move); window.addEventListener('mouseup', stop); window.addEventListener('touchmove', move); window.addEventListener('touchend', stop); };
-                const stop = () => { window.removeEventListener('mousemove', move); window.removeEventListener('mouseup', stop); window.removeEventListener('touchmove', move); window.removeEventListener('touchend', stop); };
-                track.addEventListener('mousedown', start); track.addEventListener('touchstart', start);
+
+                const start = (e) => {
+                    e.preventDefault();
+                    window.addEventListener('mousemove', move);
+                    window.addEventListener('mouseup', stop);
+                    window.addEventListener('touchmove', move);
+                    window.addEventListener('touchend', stop);
+                };
+
+                const stop = () => {
+                    window.removeEventListener('mousemove', move);
+                    window.removeEventListener('mouseup', stop);
+                    window.removeEventListener('touchmove', move);
+                    window.removeEventListener('touchend', stop);
+                };
+
+                track.addEventListener('mousedown', start);
+                track.addEventListener('touchstart', start);
             };
+
             setup('track-shield', 'handle-shield', (v) => { shieldIntegrity = v; updateDiagnostic(); }, 100);
             setup('track-lag', 'handle-lag', (v) => { decisionLag = v; updateDiagnostic(); }, 40);
         }
 
-        // Mechanics Logic
-        window.onload = () => { 
-            initChart(); 
-            setupSliders(); 
-            updateDiagnostic(); 
-            
-            // Cookie Banner initialization
-            if (!localStorage.getItem('oqe_cookies_accepted')) {
-                const banner = document.getElementById('cookie-banner');
-                if (banner) banner.style.display = 'block';
-            }
+        window.onload = () => {
+            initChart();
+            setupSliders();
+            updateDiagnostic();
         };
-
-        function acceptCookies() {
-            localStorage.setItem('oqe_cookies_accepted', 'true');
-            const banner = document.getElementById('cookie-banner');
-            if (banner) banner.style.display = 'none';
-        }
-
-        let popupShown = false;
-        document.addEventListener('mouseleave', (e) => {
-            if (e.clientY < 0 && !popupShown) {
-                const popup = document.getElementById('exit-intent-popup');
-                if (popup) {
-                    popup.style.display = 'flex';
-                    popupShown = true;
-                }
-            }
-        });
-
-        function closeExitPopup() {
-            const popup = document.getElementById('exit-intent-popup');
-            if (popup) popup.style.display = 'none';
-        }
     </script>
-
-    <script>
-        window.chatbaseConfig = { chatbotId: "LqQm-wIUNIr8Atcfigm0N" };
-    </script>
-    <script src="https://www.chatbase.co/embed.min.js" id="LqQm-wIUNIr8Atcfigm0N" defer></script>
-
 </body>
 </html>
