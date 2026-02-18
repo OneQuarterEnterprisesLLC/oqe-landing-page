@@ -16,14 +16,41 @@
         body { background-color: #ffffff; color: #111827; font-family: 'Inter', sans-serif; }
         .corporate-blue { background-color: #1e40af; color: white; }
         .corporate-blue:hover { background-color: #1e3a8a; }
-        .highlight-gold { color: #d97706; }
         .section-bg { background-color: #f9fafb; }
         .slider-track { height: 12px; background: #e5e7eb; border-radius: 6px; position: relative; cursor: pointer; }
         .slider-handle { width: 28px; height: 28px; background: #1e40af; position: absolute; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; border: 4px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-        .preview-img { max-width: 100%; border: 1px solid #e5e7eb; border-radius: 8px; }
+        #privacy-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 10000; align-items: center; justify-content: center; padding: 20px; }
+        #privacy-content { background: white; max-width: 800px; max-height: 90vh; overflow-y: auto; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; }
+        #close-privacy { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #666; }
+        #privacy-content h1 { color: #1e40af; font-size: 2rem; margin-bottom: 1rem; }
+        #privacy-content h2 { color: #1e40af; margin-top: 1.5rem; }
     </style>
 </head>
 <body class="antialiased">
+
+    <!-- Privacy Policy Modal (embedded content from your raw HTML) -->
+    <div id="privacy-modal">
+        <div id="privacy-content">
+            <span id="close-privacy" onclick="document.getElementById('privacy-modal').style.display='none'">&times;</span>
+            <h1>Privacy Policy</h1>
+            <p><strong>Last Updated: Feb 3, 2026</strong></p>
+            <p>At One Quarter Enterprises LLC, we protect your info. This page tells you how we use your data when you visit our site or see our ads.</p>
+           
+            <h2>1. What we collect</h2>
+            <p>We only save your name and email if you give them to us. We also use small tools like "cookies" to see how our ads are working.</p>
+           
+            <h2>2. How we use it</h2>
+            <p>We use your email to send you the "7 Chapters to 7 Figures" book. We use ad tools to show you the right messages.</p>
+           
+            <h2>3. Your choices</h2>
+            <p>You can ask us to delete your info anytime. You can also click "unsubscribe" on any email we send you.</p>
+           
+            <h2>4. Our Disclaimer</h2>
+            <p>This system is an installation manual. Results depend on your own discipline and hard work.</p>
+           
+            <p>© 2026 One Quarter Enterprises LLC. All Rights Reserved.</p>
+        </div>
+    </div>
 
     <!-- Exit Intent Popup -->
     <div id="exit-intent-popup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9999; align-items:center; justify-content:center; padding:20px;">
@@ -175,7 +202,8 @@
     <footer class="text-center py-12 text-gray-500 text-sm border-t border-gray-200">
         <p class="font-semibold mb-2">Identity • Architecture • Mechanics</p>
         <p>© 2026 One Quarter Enterprises LLC. All Rights Reserved.</p>
-        <a href="https://onequarterenterprisesllc.github.io/onequarter.llc-privacy/" target="_blank" class="text-blue-600 hover:underline">Privacy Policy</a>
+        <a href="#" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;" class="text-blue-600 hover:underline">Privacy Policy</a> • 
+        <a href="mailto:your-email@example.com" class="text-blue-600 hover:underline">Contact Us</a>
         <p class="mt-4 text-gray-600">This is a guide to build your system. Results depend on how well you follow the steps.</p>
     </footer>
 
