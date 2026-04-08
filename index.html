@@ -29,6 +29,12 @@
             --serif: 'Cormorant Garamond', Georgia, serif;
             --display: 'Bebas Neue', sans-serif;
             --body: 'DM Sans', sans-serif;
+            
+            /* Status Colors */
+            --status-green: #7EC8A0;
+            --status-yellow: #E8C97A;
+            --status-amber: #D97706;
+            --status-red: #E07070;
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -244,8 +250,10 @@
                 <div class="chart-container"><canvas id="chaosChart"></canvas></div>
                 <span class="section-label" style="color:white; margin-bottom: 0; justify-content: center;">Annual Chaos Tax Leak</span>
                 <div class="result-total" id="tax-amount">$0</div>
-                <p class="serif-italic" id="verdict">Significant system leakage detected. The Machine plugs these holes instantly.</p>
-                <a href="https://square.link/u/RDBg3rri" target="_blank" class="btn-gold" style="width: 100%;">Stop The Leak Now</a>
+                <p class="serif-italic" id="verdict" style="max-width: 600px; margin: 0 auto;">Diagnostic Pending...</p>
+                <div id="btn-result-wrap" style="display: none;">
+                    <a href="https://square.link/u/RDBg3rri" target="_blank" class="btn-gold" style="width: 100%;">Stop The Leak Now</a>
+                </div>
             </div>
         </div>
     </section>
@@ -360,7 +368,8 @@
         });
 
         function runAudit() {
-            const manualHours = parseFloat(document.getElementById('manual-hours').value) || 0;
+            const manualHoursInput = document.getElementById('manual-hours').value;
+            const manualHours = parseFloat(manualHoursInput) || 0;
             const hourlyRate = parseFloat(document.getElementById('rate').value) || 150;
             let checkHours = 0;
             document.querySelectorAll('.check-item.checked').forEach(el => {
@@ -368,8 +377,35 @@
             });
             const totalHours = manualHours + checkHours;
             const annualLeak = totalHours * hourlyRate * 52;
+            
             document.getElementById('tax-amount').innerText = '$' + annualLeak.toLocaleString();
             document.getElementById('result-ui').style.display = 'block';
+            
+            const verdict = document.getElementById('verdict');
+            const btnWrap = document.getElementById('btn-result-wrap');
+            
+            // Logic for Red, Yellow, Green status
+            if (annualLeak === 0) {
+                // GREEN - Perfect Architecture
+                verdict.innerText = "Architecture Verified. Your current setup has zero detectable leakage. You are operating at peak efficiency. Ready for high-speed scaling.";
+                verdict.style.color = "#7EC8A0"; // var(--status-green)
+                btnWrap.style.display = "none"; // No need to stop a leak that doesn't exist
+            } else if (annualLeak < 30000) {
+                // YELLOW - Minor Leaks
+                verdict.innerText = "Minor Leakage Detected. Your systems have small structural fractures that are slowing your progress. The 3-Account Machine will seal these gaps.";
+                verdict.style.color = "#E8C97A"; // var(--status-yellow)
+                btnWrap.style.display = "block";
+            } else if (annualLeak < 78000) {
+                // AMBER - Significant Chaos Tax
+                verdict.innerText = "Significant Chaos Tax. You are paying a high 'Stupidity Fine' every week. Your labor is flowing through broken pipes. Correction is mandatory.";
+                verdict.style.color = "#D97706"; // var(--status-amber)
+                btnWrap.style.display = "block";
+            } else {
+                // RED - Critical Failure
+                verdict.innerText = "Critical System Failure. Your capital is melting away at a lethal velocity. This leak is consuming your legacy before it can compound. Stop the bleed now.";
+                verdict.style.color = "#E07070"; // var(--status-red)
+                btnWrap.style.display = "block";
+            }
             
             const path = [annualLeak * 0.2, annualLeak * 0.5, annualLeak, annualLeak * 1.5];
             if (!chart) initChart(path);
@@ -418,7 +454,6 @@
         const onLoad = function(){
           const script = document.createElement("script");
           script.src = "https://www.chatbase.co/embed.min.js";
-          // Replace with your actual Chatbot ID if different
           script.id = "PASTE_YOUR_CHATBOT_ID_HERE"; 
           script.domain = "www.chatbase.co";
           document.body.appendChild(script)
