@@ -422,11 +422,11 @@
       <button class="btn-gold" onclick="showResult()">SHOW ME HOW MUCH I'M LOSING →</button>
 
       <div class="result-box" id="result-box">
-        <div class="rlabel">You're losing this much every year</div>
+        <div class="rlabel" id="result-label">You're losing this much every year.</div>
         <div class="ramount" id="result-amount">$0</div>
         <div class="rmsg" id="result-msg"></div>
-        <a class="rcta" href="https://square.link/u/R4bcRwAf" target="_blank">
-          GET THE PLAN THAT STOPS THE LEAK — $37 →
+        <a class="rcta" id="result-cta" href="https://square.link/u/R4bcRwAf" target="_blank">
+          GET THE PLAN — $37 →
         </a>
       </div>
     </div>
@@ -728,36 +728,48 @@
     const hours     = +document.getElementById('hours').value;
     const rate      = +document.getElementById('rate').value;
 
-    const spendLeak = income * 0.72 * (untracked / 100);
+    const spendLeak = income * (untracked / 100);
     const timeWaste = hours * 52 * rate;
     const total     = spendLeak + timeWaste;
 
-    const box = document.getElementById('result-box');
-    const amt = document.getElementById('result-amount');
-    const msg = document.getElementById('result-msg');
+    const box   = document.getElementById('result-box');
+    const amt   = document.getElementById('result-amount');
+    const msg   = document.getElementById('result-msg');
+    const lbl   = document.getElementById('result-label');
+    const cta   = document.getElementById('result-cta');
 
     amt.textContent = fmt(total);
 
-    let color, text;
-    if (total < 15000) {
-      color = '#2e7d32';
-      text  = "Your leak is smaller than most — but it's still a leak. One missing piece costs you more every year you leave it open.";
-    } else if (total < 40000) {
-      color = '#f9a825';
-      text  = "That's real money walking out the door. Not because you're bad with money — because nobody showed you how to stop it.";
-    } else if (total < 80000) {
-      color = '#e65100';
-      text  = "Most hard-working people carry this loss every year and never know it. You've been paying this bill in silence. The plan stops it.";
+    let color, text, label, ctaText;
+    if (total < 8000) {
+      color   = '#2e7d32';
+      label   = "You're in better shape than most people.";
+      text    = "Your numbers look solid. Most people can't say that. A plan keeps it that way — and helps you grow what you've already built.";
+      ctaText = "KEEP WHAT YOU HAVE AND GROW IT — $37 →";
+    } else if (total < 30000) {
+      color   = '#f9a825';
+      label   = "You're losing this much every year.";
+      text    = "That's real money walking out the door. Not because you're bad with money — because nobody showed you how to stop it.";
+      ctaText = "GET THE PLAN THAT STOPS THIS — $37 →";
+    } else if (total < 70000) {
+      color   = '#e65100';
+      label   = "You're losing this much every year.";
+      text    = "Most hard-working people carry this loss and never know it. You've been paying this bill in silence. The plan stops it.";
+      ctaText = "STOP LOSING THIS MONEY — $37 →";
     } else {
-      color = '#c62828';
-      text  = "This isn't a small leak. This is your whole future slipping away a little bit at a time. The plan fixes the foundation.";
+      color   = '#c62828';
+      label   = "You're losing this much every year.";
+      text    = "This isn't a small gap. This is your whole future slipping away a little at a time. The plan fixes it from the ground up.";
+      ctaText = "GET THE PLAN NOW — $37 →";
     }
 
     box.style.display    = 'block';
     box.style.background = color + '18';
     box.style.border     = '1px solid ' + color;
     amt.style.color      = color;
+    lbl.textContent      = label;
     msg.textContent      = text;
+    cta.textContent      = ctaText;
   }
 
   updateCalc();
