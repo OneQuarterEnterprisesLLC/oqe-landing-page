@@ -371,7 +371,6 @@
   <div class="container">
     <span class="tag">The Real Problem</span>
 
-    <!-- RULE: no "broke / stuck / failing" — replaced with neutral framing -->
     <h2>You Put In The Work. Money Comes In. Then It Moves On Quickly.</h2>
 
     <p>
@@ -411,7 +410,6 @@
     <div class="audit-box">
       <div class="free-tag">Free — Get It Right Now</div>
 
-      <!-- RULE: "money is leaking" replaced with neutral pattern language -->
       <h2>See 7 Common Money Patterns<br>That Can Slow You Down</h2>
       <p class="sub">Get the free Money Flow Report. It takes 2 minutes to read. It walks through 7 patterns that can make money move fast — even when you're trying to save. No diagnosis. No judgment. Just useful information.</p>
 
@@ -432,7 +430,6 @@
 </section>
 
 <!-- ── MONEY FLOW SIMULATION ── -->
-<!-- RULE: renamed from "Calculator" to "Money Flow Simulation" — must be explicitly educational only -->
 <section class="calc-section section">
   <div class="container">
     <span class="tag">Educational Tool</span>
@@ -471,7 +468,6 @@
         </a>
       </div>
 
-      <!-- RULE: explicit educational-only / not predictive statement required -->
       <p class="calc-disclaimer">
         <strong>This is a Money Flow Simulation for educational purposes only.</strong> The number shown is a rough illustration based on the inputs you chose. It is not a diagnosis, prediction, or guarantee of any financial outcome. Your actual situation will vary based on many personal factors. This tool does not constitute financial advice. Speak with a qualified financial professional before making significant money decisions.
       </p>
@@ -501,7 +497,6 @@
       Here is one example of what happened when someone else applied this system.
     </p>
 
-    <!-- RULE: case study must avoid implying guaranteed outcomes — story intact, results language softened -->
     <div class="proof-box">
       <div class="proof-tag">One Reported Example — Results Vary</div>
       <blockquote>
@@ -535,7 +530,6 @@
       </blockquote>
       <div class="source">— Donald E.R. Wiggins</div>
 
-      <!-- RULE: "not typical" / "results vary" disclaimer required, proximate to case study -->
       <div class="earnings-disclaimer">
         <strong>Important:</strong> This is one reported example shared by the author. It describes a specific situation involving one individual's talent, effort, market, and personal circumstances. <strong>This result is not typical. Results vary significantly from person to person.</strong> Most people who purchase this book will not experience the same outcome. No income, business result, or financial change is guaranteed or implied. This is an educational product.
       </div>
@@ -606,7 +600,6 @@
       </div>
       <div class="offer-body">
         <h4>The 3-Account Money Plan</h4>
-        <!-- RULE: 3-account framing — educational not financial advice -->
         <p>A simple educational framework for organizing how money flows.
         Three accounts. Clear rules you set for yourself.
         A structure that helps you decide where your money goes — and why.
@@ -640,8 +633,7 @@
       <div class="va-new">$37</div>
       <div class="va-new-note">All five. One price. Right now.</div>
 
-      <!-- RULE: scarcity must be "may change" / "subject to update" — no guaranteed deadlines unless enforceable -->
-      <div class="va-scarcity">⚠ This pricing is subject to change — currently set to update July 20, 2027</div>
+      <div class="va-scarcity">⚠ This pricing is subject to change — currently set to update July 20, 2026</div>
 
       <div class="app-teaser">
         📱 The Vault app is planned for July 20, 2026 — prelaunch members get early access
@@ -707,7 +699,6 @@
       <div class="icon">🏛</div>
       <h2>The Architect's Promise</h2>
 
-      <!-- RULE: guarantee must avoid certainty language / stay conditional on user action -->
       <p>
         Read the book. Set up the 3-Account structure. Follow the steps as they are laid out.
         Do this within 30 days of your purchase.
@@ -757,8 +748,7 @@
         GET EVERYTHING FOR $37 →
       </a>
 
-      <!-- RULE: urgency must be "may change" / "subject to update" -->
-      <div class="deadline mt-16">⚠ $37 Prelaunch Pricing — Subject to Change July 20, 2027</div>
+      <div class="deadline mt-16">⚠ $37 Prelaunch Pricing — Subject to Change July 20, 2026</div>
       <p class="cta-sub mt-8">
         After that date, this bundle pricing may no longer be available.
         The material keeps working. This offer may not.
@@ -784,7 +774,8 @@
     The Money Flow Simulation is an educational illustration only. Numbers it generates are based on user-entered assumptions and do not predict actual financial results.
   </p>
   <div class="footer-links mt-8">
-    <a href="https://onequarterenterprisesllc.github.io/onequarter.llc-privacy/" target="_blank">Privacy Policy</a>
+    <!-- FIXED: Privacy Policy now opens in a new tab to the correct GitHub Pages URL -->
+    <a href="https://onequarterenterprisesllc.github.io/onequarter.llc-privacy/" target="_blank" rel="noopener">Privacy Policy</a>
     <a href="mailto:support@onequarterdollar.com">support@onequarterdollar.com</a>
   </div>
 </footer>
@@ -818,7 +809,6 @@
 
     amt.textContent = fmt(total);
 
-    // RULE: no guaranteed outcomes / no "plan fixes it" language — illustration framing only
     let color, text, label, ctaText;
     if (total < 8000) {
       color   = '#2e7d32';
@@ -863,5 +853,39 @@
   ml('account', '1924779');
 </script>
 <!-- End MailerLite Universal -->
+
+<!-- ── CHATBASE WIDGET ── -->
+<!-- IMPORTANT: Replace YOUR_CHATBOT_ID_HERE with your actual Chatbase bot ID -->
+<!-- Find it in your Chatbase dashboard under Settings > Embed > Bot ID -->
+<script>
+  (function(){
+    if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+      window.chatbase = (...args) => {
+        if(!window.chatbase.q){ window.chatbase.q = [] }
+        window.chatbase.q.push(args)
+      };
+      window.chatbase = new Proxy(window.chatbase, {
+        get(target, prop){
+          if(prop === "q"){ return target.q }
+          return (...args) => target(prop, ...args)
+        }
+      });
+    }
+    const onLoad = function(){
+      const script = document.createElement("script");
+      script.src = "https://www.chatbase.co/embed.min.js";
+      script.id = LqQm-wIUNIr8Atcfigm0N;
+      script.setAttribute("domain", "www.chatbase.co");
+      document.body.appendChild(script);
+    };
+    if(document.readyState === "complete"){
+      onLoad();
+    } else {
+      window.addEventListener("load", onLoad);
+    }
+  })();
+</script>
+<!-- End Chatbase Widget -->
+
 </body>
 </html>
