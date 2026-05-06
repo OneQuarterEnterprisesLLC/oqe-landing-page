@@ -312,13 +312,81 @@
     color: var(--red); text-transform: uppercase; margin: 20px 0 8px;
   }
 
-  /* FOOTER */
-  footer { background: var(--dark); border-top: 1px solid #2a2a3e; padding: 32px 24px; text-align: center; }
-  footer .brand { font-family: 'Arial Black', sans-serif; color: var(--gold); font-size: 12px; letter-spacing: 2px; margin-bottom: 8px; }
-  footer p { color: var(--grey); font-size: 12px; line-height: 1.6; }
-  footer .footer-links { margin-top: 12px; }
-  footer .footer-links a { color: var(--gold); font-size: 12px; text-decoration: none; margin: 0 12px; opacity: 0.8; }
-  footer .footer-links a:hover { opacity: 1; text-decoration: underline; }
+  /* NEW FOOTER STYLES */
+  .main-footer {
+    background: var(--navy);
+    border-top: 2px solid var(--gold);
+    padding: 60px 24px;
+  }
+  .footer-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    gap: 30px;
+  }
+  .footer-brand-box { max-width: 400px; }
+  .footer-brand-name {
+    font-family: 'Arial Black', sans-serif;
+    color: var(--gold);
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .footer-mission { color: var(--grey); font-size: 15px; line-height: 1.6; }
+  .footer-cta-btn {
+    background: var(--gold);
+    color: var(--dark);
+    font-family: 'Arial Black', sans-serif;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 40px;
+    border-top: 1px solid #2a2a3e;
+    padding-top: 40px;
+    text-align: left;
+  }
+  .footer-col h3 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 12px;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 12px; }
+  .footer-col a { color: var(--grey); font-size: 14px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--gold); text-decoration: underline; }
+  .footer-col .italic-app { font-style: italic; opacity: 0.7; }
+  
+  .footer-bottom {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #2a2a3e;
+    text-align: left;
+  }
+  .footer-copyright {
+    color: var(--grey);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+  }
+  .footer-legal-disclaimer {
+    color: #555;
+    font-size: 10px;
+    line-height: 1.7;
+    max-width: 800px;
+  }
 
   .mt-8  { margin-top: 8px; }
   .mt-16 { margin-top: 16px; }
@@ -332,6 +400,8 @@
     .calc-box { padding: 24px 18px; }
     .offer-item { flex-direction: column; gap: 10px; }
     .value-anchor { padding: 28px 20px; }
+    .footer-header { flex-direction: column; text-align: center; align-items: center; }
+    .footer-bottom { text-align: center; }
   }
 </style>
 </head>
@@ -405,7 +475,7 @@
 </section>
 
 <!-- ── FREE AUDIT OPT-IN ── -->
-<section class="audit-section section">
+<section id="free-report" class="audit-section section">
   <div class="container">
     <div class="audit-box">
       <div class="free-tag">Free — Get It Right Now</div>
@@ -499,7 +569,7 @@
 
     <div class="proof-box">
       <div class="proof-tag">One Reported Example — Results Vary</div>
-      <blockquote>
+      <blockquote style="font-family: Georgia, serif;">
         "She wasn't in business. She was making earrings as a hobby.
         <br><br>
         I said — we can build something real out of this.
@@ -693,11 +763,11 @@
 </section>
 
 <!-- ── GUARANTEE ── -->
-<section class="guarantee-section section">
+<section id="refund-policy" class="guarantee-section section">
   <div class="container">
     <div class="guarantee-box">
       <div class="icon">🏛</div>
-      <h2>The Architect's Promise</h2>
+      <h2 style="font-family: 'Arial Black', Arial, sans-serif;">The Architect's Promise</h2>
 
       <p>
         Read the book. Set up the 3-Account structure. Follow the steps as they are laid out.
@@ -723,7 +793,7 @@
 <section class="alpha-section section-sm">
   <div class="container tc">
     <span class="tag">For People Ready to Go Further</span>
-    <h2>Want Donald to Build the Plan With You?</h2>
+    <h2 style="font-family: 'Arial Black', Arial, sans-serif;">Want Donald to Build the Plan With You?</h2>
     <p style="max-width:580px;margin:0 auto 14px;">
       Donald works with a small number of people at a time so the work gets done properly.
       He comes in and builds the money plan for your business alongside you.
@@ -737,7 +807,7 @@
 <!-- ── FINAL CTA ── -->
 <section class="final-cta section">
   <div class="container">
-    <h2>Your Money Has More Potential Than You Think.<br>A Simple System Is Where It Starts.</h2>
+    <h2 style="font-family: 'Arial Black', Arial, sans-serif;">Your Money Has More Potential Than You Think.<br>A Simple System Is Where It Starts.</h2>
     <p class="sub">
       You don't need more hours. You don't need a lucky break.
       You need a clear setup. This is it.
@@ -749,7 +819,7 @@
       </a>
 
       <div class="deadline mt-16">⚠ $37 Prelaunch Pricing — Subject to Change July 20, 2027</div>
-      <p class="cta-sub mt-8">7
+      <p class="cta-sub mt-8">
         After that date, this bundle pricing may no longer be available.
         The material keeps working. This offer may not.
       </p>
@@ -757,26 +827,67 @@
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="brand">ONE QUARTER ENTERPRISES LLC™</div>
-  <p>© 2026 One Quarter Enterprises LLC™ · Donald E.R. Wiggins · onequarterdollar.com</p>
-  <p class="mt-8">
-    This material is based on the author's personal business experience over 19 years.
-    It is provided for educational and informational purposes only.
-    It does not constitute financial, investment, tax, or legal advice.
-    No income, revenue, or financial outcome is guaranteed or implied.
-    Individual results will vary based on effort, circumstances, and how the material is applied.
-    Consult a qualified financial or legal professional before making significant money decisions.
-  </p>
-  <p class="mt-8">
-    Results described in examples reflect individual reported experiences and are not representative of typical outcomes.
-    The Money Flow Simulation is an educational illustration only. Numbers it generates are based on user-entered assumptions and do not predict actual financial results.
-  </p>
-  <div class="footer-links mt-8">
-    <!-- FIXED: Privacy Policy now opens in a new tab to the correct GitHub Pages URL -->
-    <a href="https://onequarterenterprisesllc.github.io/onequarter.llc-privacy/" target="_blank" rel="noopener">Privacy Policy</a>
-    <a href="mailto:support@onequarterdollar.com">support@onequarterdollar.com</a>
+<!-- ── NEW MULTI-COLUMN FOOTER ── -->
+<footer class="main-footer">
+  <div class="container">
+    <!-- Top Section -->
+    <div class="footer-header">
+      <div class="footer-brand-box">
+        <div class="footer-brand-name">ONE QUARTER ENTERPRISES LLC™</div>
+        <p class="footer-mission">
+          Building systems that multiply your quarter into a dollar — and beyond. 
+          Educational products for people ready to stop surviving and start building.
+        </p>
+      </div>
+      <div class="footer-cta-box">
+        <a href="https://square.link/u/RDBg3rri" class="footer-cta-btn" target="_blank">Get the Blueprint — $37</a>
+      </div>
+    </div>
+
+    <!-- Navigation Grid -->
+    <div class="footer-grid">
+      <!-- Product Column -->
+      <div class="footer-col">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="https://square.link/u/RDBg3rri" target="_blank">The Blueprint</a></li>
+          <li><a href="#free-report">Free Report</a></li>
+          <li><a href="https://onequarterdollar.app" target="_blank" rel="noopener" class="italic-app">The Vault App (Coming Soon)</a></li>
+        </ul>
+      </div>
+
+      <!-- Company Column -->
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02nuYErKDrZmkqeRjP3695gB9qCyg1QDFN2fUUdwQAYDqZcetp2Cka5jBovrXWJwuel&id=61584015328318" target="_blank" rel="noopener">About Donald</a></li>
+          <li><a href="mailto:support@onequarterdollar.com">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal Column -->
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="https://onequarterenterprisesllc.github.io/onequarter.llc-privacy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+          <li><a href="https://onequarterenterprisesllc.github.io/onequarter.llc-terms/" target="_blank" rel="noopener">Terms of Service</a></li>
+          <li><a href="https://onequarterenterprisesllc.github.io/onequarter.llc-earnings/" target="_blank" rel="noopener">Earnings Disclosure</a></li>
+          <li><a href="#refund-policy">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright & Disclaimer Section -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        &copy; 2026 ONE QUARTER ENTERPRISES LLC™ · DONALD E.R. WIGGINS · <a href="https://onequarterdollar.com" style="color: inherit; text-decoration: underline;">ONEQUARTERDOLLAR.COM</a>
+      </p>
+      <p class="footer-legal-disclaimer">
+        One Quarter Equals A Dollar (OQEAD) is an educational framework for systemizing personal and business capital. 
+        This information is for learning purposes only. We do not provide financial, legal, or investment advice. 
+        Individual results vary based on starting revenue and execution. Results described in examples reflect individual reported experiences and are not representative of typical outcomes. The Money Flow Simulation is an educational illustration only.
+      </p>
+    </div>
   </div>
 </footer>
 
@@ -872,7 +983,7 @@
     const onLoad = function(){
       const script = document.createElement("script");
       script.src = "https://www.chatbase.co/embed.min.js";
-      script.id = LqQm-wIUNIr8Atcfigm0N;
+      script.id = "LqQm-wIUNIr8Atcfigm0N";
       script.setAttribute("domain", "www.chatbase.co");
       document.body.appendChild(script);
     };
