@@ -1,160 +1,1368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Capital Flow | OQEAD Structural Briefing</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; color: #0f172a; }
-        .mono { font-family: 'JetBrains Mono', monospace; }
-        .page-frame { border: 12px solid #0f172a; margin: 20px; background: white; position: relative; }
-        .industrial-shadow { box-shadow: 10px 10px 0px #0f172a; }
-        .blueprint-bg { background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 30px 30px; }
-        .electric-blue { color: #2563eb; }
-        .deadline-red { color: #dc2626; }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OQEAD Outbound Prospecting Kit — Z-Stacked Operations Console</title>
+<style>
+  :root {
+    --vault-bg: #0A0E1C;
+    --vault-panel: #11162A;
+    --vault-panel-2: #161C36;
+    --vault-border: #1F2742;
+    --vault-gold: #D4AF37;
+    --vault-gold-soft: #F0D87C;
+    --vault-text: #F4F4F0;
+    --vault-text-muted: #A7AEC2;
+    --vault-success: #4CAF8E;
+    --vault-warning: #C97B45;
+    --vault-danger: #B85450;
+    --serif: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--vault-bg);
+    color: var(--vault-text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- TOP BAR ---------- */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10, 14, 28, 0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--vault-border);
+    padding: 14px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brandmark {
+    font-family: var(--serif); font-size: 13px;
+    letter-spacing: 0.2em; color: var(--vault-gold);
+    font-weight: 600; text-transform: uppercase;
+  }
+  .brandmark sup { font-size: 9px; opacity: 0.7; }
+  .topbar-stats {
+    display: flex; gap: 28px;
+    font-family: var(--mono); font-size: 11px;
+    color: var(--vault-text-muted); letter-spacing: 0.08em;
+  }
+  .topbar-stats strong { color: var(--vault-gold); font-weight: 600; }
+
+  /* ---------- Z-STACK STAGE ---------- */
+  .stage {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 64px;
+    padding-bottom: 80px;
+    display: flex; align-items: flex-start; justify-content: center;
+  }
+  .room {
+    position: absolute;
+    top: 64px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1040px;
+    padding: 48px 36px 60px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+  .room.active {
+    opacity: 1; pointer-events: auto;
+    position: relative; top: 0;
+  }
+
+  /* ---------- TYPOGRAPHY ---------- */
+  h1 {
+    font-family: var(--serif); font-weight: 500;
+    font-size: 48px; line-height: 1.1;
+    margin-bottom: 20px; letter-spacing: -0.01em;
+  }
+  h1 .gold { color: var(--vault-gold); font-style: italic; }
+  h2 {
+    font-family: var(--serif); font-weight: 500;
+    font-size: 30px; line-height: 1.2; margin-bottom: 16px;
+  }
+  h2 .gold { color: var(--vault-gold); }
+  h3 {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 17px; color: var(--vault-text); margin-bottom: 8px;
+  }
+  h4 {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--vault-gold); margin-bottom: 14px;
+  }
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--vault-gold); margin-bottom: 18px;
+  }
+  p { color: var(--vault-text-muted); margin-bottom: 14px; font-size: 16px; }
+  p strong { color: var(--vault-text); font-weight: 500; }
+  p.lede { font-size: 19px; line-height: 1.55; color: var(--vault-text); }
+
+  /* ---------- ICP CARDS ---------- */
+  .icp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .icp-card {
+    background: var(--vault-panel);
+    border: 1px solid var(--vault-border);
+    border-top: 3px solid var(--vault-gold);
+    padding: 24px 22px;
+    border-radius: 4px;
+  }
+  .icp-card h3 { color: var(--vault-gold); font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 12px; }
+  .icp-card p { font-size: 14px; margin-bottom: 10px; }
+  .icp-card .tag {
+    display: inline-block;
+    background: var(--vault-bg);
+    border: 1px solid var(--vault-border);
+    color: var(--vault-text-muted);
+    padding: 3px 10px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    border-radius: 2px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+
+  /* ---------- SIGNAL BOX ---------- */
+  .signal-box, .disq-box {
+    background: var(--vault-panel);
+    border: 1px solid var(--vault-border);
+    padding: 24px 28px;
+    margin: 20px 0;
+    border-radius: 4px;
+  }
+  .signal-box { border-left: 3px solid var(--vault-success); }
+  .disq-box  { border-left: 3px solid var(--vault-danger); }
+  .signal-box h4, .disq-box h4 { color: var(--vault-gold); }
+  .signal-box ul, .disq-box ul { list-style: none; padding: 0; }
+  .signal-box li, .disq-box li {
+    color: var(--vault-text-muted);
+    font-size: 14px;
+    padding: 6px 0 6px 22px;
+    position: relative;
+  }
+  .signal-box li:before {
+    content: "▲"; position: absolute; left: 0; color: var(--vault-success); font-size: 10px;
+  }
+  .disq-box li:before {
+    content: "✕"; position: absolute; left: 0; color: var(--vault-danger); font-size: 12px;
+  }
+
+  /* ---------- SOURCE VECTORS ---------- */
+  .source-list {
+    display: flex; flex-direction: column; gap: 0;
+    margin: 28px 0;
+  }
+  .source {
+    display: grid;
+    grid-template-columns: 60px 1fr 200px;
+    gap: 20px;
+    padding: 22px 0;
+    border-top: 1px solid var(--vault-border);
+    align-items: start;
+  }
+  .source:last-child { border-bottom: 1px solid var(--vault-border); }
+  .source .num {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--vault-gold);
+    font-weight: 500;
+    line-height: 1;
+  }
+  .source .body p { font-size: 14px; margin-bottom: 8px; }
+  .source .target {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--vault-text-muted);
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+  }
+  .source .target strong { color: var(--vault-gold); display: block; margin-bottom: 4px; }
+
+  /* ---------- SCRIPT VAULT ---------- */
+  .channel-tabs {
+    display: flex; gap: 4px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--vault-border);
+  }
+  .channel-tab {
+    background: transparent;
+    border: none;
+    color: var(--vault-text-muted);
+    padding: 14px 22px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .channel-tab.active {
+    color: var(--vault-gold);
+    border-bottom-color: var(--vault-gold);
+  }
+  .channel-tab:hover { color: var(--vault-gold-soft); }
+
+  .channel-panel { display: none; }
+  .channel-panel.active { display: block; }
+
+  .script-block {
+    background: var(--vault-panel);
+    border: 1px solid var(--vault-border);
+    padding: 22px 26px;
+    margin: 14px 0;
+    border-radius: 4px;
+    position: relative;
+  }
+  .script-block .script-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--vault-border);
+  }
+  .script-block .script-meta .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--vault-gold);
+  }
+  .script-block .script-meta .timing {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--vault-text-muted);
+    letter-spacing: 0.08em;
+  }
+  .script-body {
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--vault-text);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .script-body .ph {
+    color: var(--vault-gold);
+    background: rgba(212, 175, 55, 0.08);
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+  .copy-btn {
+    background: transparent;
+    border: 1px solid var(--vault-border);
+    color: var(--vault-text-muted);
+    padding: 5px 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+  .copy-btn:hover {
+    border-color: var(--vault-gold);
+    color: var(--vault-gold);
+  }
+  .copy-btn.copied { color: var(--vault-success); border-color: var(--vault-success); }
+
+  /* ---------- LEDGER ---------- */
+  .ledger-controls {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  .ledger-input {
+    background: var(--vault-bg);
+    border: 1px solid var(--vault-border);
+    color: var(--vault-text);
+    padding: 9px 12px;
+    font-family: var(--sans);
+    font-size: 13px;
+    border-radius: 2px;
+    flex: 1;
+    min-width: 130px;
+  }
+  .ledger-input:focus { outline: none; border-color: var(--vault-gold); }
+  .ledger-input.tiny { max-width: 140px; }
+
+  .add-btn, .export-btn, .clear-btn {
+    background: var(--vault-gold);
+    color: var(--vault-bg);
+    border: none;
+    padding: 9px 22px;
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .add-btn:hover { background: var(--vault-gold-soft); }
+  .export-btn {
+    background: transparent;
+    color: var(--vault-text);
+    border: 1px solid var(--vault-border);
+  }
+  .export-btn:hover { border-color: var(--vault-gold); color: var(--vault-gold); }
+  .clear-btn {
+    background: transparent;
+    color: var(--vault-text-muted);
+    border: 1px solid var(--vault-border);
+  }
+  .clear-btn:hover { border-color: var(--vault-danger); color: var(--vault-danger); }
+
+  table.ledger-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  table.ledger-table th {
+    background: var(--vault-panel);
+    color: var(--vault-gold);
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 10px;
+    border-bottom: 1px solid var(--vault-border);
+  }
+  table.ledger-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--vault-border);
+    color: var(--vault-text);
+    vertical-align: top;
+  }
+  table.ledger-table tr:hover td { background: var(--vault-panel); }
+
+  .status-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .status-noreply { background: rgba(167, 174, 194, 0.15); color: var(--vault-text-muted); border: 1px solid var(--vault-border); }
+  .status-replied { background: rgba(201, 123, 69, 0.15); color: var(--vault-warning); border: 1px solid var(--vault-warning); }
+  .status-booked  { background: rgba(212, 175, 55, 0.15); color: var(--vault-gold); border: 1px solid var(--vault-gold); }
+  .status-founder { background: rgba(76, 175, 142, 0.15); color: var(--vault-success); border: 1px solid var(--vault-success); }
+  .status-dead    { background: rgba(184, 84, 80, 0.12); color: var(--vault-danger); border: 1px solid var(--vault-danger); }
+
+  .ledger-status-select {
+    background: var(--vault-bg);
+    border: 1px solid var(--vault-border);
+    color: var(--vault-text);
+    padding: 4px 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    border-radius: 2px;
+  }
+  .row-delete {
+    background: transparent;
+    border: none;
+    color: var(--vault-text-muted);
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 14px;
+  }
+  .row-delete:hover { color: var(--vault-danger); }
+
+  .empty-ledger {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--vault-text-muted);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    border: 1px dashed var(--vault-border);
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+
+  /* ---------- VELOCITY DASHBOARD ---------- */
+  .velocity-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 28px 0;
+  }
+  .metric-card {
+    background: var(--vault-panel);
+    border: 1px solid var(--vault-border);
+    padding: 22px 18px;
+    text-align: center;
+    border-radius: 4px;
+  }
+  .metric-card .num {
+    font-family: var(--serif);
+    font-size: 42px;
+    color: var(--vault-gold);
+    font-weight: 500;
+    line-height: 1;
+  }
+  .metric-card .lbl {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--vault-text-muted);
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  .metric-card .sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--vault-text-muted);
+    margin-top: 6px;
+  }
+
+  /* ---------- DAILY CHECKLIST ---------- */
+  .checklist {
+    background: var(--vault-panel);
+    border: 1px solid var(--vault-border);
+    padding: 26px 30px;
+    margin: 24px 0;
+    border-radius: 4px;
+  }
+  .checklist h4 { margin-bottom: 18px; }
+  .check-row {
+    display: flex; align-items: center; gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--vault-border);
+  }
+  .check-row:last-child { border-bottom: none; }
+  .check-row input[type=checkbox] {
+    width: 18px; height: 18px;
+    accent-color: var(--vault-gold);
+    cursor: pointer;
+  }
+  .check-row .label {
+    flex: 1;
+    font-size: 14px;
+    color: var(--vault-text);
+  }
+  .check-row .target {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--vault-text-muted);
+    letter-spacing: 0.08em;
+  }
+  .check-row.done .label {
+    color: var(--vault-text-muted);
+    text-decoration: line-through;
+  }
+
+  /* ---------- CTA + NAV ---------- */
+  .cta {
+    display: inline-block;
+    background: var(--vault-gold);
+    color: var(--vault-bg);
+    border: none;
+    padding: 14px 32px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 20px;
+    border-radius: 2px;
+  }
+  .cta:hover { background: var(--vault-gold-soft); transform: translateY(-1px); }
+  .cta.secondary {
+    background: transparent;
+    border: 1px solid var(--vault-border);
+    color: var(--vault-text-muted);
+    margin-left: 10px;
+  }
+  .cta.secondary:hover { border-color: var(--vault-gold); color: var(--vault-gold); }
+
+  /* ---------- STEP BAR ---------- */
+  .step-bar {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: var(--vault-panel);
+    border-top: 1px solid var(--vault-border);
+    padding: 12px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    z-index: 999;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .step-bar .step-track {
+    display: flex; gap: 4px;
+    flex: 1; margin: 0 28px;
+  }
+  .step-track .seg {
+    height: 3px; flex: 1;
+    background: var(--vault-border);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .step-track .seg.done { background: var(--vault-gold); }
+  .step-bar .label { color: var(--vault-text-muted); }
+  .step-bar .label strong { color: var(--vault-gold); }
+
+  /* ---------- SOURCING ROUTINE ---------- */
+  .routine-block {
+    background: var(--vault-panel);
+    border: 1px solid var(--vault-border);
+    border-left: 3px solid var(--vault-gold);
+    padding: 26px 30px;
+    margin: 24px 0;
+    border-radius: 4px;
+  }
+  .routine-block ol {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+  }
+  .routine-block ol li {
+    counter-increment: step;
+    padding: 10px 0 10px 38px;
+    position: relative;
+    color: var(--vault-text-muted);
+    font-size: 14px;
+  }
+  .routine-block ol li:before {
+    content: counter(step, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    color: var(--vault-gold);
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+  .routine-block ol li strong { color: var(--vault-text); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 880px) {
+    .icp-grid { grid-template-columns: 1fr; }
+    .source { grid-template-columns: 50px 1fr; }
+    .source .target { grid-column: 1 / -1; padding-left: 70px; }
+    .velocity-grid { grid-template-columns: repeat(2, 1fr); }
+    h1 { font-size: 34px; }
+    h2 { font-size: 24px; }
+    .room { padding: 32px 18px 80px; }
+    table.ledger-table { font-size: 10px; }
+    table.ledger-table th, table.ledger-table td { padding: 6px 6px; }
+    .topbar-stats { display: none; }
+  }
+</style>
 </head>
-<body class="blueprint-bg">
+<body>
 
-<div class="page-frame">
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="brandmark">OQEAD · Outbound Kit<sup>™</sup></div>
+  <div class="topbar-stats">
+    <span>SLOTS · <strong id="topSlots">88</strong>/100</span>
+    <span>TODAY · <strong id="topToday">0</strong> TOUCHES</span>
+    <span>LAUNCH IN · <strong id="topDays">61</strong>D</span>
+  </div>
+</div>
 
-<header class="border-b-4 border-black p-6 flex justify-between items-center bg-white">
-    <div class="font-black italic text-xl tracking-tighter uppercase">
-        OQ<span class="electric-blue">ED</span> // Capital Flow Schematic
-    </div>
-    <div class="mono text-[10px] font-black uppercase tracking-widest text-slate-400">
-        Phase 01: System Readiness & Installation
-    </div>
-</header>
+<!-- ============ STAGE ============ -->
+<div class="stage">
 
-<section class="max-w-4xl mx-auto px-6 py-16 text-slate-900">
-    <h1 class="text-4xl md:text-6xl font-black tracking-tighter uppercase italic mb-6 leading-none">
-        THE SCHEMATIC SHOWS THE FLOW.<br>
-        <span class="deadline-red">THE ENGINE CONTROLS THE OUTCOME.</span>
-    </h1>
-
-    <p class="text-xl font-black uppercase mb-8 text-blue-600">
-        Read this briefing before you open a bank account.
+  <!-- ROOM 1 — ICP -->
+  <section class="room active" data-step="1">
+    <div class="eyebrow">Operations Console · Room I</div>
+    <h1>You are not hunting <span class="gold">buyers.</span><br>You are hunting <span class="gold">leaking operators.</span></h1>
+    <p class="lede">
+      The Ideal Codifier is the high-effort, high-revenue solo operator whose income is strong but whose
+      operational structure is bleeding. They are making the money. They are also drowning. They do not
+      know they are paying a Chaos Tax — your job is to name it for them.
     </p>
 
-    <div class="border-4 border-black p-8 industrial-shadow bg-slate-50 mb-12">
-        <p class="text-xl font-bold leading-tight uppercase">
-            This is not an income problem. It is an <span class="electric-blue">architecture failure</span>. Money is entering your life without rules, timing, or containment. That friction is the <span class="deadline-red">Chaos Tax</span>. This system exists to eliminate it.
-        </p>
+    <h4>The Three Target Archetypes</h4>
+    <div class="icp-grid">
+      <div class="icp-card">
+        <h3>The Booth Renter</h3>
+        <p>Stylists, barbers, estheticians, lash techs renting a chair or suite. Fully booked. Income peaks $80-180k. No business structure behind it. Cash flows through personal account. Tax surprises every April.</p>
+        <span class="tag">Beauty</span><span class="tag">Solo</span><span class="tag">Cash Heavy</span>
+      </div>
+      <div class="icp-card">
+        <h3>The Contractor</h3>
+        <p>Independent GCs, electricians, plumbers, HVAC techs, landscapers. Crew of 0-3. Booked 6-12 weeks out. Revenue $150-450k. Bidding by gut feel. Receivables chaos. No P&L visibility.</p>
+        <span class="tag">Trades</span><span class="tag">1099</span><span class="tag">Project-Based</span>
+      </div>
+      <div class="icp-card">
+        <h3>The Agency Founder</h3>
+        <p>Solo or 2-3 person agencies in design, marketing, web, video, consulting. Revenue $120-400k. Trading hours for dollars. No retainer discipline. Tax liability creeping. Burnout visible in their content.</p>
+        <span class="tag">Service</span><span class="tag">Knowledge</span><span class="tag">Time-Leaking</span>
+      </div>
     </div>
-</section>
 
-<section class="max-w-4xl mx-auto px-6 py-12 border-l-4 border-black bg-white mb-12">
-    <h2 class="mono text-sm font-black uppercase text-blue-600 mb-6 italic">// THE ARCHITECT’S CONTEXT: WHY THIS SYSTEM EXISTS</h2>
-
-    <div class="space-y-6 text-lg font-medium leading-relaxed text-slate-800">
-        <p>
-            I’ve known I was behind the power curve since 2004. That was the year I realized I was <strong>P.O.O.R. — Passing Over Opportunities Repeatedly</strong>. Not because I lacked effort, talent, or ambition, but because I had no structure to retain what I earned.
-        </p>
-
-        <p>
-            By 2006, I entered sales and network marketing looking for leverage. On paper, it worked. I helped build momentum for other people. I watched systems I touched generate 5‑figure months, while I personally remained unstable. Revenue moved through me, not <em>for</em> me. I was mixing personal survival with business growth inside the same account. Nothing compounded.
-        </p>
-
-        <div class="border-4 border-black p-8 bg-slate-50 industrial-shadow italic font-bold">
-            “I made a promise that I would find the heartbeat of this system, not just for myself, but so that anyone holding ‘The Quarter’ could finally build their D$llar. I had proof the money existed. What I didn’t have was containment.”
-        </div>
-
-        <p>
-            I eventually realized the truth most people avoid: this is not an income problem. It’s an <strong>architecture failure</strong>. Willpower collapses under pressure. Motivation decays. But enforced systems don’t negotiate.
-        </p>
-
-        <p class="font-black italic uppercase text-2xl">
-            I stopped praying for money and installed constraint.
-        </p>
-
-        <p>
-            After nearly two decades of observation and iteration, I identified the only four ways wealth actually exists. Everything else is noise layered on top of poor routing. The OQEAD framework documents the flow. The Engine governs timing, permissions, and extraction rules.
-        </p>
-
-        <p>
-            This briefing exists because people keep trying to scale effort instead of fixing containment. Until capital is physically separated, timed, and restricted, every win leaks.
-        </p>
+    <div class="signal-box">
+      <h4>Leaking Signals — What To Watch For</h4>
+      <ul>
+        <li>Public posts using phrases: "swamped," "drowning," "behind on books," "tax prep nightmare," "booked solid but broke"</li>
+        <li>Hiring posts for "virtual assistant," "bookkeeper," "operations help"</li>
+        <li>Switching apps publicly: "trying QuickBooks again," "moved to Wave," "looking for a CRM"</li>
+        <li>Restart language: "starting fresh," "new chapter," "Q3 reset"</li>
+        <li>Capacity complaints: "fully booked through [month]," "can't take new clients"</li>
+        <li>Cash-flow tells: "waiting on invoices," "slow pay clients," "factoring receivables"</li>
+        <li>April / October tax anxiety posts</li>
+      </ul>
     </div>
-</section>
 
-<section class="max-w-4xl mx-auto px-6 py-10">
-    <h2 class="text-4xl font-black uppercase italic mb-8 border-b-4 border-black inline-block">System Containers</h2>
+    <div class="disq-box">
+      <h4>Disqualifiers — Skip These</h4>
+      <ul>
+        <li>Multi-million revenue operators (already structured, will not feel the Chaos Tax frame)</li>
+        <li>Course sellers, coaches, info-product hustlers (saturated market, hostile to peer outreach)</li>
+        <li>Pre-revenue founders (no Chaos Tax to name; cannot afford even $37 with discipline)</li>
+        <li>W-2 employees side-hustling (different operating reality)</li>
+        <li>Anyone in your direct industry (avoid downline-cannibalization optics)</li>
+        <li>Active competitors of existing Codifiers (until referral protocol clears it)</li>
+      </ul>
+    </div>
 
-    <p class="font-bold uppercase mb-10 text-slate-700">
-        Once intake is captured, capital is routed through three enforced containers.
+    <button class="cta" onclick="goStep(2)">Next — Where They Live →</button>
+  </section>
+
+  <!-- ROOM 2 — SOURCING -->
+  <section class="room" data-step="2">
+    <div class="eyebrow">Operations Console · Room II</div>
+    <h1>Sourcing Protocol — <span class="gold">where they live, openly.</span></h1>
+    <p class="lede">
+      Leaking operators self-identify in public. You do not need paid databases. You do not need ad spend.
+      You need eyes on the right surfaces and a daily discipline. Below: the eight source vectors,
+      ranked by warmth and conversion likelihood.
     </p>
 
-    <div class="grid md:grid-cols-3 gap-8 mb-16">
-        <div class="border-4 border-black p-6 bg-white industrial-shadow">
-            <h3 class="mono text-sm font-black uppercase mb-4 text-blue-600 italic">ACCOUNT #1 — THE SHIELD</h3>
-            <p class="font-bold uppercase text-xs leading-relaxed">
-                Operating firewall. This is the only account with a debit card. Household survival and business liability are legally separated.
-            </p>
+    <div class="source-list">
+      <div class="source">
+        <div class="num">01</div>
+        <div class="body">
+          <h3>Existing Codifier Referrals — Highest Conversion</h3>
+          <p>The 12 validated operators in your ecosystem are your first list. Each one knows 5-10 other operators in the same pain. Ask each for 5 names with a one-sentence intro.</p>
         </div>
-        <div class="border-4 border-black p-6 bg-white industrial-shadow">
-            <h3 class="mono text-sm font-black uppercase mb-4 text-blue-600 italic">ACCOUNT #2 — THE VAULT</h3>
-            <p class="font-bold uppercase text-xs leading-relaxed">
-                Revenue control center. No debit card. No Cash App. This account enforces growth and blocks impulse extraction.
-            </p>
+        <div class="target"><strong>YIELD</strong>60 prospects · 35-50% warm·to-conversation rate</div>
+      </div>
+
+      <div class="source">
+        <div class="num">02</div>
+        <div class="body">
+          <h3>Instagram Hashtag Traversal</h3>
+          <p>Search hashtags: #boothrental #stylistlife #salonsuite #generalcontractor #1099life #soloagency #freelancelife. Sort by Recent. Watch comments more than posts — pain leaks in comments.</p>
         </div>
-        <div class="border-4 border-black p-6 bg-white industrial-shadow">
-            <h3 class="mono text-sm font-black uppercase mb-4 text-blue-600 italic">ACCOUNT #3 — THE COMPOUNDING ENGINE</h3>
-            <p class="font-bold uppercase text-xs leading-relaxed">
-                Legacy container. One-way transfers only. Capital compounds while life continues uninterrupted.
-            </p>
+        <div class="target"><strong>YIELD</strong>~40 prospects/hour · 5-10% reply rate</div>
+      </div>
+
+      <div class="source">
+        <div class="num">03</div>
+        <div class="body">
+          <h3>LinkedIn Title + Headcount Search</h3>
+          <p>Title contains: "Founder" OR "Owner" OR "Principal" AND company size: 1-10. Filter by recent posts mentioning growth pain, hiring, capacity. Free LinkedIn allows ~25 searches/day before friction.</p>
         </div>
+        <div class="target"><strong>YIELD</strong>~30 prospects/day · 8-12% reply rate</div>
+      </div>
+
+      <div class="source">
+        <div class="num">04</div>
+        <div class="body">
+          <h3>Facebook Industry Groups</h3>
+          <p>Join 5-8 groups per archetype: "Booth Rental Stylists USA," "Independent Contractors Network," "Solo Agency Owners." Read for 48 hours before posting. Engage in comments. Then DM the loudest pain-namers.</p>
+        </div>
+        <div class="target"><strong>YIELD</strong>~15 prospects/day · 15-20% reply rate</div>
+      </div>
+
+      <div class="source">
+        <div class="num">05</div>
+        <div class="body">
+          <h3>Reddit Subreddit Patrol</h3>
+          <p>r/Entrepreneur, r/smallbusiness, r/Salons, r/Contractor, r/agency, r/freelance. Filter "Top — This Week." Pain posts get upvotes. Reply with value in-thread first, then DM if appropriate.</p>
+        </div>
+        <div class="target"><strong>YIELD</strong>~10 prospects/day · 20-30% reply rate</div>
+      </div>
+
+      <div class="source">
+        <div class="num">06</div>
+        <div class="body">
+          <h3>Competitor Comment Sections</h3>
+          <p>Find 3-5 financial-discipline influencers your ICP follows. Read the comments on their posts. The complainers and the "this is me" commenters are pre-qualified. DM them, not the influencer.</p>
+        </div>
+        <div class="target"><strong>YIELD</strong>~20 prospects/day · 10-15% reply rate</div>
+      </div>
+
+      <div class="source">
+        <div class="num">07</div>
+        <div class="body">
+          <h3>Local Chamber & Industry Directories</h3>
+          <p>Public Chamber of Commerce member lists. Houzz (contractors), Vagaro (beauty), Clutch (agencies). Public phone + email. Use only for SMS once you have a soft warm signal.</p>
+        </div>
+        <div class="target"><strong>YIELD</strong>~5 prospects/day · 3-5% reply rate (cold-est)</div>
+      </div>
+
+      <div class="source">
+        <div class="num">08</div>
+        <div class="body">
+          <h3>The Chaos Tax Briefing Itself</h3>
+          <p>Once the first briefing runs, attendees become a list. The Monday Briefing produces its own referrals. Codifiers who graduate refer downstream — the funnel begins compounding by week 4.</p>
+        </div>
+        <div class="target"><strong>YIELD</strong>Compounds · n+1 model</div>
+      </div>
     </div>
-</section>
 
-<section class="max-w-4xl mx-auto px-6 py-16">
-    <div class="border-8 border-black p-8 md:p-16 bg-white">
-        <h2 class="text-4xl font-black uppercase italic mb-6">What You Are Buying</h2>
-
-        <div class="bg-black text-white p-6 mb-10 industrial-shadow">
-            <p class="font-bold uppercase italic text-lg leading-tight">
-                This 125-page Digital Briefing is the installation manual. It prepares your accounts, rules, and behavior for Engine activation. It is required before access is granted.
-            </p>
-        </div>
-
-        <div class="space-y-4 mb-10 font-black uppercase italic text-sm">
-            <div>>> System readiness checklist</div>
-            <div>>> Account wiring instructions</div>
-            <div>>> Transfer logic foundations</div>
-            <div>>> Failure-mode identification</div>
-        </div>
-
-        <a href="https://square.link/u/gCCvyGpp" class="inline-flex w-full bg-blue-600 text-white py-8 font-black uppercase tracking-[0.2em] text-2xl hover:bg-black transition-all italic industrial-shadow justify-center items-center text-center">
-            INSTALL THE BLUEPRINT ($37)
-        </a>
-
-        <p class="mt-8 mono text-xs font-bold uppercase text-slate-600">
-            This is not budgeting. This is system installation. Engine access is only available after completion.
-        </p>
+    <div class="routine-block">
+      <h4>Daily Sourcing Routine — 45 Minutes</h4>
+      <ol>
+        <li><strong>00:00–10:00</strong> — Review 2 IG hashtags. Add 10 prospects to ledger.</li>
+        <li><strong>10:00–20:00</strong> — Pull 1 LinkedIn search. Add 10 prospects to ledger.</li>
+        <li><strong>20:00–30:00</strong> — Scan 2 FB groups + 2 subreddits. Add 8 prospects to ledger.</li>
+        <li><strong>30:00–40:00</strong> — Send opener to all prospects added today (use Room III scripts).</li>
+        <li><strong>40:00–45:00</strong> — Send follow-ups to T+3 and T+5 day prospects. Mark statuses.</li>
+      </ol>
     </div>
-</section>
 
-<footer class="text-center py-12 border-t-4 border-black bg-white">
-    <div class="max-w-3xl mx-auto px-6 mb-8 text-left border-l-4 border-slate-300 pl-6 text-slate-500">
-        <p class="mono text-[9px] uppercase leading-relaxed italic mb-4">
-            <strong>Technical Disclosure:</strong> Results are not typical. This is educational architecture.
-        </p>
-        <p class="mono text-[9px] uppercase leading-relaxed italic">
-            <strong>Disclaimer:</strong> One Quarter Enterprises LLC is not a financial advisor.
-        </p>
+    <button class="cta" onclick="goStep(3)">Next — The Scripts →</button>
+    <button class="cta secondary" onclick="goStep(1)">← Back</button>
+  </section>
+
+  <!-- ROOM 3 — SCRIPT VAULT -->
+  <section class="room" data-step="3">
+    <div class="eyebrow">Operations Console · Room III</div>
+    <h1>The Scripts — <span class="gold">value asymmetry, never the pitch.</span></h1>
+    <p class="lede">
+      You are not selling. You are extending an invitation to a 40-minute Monday briefing where the
+      Chaos Tax is named. The OQEAD System and the 12-month Vault grandfather are the answer — but they
+      are mentioned only after the prospect asks. The script's job is the invitation, not the close.
+    </p>
+
+    <p><strong>Personalization tokens:</strong> Replace <span style="color:var(--vault-gold)">[name]</span>, <span style="color:var(--vault-gold)">[observation]</span>, and <span style="color:var(--vault-gold)">[platform-thing]</span> in every script. Generic outreach is wasted outreach.</p>
+
+    <div class="channel-tabs">
+      <button class="channel-tab active" onclick="switchChannel('li')">LINKEDIN</button>
+      <button class="channel-tab" onclick="switchChannel('sms')">SMS / TEXT</button>
+      <button class="channel-tab" onclick="switchChannel('ig')">INSTAGRAM</button>
     </div>
-    <p class="mono text-[10px] font-black text-slate-400 uppercase tracking-[0.5em]">Identity • Architecture • Mechanics</p>
-    <p class="text-[10px] font-black uppercase mt-2 tracking-widest">One Quarter Enterprises LLC // 2026</p>
-</footer>
+
+    <!-- LINKEDIN -->
+    <div class="channel-panel active" id="panel-li">
+
+      <div class="script-block">
+        <div class="script-meta">
+          <span class="tag">LinkedIn · T+0 · Opener</span>
+          <div>
+            <span class="timing">~480 chars</span>
+            <button class="copy-btn" onclick="copyScript(this)">Copy</button>
+          </div>
+        </div>
+        <div class="script-body"><span class="ph">[name]</span> — saw <span class="ph">[observation about their recent post or business]</span>. You're operating at a level most people in your space don't get to without bleeding for it. That bleed has a name — I call it the Chaos Tax. It's the operational friction that quietly eats margin and time while no one tells you it's there. I run a 40-minute briefing on it every Monday, 8 PM ET. Not selling anything in it. Want me to send the link?</div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-meta">
+          <span class="tag">LinkedIn · T+3 days · Follow-Up 1</span>
+          <div><span class="timing">~280 chars</span><button class="copy-btn" onclick="copyScript(this)">Copy</button></div>
+        </div>
+        <div class="script-body">Following up — quick clarifier. The briefing isn't a webinar. It's 40 minutes, 100 operators max, mostly Q&A. You get the framework on paper. No follow-up call required. Worth the time-bet? Mondays 8 PM ET.</div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-meta">
+          <span class="tag">LinkedIn · T+7 days · Closer</span>
+          <div><span class="timing">~220 chars</span><button class="copy-btn" onclick="copyScript(this)">Copy</button></div>
+        </div>
+        <div class="script-body">Closing this loop on my end. If timing's wrong, it's wrong — no follow-up. If it's not, the next briefing is Monday. Link's here when you want it: <span class="ph">[funnel-link]</span></div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-meta">
+          <span class="tag">LinkedIn · Objection Handlers</span>
+          <div><button class="copy-btn" onclick="copyScript(this)">Copy</button></div>
+        </div>
+        <div class="script-body">→ "What is this?"
+The Chaos Tax is the operational leak in solo and small-team businesses — disorganized cash flow, time bleed, no system. I run a 40-min Monday briefing naming the leak and the fix. 100 founder slots tied to it. Link: <span class="ph">[funnel-link]</span>
+
+→ "Are you selling something?"
+Yes — there's a $37 OQEAD System tied to the briefing, and a 12-month Master Builder Vault pass for the first 100 founders. The briefing itself is free. I'm not going to hide that. The briefing teaches the framework regardless.
+
+→ "Send me info first."
+Of course: <span class="ph">[funnel-link]</span>. Page explains everything. If after reading it the briefing still makes sense, the door's open Monday.
+
+→ "I'm too busy."
+Understood. 40 minutes, Monday 8 PM ET. If it's not the move, you're out and I don't follow up. Worth the bet?</div>
+      </div>
+    </div>
+
+    <!-- SMS -->
+    <div class="channel-panel" id="panel-sms">
+
+      <div class="script-block">
+        <div class="script-meta">
+          <span class="tag">SMS · T+0 · Opener (Warm Only)</span>
+          <div><span class="timing">~310 chars · 2 SMS</span><button class="copy-btn" onclick="copyScript(this)">Copy</button></div>
+        </div>
+        <div class="script-body"><span class="ph">[name]</span> — <span class="ph">[mutual context / who gave me your number]</span>. Quick one: I run a Monday briefing on the Chaos Tax — the operational leak that eats margin while no one names it. 40 min, Mondays 8 PM ET. Want me to save you a seat? No pitch in the room.</div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-meta">
+          <span class="tag">SMS · T+2 days · Follow-Up</span>
+          <div><span class="timing">~180 chars</span><button class="copy-btn" onclick="copyScript(this)">Copy</button></div>
+        </div>
+        <div class="script-body">Quick bump on the briefing — Monday 8 PM ET, 40 min. 100 founder slots tied to it, going fast. Link if you want to read first: <span class="ph">[funnel-link]</span></div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-meta">
+          <span class="tag">SMS · T+5 days · Closer</span>
+          <div><span class="timing">~140 chars</span><button class="copy-btn" onclick="copyScript(this)">Copy</button></div>
+        </div>
+        <div class="script-body">Last note from my side. Door's open Monday if you want it: <span class="ph">[funnel-link]</span>. Otherwise no worries — different timing.</div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-meta">
+          <span class="tag">SMS · Objection Handlers</span>
+          <div><button class="copy-btn" onclick="copyScript(this)">Copy</button></div>
+        </div>
+        <div class="script-body">→ "Who is this?"
+<span class="ph">[your name]</span>. <span class="ph">[mutual context]</span>. Running a briefing Mondays — Chaos Tax framework. Saw a fit. No pitch.
+
+→ "What does it cost?"
+Briefing itself is free. There's a $37 founders bundle tied to it — but you don't need it to attend.
+
+→ "Sounds salesy."
+Fair. It's structured. 40 min. Q&A heavy. If after Monday it's not the move, no follow-up from me.
+
+→ "Send me details."
+<span class="ph">[funnel-link]</span>. Page explains the full picture.</div>
+      </div>
+    </div>
+
+    <!-- INSTAGRAM -->
+    <div class="channel-panel" id="panel-ig">
+
+      <div class="script-block">
+        <div class="script-meta">
+          <span class="tag">Instagram DM · T+0 · Opener</span>
+          <div><span class="timing">~420 chars</span><button class="copy-btn" onclick="copyScript(this)">Copy</button></div>
+        </div>
+        <div class="script-body"><span class="ph">[name]</span> — your <span class="ph">[post / reel / story content]</span> caught my eye. The pattern you're describing has a name — Chaos Tax. The operational friction that quietly burns margin and hours while you're busy producing. I run a private Monday briefing on it. 40 min, peer-level, no webinar nonsense. 100 founder seats tied to the room. Want the link?</div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-meta">
+          <span class="tag">Instagram DM · T+3 days · Follow-Up</span>
+          <div><span class="timing">~250 chars</span><button class="copy-btn" onclick="copyScript(this)">Copy</button></div>
+        </div>
+        <div class="script-body">Following up — Monday briefing's coming. 40 min, 8 PM ET. You'll get the framework on paper either way. If it's not for you, no follow-up. <span class="ph">[funnel-link]</span></div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-meta">
+          <span class="tag">Instagram DM · T+6 days · Closer</span>
+          <div><span class="timing">~200 chars</span><button class="copy-btn" onclick="copyScript(this)">Copy</button></div>
+        </div>
+        <div class="script-body">Closing the loop from my side. If timing's off, all good. Door's at <span class="ph">[funnel-link]</span> when you want it. Mondays 8 PM ET.</div>
+      </div>
+
+      <div class="script-block">
+        <div class="script-meta">
+          <span class="tag">Instagram DM · Objection Handlers</span>
+          <div><button class="copy-btn" onclick="copyScript(this)">Copy</button></div>
+        </div>
+        <div class="script-body">→ "Is this spam?"
+Fair question. No — saw your <span class="ph">[specific content]</span>, the framework I teach is relevant. 40-min Monday briefing. No automation, real DM.
+
+→ "What's the catch?"
+Catch is: 100 founder slots tied to it. They fill, the founder pricing closes forever. Briefing itself is free.
+
+→ "Why me?"
+You're producing at a level most people don't reach without bleeding. The Chaos Tax framework names the bleed.
+
+→ "Just send me info."
+<span class="ph">[funnel-link]</span>. Full breakdown.</div>
+      </div>
+    </div>
+
+    <button class="cta" onclick="goStep(4)">Next — Tracking Ledger →</button>
+    <button class="cta secondary" onclick="goStep(2)">← Back</button>
+  </section>
+
+  <!-- ROOM 4 — TRACKING LEDGER -->
+  <section class="room" data-step="4">
+    <div class="eyebrow">Operations Console · Room IV</div>
+    <h1>Outreach Tracking <span class="gold">Ledger.</span></h1>
+    <p class="lede">
+      Every prospect goes in. Status updates by hand. No prospect leaves the ledger until they convert,
+      die, or hit a 7-day no-reply (auto-marked Dead). The ledger persists in your browser between sessions
+      and exports to CSV for the Vault Audit Log on launch day.
+    </p>
+
+    <div class="ledger-controls">
+      <input type="text" class="ledger-input" id="newName" placeholder="Prospect name" />
+      <input type="text" class="ledger-input tiny" id="newHandle" placeholder="Handle / URL" />
+      <select class="ledger-input tiny" id="newChannel">
+        <option value="LinkedIn">LinkedIn</option>
+        <option value="SMS">SMS</option>
+        <option value="Instagram">Instagram</option>
+        <option value="Facebook">Facebook</option>
+        <option value="Reddit">Reddit</option>
+        <option value="Referral">Referral</option>
+      </select>
+      <select class="ledger-input tiny" id="newArchetype">
+        <option value="Booth Renter">Booth Renter</option>
+        <option value="Contractor">Contractor</option>
+        <option value="Agency Founder">Agency Founder</option>
+        <option value="Other">Other</option>
+      </select>
+      <button class="add-btn" onclick="addProspect()">+ Add Prospect</button>
+    </div>
+
+    <div class="ledger-controls">
+      <button class="export-btn" onclick="exportCSV()">⇩ Export CSV</button>
+      <button class="export-btn" onclick="importCSV()">⇪ Import CSV</button>
+      <input type="file" id="csvFile" accept=".csv" style="display:none" onchange="handleImport(event)" />
+      <button class="clear-btn" onclick="confirmClear()">Clear Ledger</button>
+      <input type="text" class="ledger-input" id="ledgerSearch" placeholder="Search ledger..." oninput="renderLedger()" style="flex: 1; min-width: 200px;" />
+    </div>
+
+    <div id="ledgerTableWrap"></div>
+  </section>
+
+  <!-- ROOM 5 — VELOCITY DASHBOARD -->
+  <section class="room" data-step="5">
+    <div class="eyebrow">Operations Console · Room V</div>
+    <h1>Velocity Engine — <span class="gold">the math, the cadence, the close.</span></h1>
+    <p class="lede">
+      88 founder slots remaining. 61 days to launch. The math demands 1.44 founders per day, every day,
+      until the cap fills. The dashboard below tracks your daily discipline against the requirement.
+    </p>
+
+    <div class="velocity-grid">
+      <div class="metric-card">
+        <div class="num" id="vSlots">88</div>
+        <div class="lbl">Slots Remaining</div>
+        <div class="sub">of 100 total</div>
+      </div>
+      <div class="metric-card">
+        <div class="num" id="vDays">61</div>
+        <div class="lbl">Days To Launch</div>
+        <div class="sub">until July 20, 2026</div>
+      </div>
+      <div class="metric-card">
+        <div class="num" id="vPace">1.44</div>
+        <div class="lbl">Founders Per Day</div>
+        <div class="sub">required pace</div>
+      </div>
+      <div class="metric-card">
+        <div class="num" id="vToday">0</div>
+        <div class="lbl">Closed Today</div>
+        <div class="sub">your tally</div>
+      </div>
+    </div>
+
+    <h4>The Funnel Math — Reverse-Engineered</h4>
+    <div class="routine-block">
+      <ol>
+        <li><strong>1 founder/day</strong> requires roughly <strong>2 briefing attendees</strong> (50% briefing→founder rate)</li>
+        <li><strong>2 briefing attendees</strong> requires roughly <strong>4 booked conversations</strong> (50% conversation→briefing rate)</li>
+        <li><strong>4 booked conversations</strong> requires roughly <strong>40 replies</strong> (10% reply→conversation rate)</li>
+        <li><strong>40 replies</strong> requires roughly <strong>500-1000 outbound touches</strong> (4-8% reply rate)</li>
+        <li><strong>500-1000 touches</strong> requires roughly <strong>40-60 hand-touched outreaches/day</strong> spread across LinkedIn + IG + SMS + follow-ups</li>
+      </ol>
+    </div>
+
+    <div class="checklist">
+      <h4>Today's Operations Checklist</h4>
+      <div class="check-row" onclick="toggleCheck(this)"><input type="checkbox" /><span class="label">Sourcing — Add 25-30 new prospects to the ledger</span><span class="target">~30 min</span></div>
+      <div class="check-row" onclick="toggleCheck(this)"><input type="checkbox" /><span class="label">LinkedIn — Send 20 openers from Room III</span><span class="target">~25 min</span></div>
+      <div class="check-row" onclick="toggleCheck(this)"><input type="checkbox" /><span class="label">Instagram — Send 15 DM openers from Room III</span><span class="target">~20 min</span></div>
+      <div class="check-row" onclick="toggleCheck(this)"><input type="checkbox" /><span class="label">SMS — Send 5 openers (warm contacts only)</span><span class="target">~10 min</span></div>
+      <div class="check-row" onclick="toggleCheck(this)"><input type="checkbox" /><span class="label">Follow-ups — Send T+3 to 10 prospects, T+7 to 5 prospects</span><span class="target">~15 min</span></div>
+      <div class="check-row" onclick="toggleCheck(this)"><input type="checkbox" /><span class="label">Referral ask — Ask 1 existing Codifier for 5 names</span><span class="target">~5 min</span></div>
+      <div class="check-row" onclick="toggleCheck(this)"><input type="checkbox" /><span class="label">Ledger hygiene — Update statuses, mark Dead at T+7 no-reply</span><span class="target">~10 min</span></div>
+      <div class="check-row" onclick="toggleCheck(this)"><input type="checkbox" /><span class="label">Monday Briefing prep (Sundays only) — Confirm Zoom, send reminder</span><span class="target">~10 min</span></div>
+    </div>
+
+    <p style="margin-top: 28px; font-family: var(--mono); font-size: 12px; color: var(--vault-text-muted); letter-spacing: 0.1em;">
+      DISCIPLINE NOTE — Hit the checklist every day for 14 days before adjusting. The numbers will be wrong
+      until they're not. Founder velocity compounds from week 3 once the Monday Briefing builds its own gravity.
+    </p>
+
+    <button class="cta secondary" onclick="goStep(4)">← Back to Ledger</button>
+    <button class="cta secondary" onclick="goStep(1)">← Top of Console</button>
+  </section>
 
 </div>
 
-    <script>
-        window.chatbaseConfig = { chatbotId: "LqQm-wIUNIr8Atcfigm0N" };
-    </script>
-    <script src="https://www.chatbase.co/embed.min.js" id="LqQm-wIUNIr8Atcfigm0N" defer></script>
+<!-- ============ STEP BAR ============ -->
+<div class="step-bar">
+  <div class="label">ROOM · <strong id="stepLabel">I of V</strong></div>
+  <div class="step-track" id="stepTrack">
+    <div class="seg done" onclick="goStep(1)"></div>
+    <div class="seg" onclick="goStep(2)"></div>
+    <div class="seg" onclick="goStep(3)"></div>
+    <div class="seg" onclick="goStep(4)"></div>
+    <div class="seg" onclick="goStep(5)"></div>
+  </div>
+  <div class="label" id="stepName">ICP</div>
+</div>
+
+<script>
+  // ============================================================
+  // OQEAD OUTBOUND KIT — STATE MACHINE
+  // ============================================================
+  const state = {
+    step: 1,
+    totalSteps: 5,
+    stepNames: ['ICP', 'SOURCES', 'SCRIPTS', 'LEDGER', 'VELOCITY'],
+    slotsRemaining: 88,
+    ledger: [],
+    todayTouches: 0,
+    closedToday: 0
+  };
+
+  // ---------- PERSISTENCE ----------
+  const LS_KEY = 'oqead_outbound_ledger_v1';
+  function persist() {
+    try {
+      localStorage.setItem(LS_KEY, JSON.stringify({
+        ledger: state.ledger,
+        slotsRemaining: state.slotsRemaining,
+        todayTouches: state.todayTouches,
+        closedToday: state.closedToday,
+        savedAt: new Date().toISOString()
+      }));
+    } catch(e) { /* private mode / quota — silent */ }
+  }
+  function hydrate() {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      state.ledger = data.ledger || [];
+      if (typeof data.slotsRemaining === 'number') state.slotsRemaining = data.slotsRemaining;
+      if (typeof data.todayTouches === 'number') state.todayTouches = data.todayTouches;
+      if (typeof data.closedToday === 'number') state.closedToday = data.closedToday;
+    } catch(e) { /* silent */ }
+  }
+
+  // ---------- ROOM NAV ----------
+  function goStep(n) {
+    if (n < 1 || n > state.totalSteps) return;
+    state.step = n;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  function render() {
+    document.querySelectorAll('.room').forEach(r => {
+      const s = parseInt(r.dataset.step);
+      r.classList.toggle('active', s === state.step);
+    });
+    const segs = document.querySelectorAll('.step-track .seg');
+    segs.forEach((seg, i) => seg.classList.toggle('done', i < state.step));
+    document.getElementById('stepLabel').textContent =
+      ['I','II','III','IV','V'][state.step - 1] + ' of V';
+    document.getElementById('stepName').textContent = state.stepNames[state.step - 1];
+    document.getElementById('topSlots').textContent = state.slotsRemaining;
+    document.getElementById('topToday').textContent = state.todayTouches;
+    if (state.step === 4) renderLedger();
+    if (state.step === 5) renderVelocity();
+  }
+
+  // ---------- CHANNEL TABS ----------
+  function switchChannel(ch) {
+    document.querySelectorAll('.channel-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.channel-panel').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('panel-' + ch).classList.add('active');
+  }
+
+  // ---------- SCRIPT COPY ----------
+  function copyScript(btn) {
+    const body = btn.closest('.script-block').querySelector('.script-body');
+    const text = body.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.classList.add('copied');
+      btn.textContent = 'Copied ✓';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.textContent = 'Copy';
+      }, 1800);
+    });
+  }
+
+  // ---------- LEDGER ----------
+  function addProspect() {
+    const name = document.getElementById('newName').value.trim();
+    const handle = document.getElementById('newHandle').value.trim();
+    const channel = document.getElementById('newChannel').value;
+    const archetype = document.getElementById('newArchetype').value;
+    if (!name) { alert('Prospect name required.'); return; }
+    const today = new Date().toISOString().substring(0, 10);
+    state.ledger.unshift({
+      id: 'P-' + Date.now(),
+      name, handle, channel, archetype,
+      firstTouch: today,
+      touches: 1,
+      status: 'noreply',
+      lastUpdate: today,
+      notes: ''
+    });
+    state.todayTouches += 1;
+    document.getElementById('newName').value = '';
+    document.getElementById('newHandle').value = '';
+    persist();
+    renderLedger();
+    document.getElementById('topToday').textContent = state.todayTouches;
+  }
+
+  function renderLedger() {
+    const wrap = document.getElementById('ledgerTableWrap');
+    const search = (document.getElementById('ledgerSearch')?.value || '').toLowerCase();
+    let rows = state.ledger;
+    if (search) {
+      rows = rows.filter(r =>
+        r.name.toLowerCase().includes(search) ||
+        (r.handle || '').toLowerCase().includes(search) ||
+        r.channel.toLowerCase().includes(search) ||
+        r.archetype.toLowerCase().includes(search) ||
+        r.status.toLowerCase().includes(search)
+      );
+    }
+    if (rows.length === 0) {
+      wrap.innerHTML = '<div class="empty-ledger">LEDGER EMPTY — ADD YOUR FIRST PROSPECT ABOVE</div>';
+      return;
+    }
+    let html = '<table class="ledger-table"><thead><tr>'
+      + '<th>Prospect</th><th>Handle</th><th>Channel</th><th>Type</th>'
+      + '<th>First Touch</th><th>Touches</th><th>Status</th><th>Notes</th><th></th>'
+      + '</tr></thead><tbody>';
+    rows.forEach(r => {
+      const statusClass = 'status-' + r.status;
+      const statusLabels = {
+        noreply: 'No Reply', replied: 'Replied', booked: 'Booked',
+        founder: 'Founder', dead: 'Dead'
+      };
+      html += '<tr>'
+        + '<td>' + escapeHTML(r.name) + '</td>'
+        + '<td>' + escapeHTML(r.handle || '') + '</td>'
+        + '<td>' + escapeHTML(r.channel) + '</td>'
+        + '<td>' + escapeHTML(r.archetype) + '</td>'
+        + '<td>' + escapeHTML(r.firstTouch) + '</td>'
+        + '<td>'
+          + '<button class="row-delete" onclick="bumpTouch(\'' + r.id + '\')" title="Increment touches">+</button> '
+          + r.touches
+        + '</td>'
+        + '<td>'
+          + '<select class="ledger-status-select" onchange="changeStatus(\'' + r.id + '\', this.value)">'
+          + ['noreply','replied','booked','founder','dead'].map(s =>
+              '<option value="' + s + '"' + (r.status === s ? ' selected' : '') + '>' + statusLabels[s] + '</option>'
+            ).join('')
+          + '</select> '
+          + '<span class="status-pill ' + statusClass + '">' + statusLabels[r.status] + '</span>'
+        + '</td>'
+        + '<td><input type="text" class="ledger-input tiny" value="' + escapeHTML(r.notes || '') + '" oninput="updateNotes(\'' + r.id + '\', this.value)" /></td>'
+        + '<td><button class="row-delete" onclick="deleteRow(\'' + r.id + '\')" title="Delete">✕</button></td>'
+        + '</tr>';
+    });
+    html += '</tbody></table>';
+    wrap.innerHTML = html;
+  }
+
+  function bumpTouch(id) {
+    const p = state.ledger.find(r => r.id === id);
+    if (p) {
+      p.touches += 1;
+      p.lastUpdate = new Date().toISOString().substring(0, 10);
+      state.todayTouches += 1;
+      persist();
+      renderLedger();
+      document.getElementById('topToday').textContent = state.todayTouches;
+    }
+  }
+  function changeStatus(id, status) {
+    const p = state.ledger.find(r => r.id === id);
+    if (!p) return;
+    const wasFounder = p.status === 'founder';
+    p.status = status;
+    p.lastUpdate = new Date().toISOString().substring(0, 10);
+    if (status === 'founder' && !wasFounder) {
+      state.slotsRemaining = Math.max(0, state.slotsRemaining - 1);
+      state.closedToday += 1;
+    }
+    if (status !== 'founder' && wasFounder) {
+      state.slotsRemaining = Math.min(100, state.slotsRemaining + 1);
+      state.closedToday = Math.max(0, state.closedToday - 1);
+    }
+    persist();
+    renderLedger();
+    document.getElementById('topSlots').textContent = state.slotsRemaining;
+  }
+  function updateNotes(id, val) {
+    const p = state.ledger.find(r => r.id === id);
+    if (p) { p.notes = val; persist(); }
+  }
+  function deleteRow(id) {
+    if (!confirm('Remove this prospect from the ledger?')) return;
+    const p = state.ledger.find(r => r.id === id);
+    if (p && p.status === 'founder') {
+      state.slotsRemaining = Math.min(100, state.slotsRemaining + 1);
+    }
+    state.ledger = state.ledger.filter(r => r.id !== id);
+    persist();
+    renderLedger();
+    document.getElementById('topSlots').textContent = state.slotsRemaining;
+  }
+  function confirmClear() {
+    if (!confirm('Permanently clear ENTIRE ledger? Export first if you need a record.')) return;
+    const founderCount = state.ledger.filter(r => r.status === 'founder').length;
+    state.slotsRemaining = Math.min(100, state.slotsRemaining + founderCount);
+    state.ledger = [];
+    state.todayTouches = 0;
+    state.closedToday = 0;
+    persist();
+    renderLedger();
+    document.getElementById('topSlots').textContent = state.slotsRemaining;
+    document.getElementById('topToday').textContent = 0;
+  }
+
+  // ---------- CSV ----------
+  function exportCSV() {
+    if (state.ledger.length === 0) { alert('Ledger empty — nothing to export.'); return; }
+    const headers = ['ID','Name','Handle','Channel','Archetype','First Touch','Touches','Status','Last Update','Notes'];
+    const rows = state.ledger.map(r => [
+      r.id, r.name, r.handle, r.channel, r.archetype,
+      r.firstTouch, r.touches, r.status, r.lastUpdate, r.notes
+    ]);
+    const csv = [headers, ...rows]
+      .map(row => row.map(cell => '"' + String(cell || '').replace(/"/g, '""') + '"').join(','))
+      .join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'oqead-outreach-ledger-' + new Date().toISOString().substring(0,10) + '.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+  function importCSV() { document.getElementById('csvFile').click(); }
+  function handleImport(ev) {
+    const file = ev.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      try {
+        const txt = e.target.result;
+        const lines = txt.split(/\r?\n/).filter(l => l.trim());
+        const header = lines.shift();
+        lines.forEach(line => {
+          const cells = parseCSVRow(line);
+          state.ledger.push({
+            id: cells[0] || 'P-' + Date.now() + Math.random(),
+            name: cells[1] || '',
+            handle: cells[2] || '',
+            channel: cells[3] || 'LinkedIn',
+            archetype: cells[4] || 'Other',
+            firstTouch: cells[5] || new Date().toISOString().substring(0,10),
+            touches: parseInt(cells[6]) || 1,
+            status: cells[7] || 'noreply',
+            lastUpdate: cells[8] || new Date().toISOString().substring(0,10),
+            notes: cells[9] || ''
+          });
+        });
+        persist();
+        renderLedger();
+        alert('Imported ' + lines.length + ' rows.');
+      } catch(err) { alert('CSV parse error: ' + err.message); }
+    };
+    reader.readAsText(file);
+  }
+  function parseCSVRow(row) {
+    const result = []; let cur = ''; let inQ = false;
+    for (let i = 0; i < row.length; i++) {
+      const c = row[i];
+      if (c === '"' && row[i+1] === '"') { cur += '"'; i++; }
+      else if (c === '"') { inQ = !inQ; }
+      else if (c === ',' && !inQ) { result.push(cur); cur = ''; }
+      else { cur += c; }
+    }
+    result.push(cur);
+    return result;
+  }
+
+  // ---------- VELOCITY ----------
+  function renderVelocity() {
+    document.getElementById('vSlots').textContent = state.slotsRemaining;
+    const launch = new Date('2026-07-20T00:00:00Z');
+    const now = new Date();
+    const days = Math.max(0, Math.ceil((launch - now) / 86400000));
+    document.getElementById('vDays').textContent = days;
+    const pace = days > 0 ? (state.slotsRemaining / days).toFixed(2) : '∞';
+    document.getElementById('vPace').textContent = pace;
+    document.getElementById('vToday').textContent = state.closedToday;
+    document.getElementById('topDays').textContent = days;
+  }
+
+  function toggleCheck(row) {
+    if (event.target.type === 'checkbox') return;
+    const cb = row.querySelector('input[type=checkbox]');
+    cb.checked = !cb.checked;
+    row.classList.toggle('done', cb.checked);
+  }
+  document.querySelectorAll('.check-row input[type=checkbox]').forEach(cb => {
+    cb.addEventListener('change', e => {
+      cb.closest('.check-row').classList.toggle('done', cb.checked);
+    });
+  });
+
+  // ---------- UTIL ----------
+  function escapeHTML(s) {
+    return String(s).replace(/[&<>"']/g, c => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    }[c]));
+  }
+
+  // ---------- TOP BAR LAUNCH COUNTDOWN ----------
+  function updateTopDays() {
+    const launch = new Date('2026-07-20T00:00:00Z');
+    const days = Math.max(0, Math.ceil((launch - new Date()) / 86400000));
+    document.getElementById('topDays').textContent = days;
+  }
+
+  // ---------- BOOT ----------
+  hydrate();
+  render();
+  updateTopDays();
+  setInterval(updateTopDays, 60000);
+</script>
 
 </body>
 </html>
